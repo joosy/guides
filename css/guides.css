@@ -1,0 +1,13 @@
+body {
+  padding-top: 30px;
+}
+
+img.logo, .guide img {
+  max-width: 100%;
+  display: block;
+  margin-right: auto; margin-left: auto;
+}
+
+pre code {
+  border: none;
+}
