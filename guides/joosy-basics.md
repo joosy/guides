@@ -128,6 +128,6 @@ First one is needed to boot the application while `blog` directory contains appl
     │   └── widgets
     └── widgets
 
-Joosy application structure is pretty straightforward and with structure you get your first page and layout. If you never used HAML before you should [go try now](http://haml-lang.com/). Joosy bundles and uses excellent [CoffeScript-enabled HAML notation](https://github.com/9elements/haml-coffee). Within advanced topics we'll describe it how to change the template engine. But you are encouraged to use HAML for now since all this guide is built on top of that.
+Joosy application structure is pretty straightforward and with structure you get your first page and layout. You either get your first templates… and they are in HAML. If you never used HAML before you should [go try now](http://haml-lang.com/). Joosy bundles and uses excellent [CoffeScript-enabled HAML notation](https://github.com/9elements/haml-coffee). Within advanced topics we'll describe it how to change the template engine to anything like ECO or Jade. But you are encouraged to use HAML for now since all this guide is built on top of that.
 
 You should try to investigate `layouts/` and `pages/` content on your own since that are the things we will go through in [next chapter](layouts-pages-and-routing.html).
