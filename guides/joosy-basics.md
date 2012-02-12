@@ -80,15 +80,46 @@ Joosy is intended to ease building of modern medium and large-sized browser-base
 
 Compare Joosy to Backbone like Rails to Sinatra. While Rails engine is much more powerful, Sinatra still has a lot of cases to be used at. If all you need is to enable some RICHness on one of your pages, Joosy can handle that. But Backbone will do the trick with lesser dependencies. If you need to move complete web-resource to browser Joosy will do the task at its Best.
 
-## What's next?
+## Creating a new Joosy project
 
-We have a set of guidelines showing you, step-by-step, how to create a Joosy application. You should probably follow them starting from [Creating a new project](/joosy/guides/creating-a-new-project.html)
+Assuming you already have Ruby & Rails installed, let's proceed to creating a new rails project.
 
-### Hello world app
+    rails new blog
 
-Using built-in generators you can quickly generate small app inside your Rails app to see Joosy application from inside a bit.
+Then let's add `gem 'joosy', :git => 'git://github.com/roundlake/joosy.git'` to the Gemfile and `bundle`.
 
-    rails g joosy:application dummy
-    rails g joosy:preloader dummy
+Now you can generate basic Joosy application skeleton.
 
-Now you can `rails s` and see Joosy placeholder at [localhost:3000/dummy](http://localhost:3000/dummy)
+    rails g joosy:application blog
+
+In order to have the application booted, we need to also generate the preloader.
+
+    rails g joosy:preloader blog
+
+So you can `rails s` and see Joosy placeholder at [localhost:3000/blog](http://localhost:3000/blog)
+
+![](http://f.cl.ly/items/3r1T27472y0K0u440Z3B/Screen%20Shot%202012-02-11%20at%2011.28.49%20AM.png)
+
+Let's see where our Joosy application sources are placed. In `app/assets/javascripts` we have the `blog_preloader.js.coffee`, which is needed to boot the application, and the `blog` directory with the application sources in it.
+
+Joosy application structure is quite similar to Rails' one. We'll assume you to do most of your work in there.
+
+    .
+    ├── helpers
+    │   └── application.js.coffee
+    ├── layouts
+    │   └── application.js.coffee
+    ├── pages
+    │   ├── application.js.coffee
+    │   └── welcome
+    │       └── index.js.coffee
+    ├── resources
+    ├── routes.js.coffee
+    ├── templates
+    │   ├── layouts
+    │   │   └── application.jst.hamlc
+    │   ├── pages
+    │   │   └── welcome
+    │   │       └── index.jst.hamlc
+    │   └── widgets
+    └── widgets
