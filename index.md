@@ -13,7 +13,7 @@ title: "Guides"
 
   In this chapter we'll create basic blog pages with layouts and learn how routing in Joosy works. We'll either learn how to load basic data from server during page load.
 
-* ## [2. Elements, events and filters](guides/elements-events-and-filters.html)
+* ## 2. Elements, events and filters
 
   This chapter describes HTML elements and events binding. We'll also discuss Filters, the powerfull system of interaction with layouts/pages bootstrap. With help of those we will...
 
