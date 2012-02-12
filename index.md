@@ -1,6 +1,6 @@
 ---
 layout: index
-title: "Index"
+title: "Guides"
 ---
 
 # Start here
