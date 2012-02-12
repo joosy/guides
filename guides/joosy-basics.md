@@ -29,7 +29,7 @@ In Backbone or Spine you only have abstract Views, Models and "Packs of …" and
 
 #### [Ember](http://emberjs.com/)
 
-Ember is the closest framework by spirit. But it still doesn't give you enough conventions and is even more abstract than Backbone in several parts. It either limits you to Handlebars. Joosy rendering system is built on top of same solution, Morpher. That said you can bind your variables dynamically just like in Ember. But it allows you to any templates syntax.
+Ember is the closest framework by spirit. But it still doesn't give you enough conventions and is even more abstract than Backbone in several parts. It either limits you to Handlebars. Joosy rendering system is built on top of same solution, Morpher. That said you can bind your variables dynamically just like in Ember. But it allows you to use any templates syntax.
 
 ### The Joosy MVC Interpretation
 
