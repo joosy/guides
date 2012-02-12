@@ -82,7 +82,7 @@ Compare Joosy to Backbone like Rails to Sinatra. While Rails engine is much more
 
 ## What's next?
 
-We have a set of guidelines showing you, step-by-step, how to create a Joosy application. You should probably follow them starting from [Creating a new project](http://roundlake.github.com/joosy/guides/creating-a-new-project.html)
+We have a set of guidelines showing you, step-by-step, how to create a Joosy application. You should probably follow them starting from [Creating a new project](/joosy/guides/creating-a-new-project.html)
 
 ### Hello world app
 
