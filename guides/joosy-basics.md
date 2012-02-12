@@ -86,23 +86,27 @@ Assuming you already have Ruby & Rails installed, let's proceed to creating a ne
 
     rails new blog
 
-Then let's add `gem 'joosy', :git => 'git://github.com/roundlake/joosy.git'` to the Gemfile and `bundle`.
+To activate Joosy you only need to extend your Gemfile with:
 
-Now you can generate basic Joosy application skeleton.
+    gem 'joosy', :git => 'git://github.com/roundlake/joosy.git
+
+After `bundle install` is done you can generate basic Joosy application skeleton.
 
     rails g joosy:application blog
-
-In order to have the application booted, we need to also generate the preloader.
-
     rails g joosy:preloader blog
 
-So you can `rails s` and see Joosy placeholder at [localhost:3000/blog](http://localhost:3000/blog)
+First command will create the application itself. The second one will generate required bootstrap to properly run it from Rails. It will by default create a controller by application name. It's safe to transfer it to any other controller you want but don't forget to update routes.
+
+Now you can start rails with `rails s` and visit you newly created app [localhost:3000/blog](http://localhost:3000/blog). This is what you are supposed to see:
 
 ![](http://f.cl.ly/items/3r1T27472y0K0u440Z3B/Screen%20Shot%202012-02-11%20at%2011.28.49%20AM.png)
 
-Let's see where our Joosy application sources are placed. In `app/assets/javascripts` we have the `blog_preloader.js.coffee`, which is needed to boot the application, and the `blog` directory with the application sources in it.
+According to Rails Assets Pipeline your application is now situated in `app/assets/javascripts` folder. At top level we have:
 
-Joosy application structure is quite similar to Rails' one. We'll assume you to do most of your work in there.
+    blog_preloader.js.coffee
+    blog/
+
+First one is needed to boot the application while `blog` directory contains application sources in it. We'll discuss bootstrap and preloaders later in this guide so for now you should consider `app/assets/javascripts/blog` as a baseline.
 
     .
     ├── helpers
@@ -123,3 +127,7 @@ Joosy application structure is quite similar to Rails' one. We'll assume you to 
     │   │       └── index.jst.hamlc
     │   └── widgets
     └── widgets
+
+Joosy application structure is pretty straightforward and with structure you get your first page and layout. If you never used HAML before you should [go try now](http://haml-lang.com/). Joosy bundles and uses excellent [CoffeScript-enabled HAML notation](https://github.com/9elements/haml-coffee). Within advanced topics we'll describe it how to change the template engine. But you are encouraged to use HAML for now since all this guide is built on top of that.
+
+You should try to investigate `layouts/` and `pages/` content on your own since that are the things we will go through in [next chapter](layouts-pages-and-routing.html).
