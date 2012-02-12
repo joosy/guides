@@ -99,7 +99,7 @@ First command will create the application itself. The second one will generate r
 
 Now you can start rails with `rails s` and visit you newly created app [localhost:3000/blog](http://localhost:3000/blog). This is what you are supposed to see:
 
-![](http://f.cl.ly/items/3r1T27472y0K0u440Z3B/Screen%20Shot%202012-02-11%20at%2011.28.49%20AM.png)
+![](http://cl.ly/221l423a0U33362x2V2g/Screen%20Shot%202012-02-11%20at%2011.28.49%20AM.png)
 
 According to Rails Assets Pipeline your application is now situated in `app/assets/javascripts` folder. At top level we have:
 
