@@ -2,6 +2,25 @@ body {
   padding-top: 30px;
 }
 
+.index h3 {
+  font-size: 2em;
+  padding-bottom: 5px;
+}
+
+.index ul {
+  margin-left: 0;
+}
+
+.index li {
+  list-style: none;
+  padding-top: 10px; padding-bottom: 10px;
+}
+
+.index li a {
+  display: block;
+  font-size: 1.3em;
+}
+
 img.logo, .guide img {
   max-width: 100%;
   display: block;

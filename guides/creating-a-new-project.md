@@ -79,5 +79,3 @@ after the index (`/`) route. Now we can fire up the browser and navigate to [loc
 ![](http://f.cl.ly/items/0q1H0O402E040n2T0718/Screen%20Shot%202012-02-11%20at%2011.49.14%20AM.png)
 
 As you can see, we pass params to our Joosy app after the she-bang (`!#`). It's common behavior for most modern web apps, like Twitter, iCloud, etc.
-
-### Basic Joosy interaction with backend
