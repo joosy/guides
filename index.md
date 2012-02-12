@@ -17,13 +17,15 @@ title: "Guides"
 
   This chapter describes HTML elements and events binding. We'll also discuss Filters, the powerfull system of interaction with layouts/pages bootstrap. With help of those we will...
 
-* ## 3. Helpers
+* ## 3. Resources
 
-* ## 4. Resources
+* ## 4. Dynamic rendering
 
-* ## 5. Widgets
+* ## 5. Helpers
 
-* ## 6. Forms
+* ## 6. Widgets
+
+* ## 7. Forms
 
 * ## 7. Preloaders
 
