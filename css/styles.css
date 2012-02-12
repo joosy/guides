@@ -47,10 +47,11 @@ header h1 a img {
 header .nav {
   float: right;
   margin-top: 2em;
-  font-size: .8em;
+  font-size: 17px;
 }
 
 section.topbar {
+  background: #3c3c3c;
   background: linear-gradient(#3c3c3c, #2a2a2a);
   padding-top: .8em;
   margin-bottom: -1em;
@@ -85,7 +86,7 @@ header .nav li, section.topbar li {
 }
 
 header .nav li {
-  margin: 0 0 0 1.4em;
+  margin: 0 0 0 0.8em;
 }
 
 header .nav li a {
@@ -95,6 +96,7 @@ header .nav li a {
 
 header .nav .index {
   padding: .4em 1em;
+  background: #f23900;
   background: linear-gradient(#fe4d00, #f23900);
   border-radius: .5em;
   position: relative;
@@ -208,4 +210,12 @@ small { font-size: 80%; }
   article h6,
   article hr, 
   article table { max-width: none; }
+}
+
+.wip {
+  font-size: 18px;
+  font-weight: bold;
+  color: #CC0000;
+  text-align: center;
+  margin-top: 30px;
 }
