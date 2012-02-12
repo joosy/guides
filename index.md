@@ -3,7 +3,7 @@ layout: index
 title: "Guides"
 ---
 
-# Basic guide: creating a blog with Joosy
+# Creating a blog on Joosy
 
 * ## [0. Joosy basics](guides/joosy-basics.html)
 
@@ -17,12 +17,22 @@ title: "Guides"
 
   This chapter describes HTML elements and events binding. We'll also discuss Filters, the powerfull system of interaction with layouts/pages bootstrap. With help of those we will...
 
-* ## 3. Resources
+* ## 3. Helpers
 
-* ## 4. Widgets
+* ## 4. Resources
 
-* ## 5. Forms
+* ## 5. Widgets
 
-* ## 6. Preloaders
+* ## 6. Forms
 
-* ## 7. Load, unload and loading animations
+* ## 7. Preloaders
+
+* ## 8. Load, unload and "in progress" animations
+
+# Advanced guides
+
+* ## Authentication
+
+* ## Permissions and ACL management
+
+* ## How to switch template engine
