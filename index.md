@@ -53,6 +53,8 @@ To learn Joosy you are supposed to completely read the introductionary part, the
 
 ## Advanced guides
 
+* ### Search engines indexing
+
 * ### Authentication
 
 * ### Permissions and ACL management
