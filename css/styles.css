@@ -14,10 +14,22 @@ a:visited { color: #67BCD5; }
 
 header { 
   margin-bottom: 30px; 
-  background: #ffa200; 
-  border-bottom: 1px solid #e0e0e0; }
-  
-header h1 { font-size: 20px; padding: 20px 0; margin: 0; }
+  padding-top: 20px;
+  background: linear-gradient(#ffa000, #ff8300); 
+  border-bottom: 1px solid #e0e0e0; 
+}
+
+header h1 { 
+  font-size: 20px; 
+  padding: 10px 0; 
+  margin: 0; 
+  float: left;
+  background: url(/joosy/img/logo.png) no-repeat;
+  width: 246px;
+  height: 80px;
+  text-indent: -9999em;
+}
+
 header h1 a:hover,
 header h1 a:visited,
 header h1 a { font-weight: bold; text-decoration: none; display: block; color: #ffeccc; }
@@ -30,6 +42,56 @@ header h1 a img {
   vertical-align: middle;
   width: 26px;
   height: 26px;
+}
+
+header .nav {
+  float: right;
+  margin-top: 2em;
+  font-size: .8em;
+}
+
+section.topbar {
+  background: linear-gradient(#3c3c3c, #2a2a2a);
+  padding-top: .8em;
+  margin-bottom: -1em;
+  font-size: .7em;
+  text-align: center;
+}
+
+section.topbar a {
+  color: #ffa000;
+  font-weight: bold;
+}
+
+section.topbar li {
+  margin: 0;
+  padding: 0 .8em 0 .5em;
+  border-right: .1em solid #626262;
+}
+
+section.topbar li:last-child {
+  border-right: none;
+}
+
+header .nav li, section.topbar li {
+  display: inline;
+  list-style: none;
+}
+
+header .nav li {
+  margin: 0 0 0 1.4em;
+}
+
+header .nav li a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+header .nav .index {
+  padding: .4em 1em;
+  background: linear-gradient(#fe4d00, #f23900);
+  border-radius: .5em;
+  position: relative;
 }
 
 h2.section { 
