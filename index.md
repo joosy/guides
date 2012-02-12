@@ -7,7 +7,7 @@ title: "Guides"
 
 * ## [0. Joosy basics](guides/joosy-basics.html)
 
-  This chapter describes ideology of Joosy, compares Joosy to alternatives and shares our vision of JS framework. It either includes description of Joosy directory structure and very basic generators.
+  This chapter describes ideology of Joosy, compares Joosy to alternatives and shares our vision of JS framework. We will create our future Blog application using generators and learn the directory structure.
 
 * ## [1. Layouts, pages and routing](guides/layouts-pages-and-routing.html)
 
@@ -15,21 +15,35 @@ title: "Guides"
 
 * ## 2. Elements, events and filters
 
-  This chapter describes HTML elements and events binding. We'll also discuss Filters, the powerfull system of interaction with layouts/pages bootstrap. With help of those we will...
+  This chapter describes HTML elements and events binding. We'll add simple events to show number of comments next to blog's title using. We'll also discuss Filters, the powerful system of interaction with layouts/pages bootstrap.
 
 * ## 3. Resources
 
+  With help of Resources we'll improve our pages' fetch process, will add ability to delete posts. We'll either learn how to do inline resources mapping (like when you have `has_many` in Rails).
+
 * ## 4. Dynamic rendering
 
-* ## 5. Helpers
+  This chapter will show you what you can do with your resources and dynamic binding. We'll learn how to link variable value and its HTML representation which will automatically update after variable changes. Using that we'll add inline title editor to our blog.
 
-* ## 6. Widgets
+* ## 5. Widgets
+
+  In this chapter we'll move our inline title editor to a widget and will reuse it on all blog posts pages.
+
+* ## 6. Helpers
+
+  Using helpers we'll format blog posts content. This chapter either learns how to create local helpers accessible only inside views of one page.
 
 * ## 7. Forms
 
-* ## 7. Preloaders
+  With help of Forms we'll finally add posts management to our blog. We'll make tiny admin pages to create and edit posts.
 
-* ## 8. Load, unload and "in progress" animations
+* ## 8. Preloaders
+
+  Now that our blog is ready we'll improve its loading. This chapter will learn you how to use two different kind of preloaders that come with Joosy. You'll know their advantages and how you can use them.
+
+* ## 9. Load, unload and "in progress" animations
+
+  This is advanced chapter that will show you how you can get some advanced control over the process of pages loading. We'll add fading animation that will both: indicate the process of page loading and just look good :).
 
 # Advanced guides
 
