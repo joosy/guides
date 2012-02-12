@@ -3,7 +3,7 @@ layout: index
 title: "Guides"
 ---
 
-# Basic guide: creating a blog with Joosy
+# Creating a blog on Joosy
 
 * ## [0. Joosy basics](guides/joosy-basics.html)
 
@@ -25,4 +25,11 @@ title: "Guides"
 
 * ## 6. Preloaders
 
-* ## 7. Load, unload and loading animations
+* ## 8. Load, unload and "in progress" animations
+
+# Advanced guides
+
+* ## Authentication
+* ## Permissions and ACL management
+* ## How to switch template engine
+>>>>>>> Guides plan extended
