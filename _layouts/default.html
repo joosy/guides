@@ -4,10 +4,25 @@
     <title>{{ page.title }} — Joosy Guides</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <link rel="stylesheet" href="/joosy/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/joosy/css/guides.css">
+    <link rel="stylesheet" href="/joosy/css/base.css">
+    <link rel="stylesheet" href="/joosy/css/skeleton.css">
+    <link rel="stylesheet" href="/joosy/css/styles.css">
+    <script src="http://cachedcommons.org/cache/modernizr/1.5.0/javascripts/modernizr-min.js"></script>
   </head>
   <body>
-    {{ content }}
+    <header>
+      <div class="container">
+        <div class="sixteen columns">
+          <h1>Joosy Gudies</h1>
+        </div>
+      </div>
+    </header>
+    <div class="container">
+      <section class="row">
+        <div class="sixteen columns">
+          {{ content }}
+        </div>
+      </section>
+    </div>
   </body>
 </html>

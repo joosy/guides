@@ -1,0 +1,138 @@
+/* #Site Styles
+================================================== */
+
+@import url(http://fonts.googleapis.com/css?family=Merriweather:400,700,300);
+
+body { font: 18px/25px 'Palatino', 'Palatino Linotype', 'Georgia', serif; }
+h1, h2, h3, h4, h5, h6 { font-weight: bold; }
+
+li { line-height: 24px }
+
+header { 
+  margin-bottom: 30px; 
+  background: #f0f0f0; 
+  border-bottom: 1px solid #e0e0e0; }
+  
+header h1 { font-size: 20px; padding: 20px 0; margin: 0; }
+header h1 a:hover,
+header h1 a:visited,
+header h1 a { font-weight: bold; text-decoration: none; display: block; }
+header h1 a img { 
+  border-radius: 2px; 
+  padding: 1px; 
+  background: white; 
+  box-shadow: 1px 1px 1px rgba(0,0,0,.3); 
+  margin-right: 15px;
+  vertical-align: middle;
+  width: 26px;
+  height: 26px;
+}
+
+h2.section { 
+  font-size: 13px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  font-family: arial, helvetica, sans-serif;
+}
+
+iframe, object { margin-bottom: 1em; }
+
+footer { 
+  font-size: 14px;
+  font-family: 'Merriweather', serif;
+  font-weight: bold; 
+  text-shadow: 0 1px 0 white;
+  color: #777; 
+  text-align: right; }
+footer .columns { 
+  position: relative; 
+  padding: 20px 0; 
+  border-top: 1px solid #e0e0e0; }
+footer a { text-shadow: none; color: #222; }
+footer .twitter { position: absolute; left: 0; top: 20px; }
+
+.permalink { text-align: right; }
+.permalink a { text-transform: uppercase; font-size: 8pt; color: #888; }
+
+abbr.published { 
+  color: #666; font-size: 14px;
+  font-family: 'Merriweather', serif; }
+abbr.published a { color: #666; text-decoration: none; }
+  
+.post-list ul { list-style: none; }
+.post-list ul li { margin-bottom: 20px; }
+.post-list ul li h2 { font-size: 20px; line-height: 29px; font-weight: 500; text-shadow: 0 1px 0 white; }
+.post-list ul li h2 a { text-decoration: none; border-bottom: 1px solid #e0e0e0; }
+
+article { margin-bottom: 3em; }
+article p,
+article li, 
+article blockquote,
+article h4,
+article h4,
+article h5,
+article h6,
+article h6,
+article h6,
+article hr, 
+article table { max-width: 560px; }
+
+article ul { list-style: disc outside; margin-left: 2em; }
+article blockquote { font-size: 14px; line-height: 19px; padding: 0 12px; margin: 20px 8px; }
+article blockquote p { font-family: 'Merriweather', serif; font-size: 13px; font-style: normal; }
+
+article .entry-header { margin-bottom: 20px; }
+article .entry-header h2 { margin: 20px 0; }
+article .entry-header a { text-decoration: none; border-bottom: 0; }
+article .entry-header a:hover { border-bottom: 1px solid #CCC; }
+article .entry-header .published a { border: 0; color: #888; }
+
+article .entry-content h1 { font-size: 19pt; }
+article .entry-content h2 { font-size: 17pt; }
+article .entry-content h3 { font-size: 14pt; }
+article .entry-content h4 { font-size: 12pt; }
+article .entry-content h5 { font-size: 10pt; font-weight: bold }
+article .entry-content h6 { font-size: 10pt; margin-bottom: .3em; }
+
+article .metadata { font-size: 11px; color: #888; }
+article .metadata p { margin-bottom: 0; }
+article .metadata a { color: #666; }
+
+sup { vertical-align: .2em; font-size: 80%; margin: -2px 0 0 2px; }
+
+p img { max-width: 100%; }
+code, pre { font-family: "Andale Mono", "courier-new", courier, monospace; }
+code { background: #F0F0F0; border-radius: 3px; font-size: 16px; }
+pre { margin: 20px 0;
+      font-size: 13px; }
+small { font-size: 80%; }
+
+/* .container, .container .sixteen.columns { width: 480px; } */
+
+.MathJax_Display * { color: #222 !important; }
+
+@media only screen and (max-width: 767px) {
+  
+  header { margin-bottom: 15px; }
+  header h1 { padding: 10px 0; }
+  footer { font-size: 11px; }
+  footer .twitter { position: static; }
+  article .entry-header h2 { font-size: 22px; margin: 10px 0; }
+  abbr.published { font-size: 11px; }
+  
+  .post-list ul li { margin-bottom: 6px; }
+  .post-list ul li abbr { margin-bottom: 0px; }
+  .post-list ul li h2 { font-size: 16px; line-height: 24px; }
+  
+  article p,
+  article li, 
+  article blockquote,
+  article h4,
+  article h4,
+  article h5,
+  article h6,
+  article h6,
+  article h6,
+  article hr, 
+  article table { max-width: none; }
+}
