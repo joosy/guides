@@ -1,6 +1,6 @@
 ---
 layout: guide
-title: "Getting Started with Joosy"
+title: "Joosy Basics"
 ---
 
 ## Assumptions
@@ -21,7 +21,7 @@ Finally, Joosy boosts your development drastically.
 
 ### How is Joosy different from X
 
-We share quite different goals and totally differ in ways to achieve it. While existing MVC frameworks define basic entities for you and leave you alone with application basic patterns and solutions, Joosy tries to give convention for each of them.
+We share quite different goals and totally differ in ways to achieve them. While existing MVC frameworks define basic entities for you and leave you alone with application basic patterns and solutions, Joosy tries to give convention for each of them.
 
 #### [Backbone](http://documentcloud.github.com/backbone/)
 
@@ -37,9 +37,9 @@ You probably are familiar with the concept of MVC. It's a pattern to keep code D
 
 #### Views
 
-In Joosy views are just views. Set of files (in templates/ folder). They do not differ from Rails and give you quite the same abilities (including helpers!). Besides that Joosy has renderDynamic which allows you to bind your variables to HTML representation tightly. You change variable value, Joosy changes HTML.
+In Joosy views are just views. Set of files (in `templates/` folder). They do not differ from Rails and give you quite the same abilities (including helpers!). Besides that Joosy has `renderDynamic` which allows you to bind your variables to HTML representation tightly. You change variable value, Joosy changes HTML.
 
-By default Joosy comes with Coffee-Haml (which looks and works pretty much like Ruby Haml). Combined with Sugar.js it will feel very similar to Ruby and server-side and will provide you the easiest migration.
+By default Joosy comes with Coffee-Haml (which looks and works pretty much like usual Haml). Combined with Sugar.js it will feel very similar to Ruby and server-side and will provide you the easiest migration.
 
 #### Controllers
 
@@ -60,7 +60,7 @@ Widgets are needed to keep your code DRY. They help you organize it in reusable 
 
 There are some facts that should be noted to explain it how we understand browser-side models.
 
-* In most cases you will want to leave your logic on server-side. In a real models. 
+* In most cases you will want to leave your logic on server-side. In real models. 
 * You rarely want to make 5 HTTP requests instead of 1.
 * In most cases you will have to give user a Form as a way to change anything.
 * You'll get different possible set of fields depending on case you use your model at.
@@ -88,7 +88,7 @@ Assuming you already have Ruby & Rails installed, let's proceed to creating a ne
 
 To activate Joosy you only need to extend your Gemfile with:
 
-    gem 'joosy', :git => 'git://github.com/roundlake/joosy.git
+    gem 'joosy'
 
 After `bundle install` is done you can generate basic Joosy application skeleton.
 
