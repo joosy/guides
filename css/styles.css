@@ -178,8 +178,14 @@ sup { vertical-align: .2em; font-size: 80%; margin: -2px 0 0 2px; }
 p img { max-width: 100%; }
 code, pre { font-family: "Andale Mono", "courier-new", courier, monospace; }
 code { background: #F0F0F0; border-radius: 3px; font-size: 16px; }
-pre { margin: 20px 0;
-      font-size: 13px; }
+pre {
+  margin: 20px 0;
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 13px; 
+  background: #ddd; 
+}
+pre code { background: transparent; color: #888; }
 small { font-size: 80%; }
 
 /* .container, .container .sixteen.columns { width: 480px; } */
