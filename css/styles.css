@@ -183,9 +183,8 @@ pre {
   padding: 10px;
   border-radius: 10px;
   font-size: 13px; 
-  background: #ddd; 
+  background: #f0f0f0; 
 }
-pre code { background: transparent; color: #888; }
 small { font-size: 80%; }
 
 /* .container, .container .sixteen.columns { width: 480px; } */
