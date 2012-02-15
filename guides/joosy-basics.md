@@ -80,11 +80,41 @@ Joosy is intended to ease building of modern medium and large-sized browser-base
 
 Compare Joosy to Backbone like Rails to Sinatra. While Rails engine is much more powerful, Sinatra still has a lot of cases to be used at. If all you need is to enable some RICHness on one of your pages, Joosy can handle that. But Backbone will do the trick with lesser dependencies. If you need to move complete web-resource to browser Joosy will do the task at its Best.
 
-## Creating a new Joosy project
+## Creating basic Rails blog app
 
 Assuming you already have Ruby & Rails installed, let's proceed to creating a new rails project.
 
     rails new blog
+
+Now, let's generate scaffolds for Post and Comment, and add sample data
+to the database.
+
+    rails g scaffold Post title:string body:text
+    rails g scaffold Comment post:references body:text
+
+Fire up your text editor of choice and declare `has_many` for Post.
+
+    class Post < ActiveRecord::Base
+      has_many :comments
+    end
+
+Don't forget to run migrations after that
+
+    rake db:migrate
+
+Let's fill our database with sample data. Put the following into
+`db/seeds.rb`
+
+    posts = Post.create([{ title: 'Welcome there', body: 'Hey, welcome to the joosy blog example' }, { title: 'Test post', body: 'Nothing there. Really' }])
+    Comment.create(body: 'Great article!', post: posts.first)
+
+Run
+
+    rake db:seed
+
+So now we are ready to go.
+
+## Adding Joosy
 
 To activate Joosy you only need to extend your Gemfile with:
 
