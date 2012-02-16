@@ -3,11 +3,7 @@ layout: guide
 title: "Layouts, pages and routing"
 ---
 
-### Layouts
-
-As you use Rails, you're familiar with the concept behind them. Basically, layouts are used to keep your templates DRY. You can have as many nest levels in your layouts as you want.
-
-### Pages
+### Pages & Layouts
 
 Let's create a simple Joosy page and see what's going on.
 
@@ -42,6 +38,20 @@ after the index (`/`) route. Now we can fire up the browser and navigate to [loc
 
 As you can see, we pass params to our Joosy app after the she-bang (`!#`). It's common behavior for most modern web apps, like Twitter, iCloud, etc.
 
+#### Layouts
+
+As you use Rails, you're familiar with the concept behind them. Basically, layouts are used to keep your templates DRY. You can have as many nest levels in your layouts as you want.
+
+Layouts in Joosy are made up of a class and a template
+
+Let's change the main layout a bit, so that, there is a small copyright in the bottom of the page. Add the following to `templates/layouts/application.jst.hamlc` 
+
+    %p &copy; 2012
+
+Hi page now looks like
+
+![](http://f.cl.ly/items/1s0T1y3R263m2w423E18/Screen%20Shot%202012-02-16%20at%208.15.36%20PM.png)
+
 ## Let's proceed with out blog app
 
 For first, let's create a new page for post listings.
@@ -65,9 +75,9 @@ It's like writing `resources :resources` in Rails and specifying each resource m
 Now let's allow the app to fetch our posts. Open the Index Post page (`pages/post/index.js.coffee`). To fetch data via the REST API we should declare `@fetch` inside the page class
 
     @fetch (complete) ->
-      $.get 'http://localhost:3000/posts.json', (result) =>
-        @data = posts: result
-        complete()
+      $.get '/posts.json', (result) =>
+        data = posts: result
+        complete()
 
 There we tell Joosy to get the list of posts, and assign it to the `posts` local for the template (via `@data`).
 
@@ -81,6 +91,6 @@ To make our templates show posts, we just need to iterate through the `posts` lo
 
 If you followed everything correctly, now you'd be able to see post listing at [localhost:3000/blog/#!/posts](http://localhost:3000/blog/#!/posts).
 
-![](http://f.cl.ly/items/2a0I0D1T1Z43230Z1M1f/Screen%20Shot%202012-02-16%20at%207.28.17%20PM.png)
+![](http://f.cl.ly/items/2i3x1N1K273l3Y1u2R13/Screen%20Shot%202012-02-16%20at%208.15.15%20PM.png)
 
 So we've built a simple Joosy application able to show the post index.
