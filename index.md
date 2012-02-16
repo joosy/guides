@@ -13,7 +13,7 @@ To learn Joosy you are supposed to completely read the introductionary part, the
 
 * ### [0. Joosy basics](guides/joosy-basics.html)
 
-  This chapter describes ideology of Joosy, compares Joosy to alternatives and shares our vision of JS framework. We will create our future Blog application using generators and learn the directory structure.
+  This chapter describes ideology of Joosy, compares Joosy to alternatives and shares our vision of JS framework. We will create our Blog application using generators and learn the directory structure.
 
 * ### [1. Layouts, pages and routing](guides/layouts-pages-and-routing.html)
 
