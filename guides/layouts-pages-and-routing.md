@@ -24,7 +24,7 @@ The page class looks as follows
         @layout ApplicationLayout
         @view   'hi'
 
-it describes what layout and view to use. Also, it can contain `afterLoad`/`beforeLoad` (like rails' `after_filter` and `before_filter`), as well as elements and events hashes.
+it describes what layout and view to use.
 
 ### Routing
 
@@ -38,7 +38,7 @@ after the index (`/`) route. Now we can fire up the browser and navigate to [loc
 
 As you can see, we pass params to our Joosy app after the she-bang (`!#`). It's common behavior for most modern web apps, like Twitter, iCloud, etc.
 
-#### Layouts
+### Layouts
 
 As you use Rails, you're familiar with the concept behind them. Basically, layouts are used to keep your templates DRY. You can have as many nest levels in your layouts as you want.
 
