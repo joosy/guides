@@ -76,7 +76,7 @@ Now let's allow the app to fetch our posts. Open the Index Post page (`pages/pos
 
     @fetch (complete) ->
       $.get '/posts.json', (result) =>
-        data = posts: result
+        @data = posts: result.posts
         complete()
 
 There we tell Joosy to get the list of posts, and assign it to the `posts` local for the template (via `@data`).
