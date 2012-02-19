@@ -32,6 +32,59 @@ Then open `pages/posts/index.js.coffee` and add `comments_count` element declara
 
     elements: { comments_count: '.comments_count' }
 
-So we have just defined the `@comments_count` element.
+So we have just defined the `@comments_count` element. Remember, we want comments counter to be hidden by default? Add following CSS rule to `app/assets/stylesheets/posts.css.scss`
+
+    .comments_count {
+      display: none;
+    }
+
+![](http://f.cl.ly/items/3a0r2c240c2P0D0P202j/Screen%20Shot%202012-02-19%20at%2010.25.50%20PM.png)
+
+Now it's time to add some animations over here! That's where events come in handy. Basically, `events` is hash of pairs "event descriptions" (which can also contain elements in them)-event handlers.
+
+Syntax for events is really simple
+
+    events: { 'eventname object': (obj) -> $(obj).hide() }
+
+So each key of `events` consists of two main parts: event name (like `click`, `mouseenter`, and so forth) and event object. Joosy has one sweet thing about event objects: you can specify any element you've declared before as event object.
+
+Presume we have
+
+    elements: { heading: 'h1' }
+
+If we wanted to hide title when it's hovered we could declare this very basic event
+
+    events: { 'mouseenter $heading': (h) -> $(h).hide() }
+
+That gives us so much flexibility! If we need to change what's
+"heading" on your page, we can just change the element, now events will work with an updated element. Cool huh?
+
+Let's get back to our little blog. So we want our comments counters to appear when we hover the post title. As you should probabaly know, javascript event which is responsive for "hover" on an object is called `mouseenter`. So that
+
+    events: { 'mouseenter h1': (h) -> $(h).children(".comments_count").fadeIn() }
+
+Reload the blog page and hover any title
+
+![](http://f.cl.ly/items/210n173D3H0S1t1Y271M/Screen%20Shot%202012-02-19%20at%2010.43.15%20PM.png)
+
+Pretty smooth. But what if we move the pointer to another title?
+
+![](http://f.cl.ly/items/1y1w210x1w1N3f2W183P/Screen%20Shot%202012-02-19%20at%2010.44.51%20PM.png)
+
+That's not what we expected to see, right? To fix that we simple need to handle the `mouseleave` event to hide comments counter when we're not pointing at the post title anymore.
+
+Change the `events` hash like shown below
+
+    events: {
+      'mouseenter h1': (header) -> $(header).children(".comments_count").fadeIn()
+      'mouseleave h1': (header) -> $(header).children(".comments_count").fadeOut()
+    }
+
+Only the comments counter of the post we're pointing on the title of
+is shown now
+
+![](f.cl.ly/items/231X231r0l2i1L3K0t23/Screen%20Shot%202012-02-19%20at%2010.47.21%20PM.png)
+
+Fair enough.
 
 ## Filters

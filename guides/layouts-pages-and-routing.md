@@ -34,7 +34,7 @@ In order to be able to navigate to this page, we need to add a route for it. Ope
 
 after the index (`/`) route. Now we can fire up the browser and navigate to [localhost:3000/blog/#!/hi](http://localhost:3000/blog/#!/hi)
 
-![](http://f.cl.ly/items/0q1H0O402E040n2T0718/Screen%20Shot%202012-02-11%20at%2011.49.14%20AM.png)
+![](http://f.cl.ly/items/2n261D1D2M2C0J0c1M0B/Screen%20Shot%202012-02-19%20at%2010.28.52%20PM.png)
 
 As you can see, we pass params to our Joosy app after the she-bang (`!#`). It's common behavior for most modern web apps, like Twitter, iCloud, etc.
 
@@ -50,7 +50,7 @@ Let's change the main layout a bit, so that, there is a small copyright in the b
 
 Hi page now looks like
 
-![](http://f.cl.ly/items/1s0T1y3R263m2w423E18/Screen%20Shot%202012-02-16%20at%208.15.36%20PM.png)
+![](http://f.cl.ly/items/3m3g2w0z2f1G0J3c1k2F/Screen%20Shot%202012-02-19%20at%2010.27.17%20PM.png)
 
 ## Let's proceed with out blog app
 
@@ -91,6 +91,6 @@ To make our templates show posts, we just need to iterate through the `posts` lo
 
 If you followed everything correctly, now you'd be able to see post listing at [localhost:3000/blog/#!/posts](http://localhost:3000/blog/#!/posts).
 
-![](http://f.cl.ly/items/2i3x1N1K273l3Y1u2R13/Screen%20Shot%202012-02-16%20at%208.15.15%20PM.png)
+![](http://f.cl.ly/items/3a0r2c240c2P0D0P202j/Screen%20Shot%202012-02-19%20at%2010.25.50%20PM.png)
 
 So we've built a simple Joosy application able to show the post index.
