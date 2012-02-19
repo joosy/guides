@@ -83,7 +83,7 @@ Change the `events` hash like shown below
 Only the comments counter of the post we're pointing on the title of
 is shown now
 
-![](f.cl.ly/items/231X231r0l2i1L3K0t23/Screen%20Shot%202012-02-19%20at%2010.47.21%20PM.png)
+![](http://f.cl.ly/items/231X231r0l2i1L3K0t23/Screen%20Shot%202012-02-19%20at%2010.47.21%20PM.png)
 
 Fair enough.
 
