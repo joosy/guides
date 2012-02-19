@@ -7,7 +7,7 @@ title: "Elements, events and filters"
 
 At the lower level `elements` is a hash, whose keys are internal variable names and values are jQuery selectors for them. If you had following in some of your pages
 
-    elements { foo: '.bar'}
+    elements: { foo: '.bar'}
 
 Then after page is loaded, you get @foo variable in that page, that provides access to the element with class `bar`.
 
