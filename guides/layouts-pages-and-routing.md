@@ -20,7 +20,7 @@ The page class looks as follows
 
     Joosy.namespace 'Welcome', ->
         
-        class @HiPage extends ApplicationPage
+      class @HiPage extends ApplicationPage
         @layout ApplicationLayout
         @view   'hi'
 
