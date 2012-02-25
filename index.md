@@ -23,11 +23,11 @@ To learn Joosy you are supposed to completely read the introductionary part, the
 
   This chapter describes HTML elements and events binding. We'll add simple events to show number of comments next to blog's title. We'll also discuss Filters, the powerful system of interaction with layouts/pages bootstrap.
 
-* ### 3. Resources
+* ### [3. Resources](guides/resources.md)
 
   With help of Resources we'll improve our pages' fetch process, will add ability to delete posts. We'll either learn how to do inline resources mapping (like when you have `has_many` in Rails).
 
-* ### 4. Dynamic rendering
+* ### [4. Dynamic rendering](guides/dynamic-rendering.html)
 
   This chapter will show you what you can do with your resources and dynamic binding. We'll learn how to link variable value and its HTML representation which will automatically update after variable changes. Using that we'll add inline title editor to our blog.
 
