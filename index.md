@@ -31,23 +31,24 @@ To learn Joosy you are supposed to completely read the introductionary part, the
 
   This chapter will show you what you can do with your resources and dynamic binding. We'll learn how to link variable value and its HTML representation which will automatically update after variable changes. Using that we'll add inline title editor to our blog.
 
-* ### 5. Widgets
+* ### [5. Widgets](guides/widgets.html)
 
   In this chapter we'll move our inline title editor to a widget and will reuse it on all blog posts pages.
 
-* ### 6. Helpers
+* ### [6. Helpers](guides/helpers.html)
 
   Using helpers we'll format blog posts content. This chapter either learns how to create local helpers accessible only inside views of one page.
 
-* ### 7. Forms
+* ### [7. Forms](guides/forms.html)
 
   With help of Forms we'll finally add posts management to our blog. We'll make tiny admin pages to create and edit posts.
 
-* ### 8. Preloaders
+* ### [8. Preloaders](guides/preloaders.html)
 
   Now that our blog is ready we'll improve its loading. This chapter will learn you how to use two different kind of preloaders that come with Joosy. You'll know their advantages and how you can use them.
 
-* ### 9. Load, unload and "in progress" animations
+* ### [9. Load, unload and 'in progress'
+  animations](guides/load-unload-and-in-progress-animations.html)
 
   This is advanced chapter that will show you how you can get some advanced control over the process of pages loading. We'll add fading animation that will both: indicate the process of page loading and just look good :).
 
