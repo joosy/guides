@@ -47,8 +47,7 @@ To learn Joosy you are supposed to completely read the introductionary part, the
 
   Now that our blog is ready we'll improve its loading. This chapter will learn you how to use two different kind of preloaders that come with Joosy. You'll know their advantages and how you can use them.
 
-* ### [9. Load, unload and 'in progress'
-  animations](guides/load-unload-and-in-progress-animations.html)
+* ### [9. Load, unload and 'in progress' animations](guides/load-unload-and-in-progress-animations.html)
 
   This is advanced chapter that will show you how you can get some advanced control over the process of pages loading. We'll add fading animation that will both: indicate the process of page loading and just look good :).
 
