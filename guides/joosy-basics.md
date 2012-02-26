@@ -116,7 +116,10 @@ Also, we will need for the `Posts` controller to return posts _with_ comments in
 Let's fill our database with sample data. Put the following into
 `db/seeds.rb`
 
-    posts = Post.create([{ title: 'Welcome there', body: 'Hey, welcome to the joosy blog example' }, { title: 'Test post', body: 'Nothing there. Really' }])
+    posts = Post.create([
+      { title: 'Welcome there', body: 'Hey, welcome to the joosy blog example' },
+      { title: 'Test post',     body: 'Nothing there. Really' }
+    ])
     Comment.create(body: 'Great article!', post: posts.first)
 
 After running `rake db:seed` we are ready to go.

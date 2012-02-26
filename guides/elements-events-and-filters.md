@@ -16,12 +16,11 @@ Let's add the comments count next to post titles which appears when we hover the
 Navigate to your index post template (`templates/pages/post/index.jst.hamlc`) and replace its content with
 
     - @posts.each (post) =>
-      %h1
-    = post['title']
-      %small
-        -
-        .comments_count= post['comments'].length
-        comments
+      %h1= post['title']
+        %small.comments_count
+          \-
+          = post['comments'].length
+          comments
       %p= post['body']
 
 If we navigate to [localhost:3000/blog/#!/posts](http://localhost:3000/blog/#!/posts) we'd see
@@ -30,9 +29,10 @@ If we navigate to [localhost:3000/blog/#!/posts](http://localhost:3000/blog/#!/p
 
 Then open `pages/posts/index.js.coffee` and add `comments_count` element declaration right after `@view`
 
-    elements: { comments_count: '.comments_count' }
+    elements: 
+      commentsCount: '.comments_count'
 
-So we have just defined the `@comments_count` element. Remember, we want comments counter to be hidden by default? Add following CSS rule to `app/assets/stylesheets/posts.css.scss`
+So we have just defined the `@commentsCount` element. Remember, we want comments counter to be hidden by default? Add following CSS rule to `app/assets/stylesheets/posts.css.scss`
 
     .comments_count {
       display: none;
@@ -50,18 +50,24 @@ So each key of `events` consists of two main parts: event name (like `click`, `m
 
 Presume we have
 
-    elements: { heading: 'h1' }
+    elements: 
+      comments_count: '.comments_count'
+      heading: 'h1'
 
 If we wanted to hide title when it's hovered we could declare this very basic event
 
-    events: { 'mouseenter $heading': (h) -> $(h).hide() }
+    events: 
+      'mouseenter $heading': (header) ->
+        $(header).hide()
 
 That gives us so much flexibility! If we need to change what's
 "heading" on your page, we can just change the element, now events will work with an updated element. Cool huh?
 
 Let's get back to our little blog. So we want our comments counters to appear when we hover the post title. As you should probabaly know, javascript event which is responsive for "hover" on an object is called `mouseenter`. So that
 
-    events: { 'mouseenter h1': (h) -> $(h).children(".comments_count").fadeIn() }
+    events: 
+      'mouseenter $heading': (header) ->
+        $(".comments_count", header).fadeIn()
 
 Reload the blog page and hover any title
 
@@ -75,10 +81,11 @@ That's not what we expected to see, right? To fix that we simple need to handle 
 
 Change the `events` hash like shown below
 
-    events: {
-      'mouseenter h1': (header) -> $(header).children(".comments_count").fadeIn()
-      'mouseleave h1': (header) -> $(header).children(".comments_count").fadeOut()
-    }
+    events:
+      'mouseenter $heading': (header) ->
+        $(".comments_count", header).fadeIn()
+      'mouseleave $heading': (header) ->
+        $(".comments_count", header).fadeOut()
 
 Only the comments counter of the post we're pointing on the title of
 is shown now

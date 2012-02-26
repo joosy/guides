@@ -76,7 +76,7 @@ Now let's allow the app to fetch our posts. Open the Index Post page (`pages/pos
 
     @fetch (complete) ->
       $.get '/posts.json', (result) =>
-        @data = posts: result.posts
+        @data = posts: result
         complete()
 
 There we tell Joosy to get the list of posts, and assign it to the `posts` local for the template (via `@data`).
@@ -93,4 +93,4 @@ If you followed everything correctly, now you'd be able to see post listing at [
 
 ![](http://f.cl.ly/items/3a0r2c240c2P0D0P202j/Screen%20Shot%202012-02-19%20at%2010.25.50%20PM.png)
 
-So we've built a simple Joosy application able to show the post index.
+So we've built a simple Joosy application able to show the post index. In the [next chapter](elements-events-and-filters.html) we will learn how pretty can be adding behavior to pages.
