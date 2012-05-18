@@ -19,6 +19,10 @@ Finally, Joosy boosts your development drastically. Just like the Rails do.
 
   Everything you need to know to get started. Architecture description and incredible features highlight.
 
+* ### [Joosy vs X](guides/basics/joosy-vs-x.html)
+
+  Comparison of Joosy against Backbone and Ember.js.
+
 ## Creating a blog on Joosy
 
 * ### [Rails preparations](guides/blog/rails-preparations.html)
