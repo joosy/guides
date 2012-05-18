@@ -3,51 +3,59 @@ layout: index
 title: "Getting started"
 ---
 
-### The Joosy MVC Interpretation
+## Getting started
 
-You probably are familiar with the concept of MVC. It's a pattern to keep code DRY, isolate business logic from the UI. However the concept of Model-View-Controller just doesn't work for browser applications. There are numerous reasons for that that can't be fit into this introduction. Instead we'll tell you what we propose.
+### The most important thing to know
 
-#### Views
+Joosy is not an MVC framework. It addresses the same problems but it's not based clearly on a popular MVC paradigm. Nor it is an MVVM. Joosy is an active view for your server-side framework (mainly the Rails). It was created to complement and cooperate with backend. Not to be an abstraction. Therefore you'll probably like it if you are:
 
-In Joosy views are just views. Set of files (in templates/ folder). They do not differ from Rails and give you quite the same abilities (including helpers!). Besides that Joosy has renderDynamic which allows you to bind your variables to HTML representation tightly. You change variable value, Joosy changes HTML.
+* Rails developer
+* Use CoffeeScript heavily
+* Like HAML (not really required)
 
-By default Joosy comes with Coffee-Haml (which looks and works pretty much like Ruby Haml). Combined with Sugar.js it will feel very similar to Ruby and server-side and will provide you the easiest migration.
+The first point is required to fill Joosy the right way. It was greatly inspired by the approach Rails promotes. Unlike most of alternatives we don't stay away from a real-life troubles. Nor we expect the community to decide on it's own. We try to give some kind of convention for each of them. Just like in Rails you should concetrate on what you do. Not how you do it.
 
-#### Controllers
+CoffeeScript is an alma-mater of Joosy. In theory you can use Joosy with a plain JS but you won't be happy. We use the Coffee meta posibilities heavily. Joosy is class-based and relays on CoffeeScript static methods prototype magic. Without having requirement to stay JS-compatible we created an interface that is as clear as possible.
 
-Unlike server-side, client-side has a state. At server-side you only have incoming data and you convert it to output data. At client-side you work with events. To handle correct bootstrap and help you organize your code well, we have 3 entities which play the role of controller. Their organizing functions are similar but they behavior dramatically different at bootstrap.
+We've added some spice to the Rails+Coffee combo. Applause, the Sugar.js. This incredible library extends the JS the way you are used to with an ActiveSupport. All the comfortable features are here: [].first, 'foo'.camelize, 'fluffy'.pluralize and many-many more. This sause really make the Coffee feel just like Ruby.
 
-They are:
+And last but no the least: viva la HAML! Joosy uses templaters abstraction so in theory you can use anything you are used to. But if you ever tried HAML and fell in love like we did, Joosy is shipped with amazing HAML-Coffee template engine.
 
-###### Pages
-Pages are the heart of the entire application. They are used to fetch data, bind events, setup widgets, trig visual effects, and pass the data to the templates.
+### Not am MVC? But...
 
-###### Layouts 
-Layouts are mainly used to set a part of your page that won't be reloaded often. Pages are wrapped into Layouts. Just like pages Layouts can bind events and setup widgets. Consider layouts as a bit extended version of what you have in Rails.
+The idea is simple. REST in not an SQL. Application Server is not an RDBMS. You can't have real logic inside your models. Therefore you don't have models. Inside your browser you don't need to be linked to REST structure since your only goal is an interaction with user. That's why you don't need controller. Joosy operates with View terms. It has pages, layouts, widgets, forms. Everything you are used to but with a Rails flavor.
 
-###### Widgets 
-Widgets are needed to keep your code DRY. They help you organize it in reusable modules.
+With Rails you pass your data to your templates through controller and then get it back from forms or AJAX-queries. That's exactly how Joosy works. It has a layer of slim `Resources` (just like `@foo` that was sent to your view). Yes, they are pulled from REST controllers and not otherwise but does it change anything? As soon as you got your data from your controller you operate with a `Layout` and `Pages`. Each of them is a entity that hold interaction with users. It's connected to a template, JS events and all that stuff you expect from your browser application. To avoid redundancy you can group typical code into something that is called `Widget`. Joosy controls your DOM so it only reloads layout when the new page requires another one.
 
-#### Models
+To send data back Joosy has a `Form`. It wraps your basic HTML form and turns it into AJAXified thing. It works without page reload and interacts with your code using events. It even has an event for the "upload progress". `Forms` are magically linked to `Resources` so you don't write your code twice. Wait, even more! You have the `formFor` helper. Just like in Rails.
 
-There are some facts that should be noted to explain it how we understand browser-side models.
+As mentioned before Joosy uses HAML-Coffee template engine. Joosy supports helpers we love so much. Again, just like Rails.
 
-* In most cases you will want to leave your logic on server-side. In a real models. 
-* You rarely want to make 5 HTTP requests instead of 1.
-* In most cases you will have to give user a Form as a way to change anything.
-* You'll get different possible set of fields depending on case you use your model at.
+Offcourse we have other stuff like `Router` and `Preloader`. Everything out of box.
 
-With all that in mind we came up to the fact: you can not reproduce real models in browser nor you should try to. What you need is a comfortable channel between browser and server-side to get structured data, work with that and send it back. That's mainly a transport and interface task while models are MUCH more than that. To solve this task Joosy offers you two things:
+### Okay, it's Rails. Anything else?
 
-###### Resources
-Resource is wrapper on top of JSON dump which will help you to get data from server, parse it and structure it. It will trigger 'changed' if you change resource, will map inline hashes in other resources if possible and do all other magic stuff you expect from your model when you read data. Resources either define Collections. In most cases you can say Resources are fully-functional read part of what you get used to as model.
+Unlike Rails server application it has a state. For example if you use the only `Layout` for every page it will never get reloaded. Unlike the data it holds. To ease the DOM updates Joosy has `dynamic rendering` feature. It allows you to bind your resource to a template to automatically update DOM whenever resource changes. No manual events handling and rerendering. You just call `@renderDynamic` for a partial and it always stays actual.
 
-###### Forms
-After you got your data as resources and used it to display something, you'll need to change it. While resource defines modification methods like _save_ and _destroy_ most of complex modifications should go through Joosy.Form. It turns your form into AJAX and binds the resource to it. It handles file uploads, it gives you upload progress callback and makes it a dream to handle. Joosy.Form will either understand standard Rails invalidation response and will mark invalidated fields with ".field_with_errors" out of box.
+Besides that Joosy offers built-in Identity Map implementation. You don't have to care about `Resources` instances. Even if you reload your `Resource` from a new Page your dynamic rendering will work from your Layout. Or any other place.
 
+### Total highlights
 
-## What is Joosy good for
+Just to make sure you get it right here's the full list of functionality highlights we have to offer:
 
-Joosy is intended to ease building of modern medium and large-sized browser-based applications, minimize code base while providing more features and what's most important, giving you ready conventions for typical tasks.
+* Easy and familiar Application structure. You work with pages, layouts and forms.
+* Built-in ActiveSupport analog
+* Built-in HAML-Coffee templates
+* Helpers
+* Identity Map for your data
+* Easy and straightforward dynamic binding of data to a DOM
+* Built-in preloaders
+* Automatic Resources generation based on Rails REST routes
+* Out-of-box code generators
+* ActiveResource-like REST interface
+
+### So what is Joosy good for
+
+Joosy is intended to ease building of modern medium and large-sized browser-based applications using Rails as a backend. To minimize code base while providing more features and what's most important, giving you ready conventions for typical tasks.
 
 Compare Joosy to Backbone like Rails to Sinatra. While Rails engine is much more powerful, Sinatra still has a lot of cases to be used at. If all you need is to enable some RICHness on one of your pages, Joosy can handle that. But Backbone will do the trick with lesser dependencies. If you need to move complete web-resource to browser Joosy will do the task at its Best.
