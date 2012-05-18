@@ -3,51 +3,61 @@ layout: index
 title: "Guides"
 ---
 
-# Guides Index
+# Joosy Guides (v1.0.0)
 
-You can find two large sections of guides on this page. The first one is a large book-like introductionary guide. During 9 chapters you'll be brought through most widely-used parts of Joosy while creating a weblog software. You are supposed to read those chapters one by one. The other section includes independent guides on basic patterns for common tasks you will most probably meet during web development.
+Joosy is a javascript framework. Being a harmonious extensions to Rails it introduces everything you like about this framework right to your browser. Ready conventions set, extensive CoffeeScript, HAML support, Helpers, seamless backend integration, automatic code generation and more.
 
-To learn Joosy you are supposed to completely read the introductionary part, then look through advanced part and start practicing watching the [API](http://api.joosy.ws/) for details.
+Joosy allows you to create web apps which work completely in the browser. So that, it helps you to relocate all your Rails Views to the client side. It also helps you with managing the growing quantity of JS code. On another hand, it makes your backend to have exactly one function --  to be a simple REST provider. That leads to easier development support and improves the scalability greatly.
+
+Besides Rails, Joosy is based on top of [CoffeeScript](http://coffeescript.org/), [jQuery](http://jquery.com/) and [Sugar.js](http://sugarjs.com/) in role of ActiveSupport.
+
+Finally, Joosy boosts your development drastically. Just like the Rails do.
+
+## Joosy basics
+
+* ### [Getting started](guides/basics/getting-started.html)
+
+  Everything you need to know to get started. Architecture description and incredible features highlight.
 
 ## Creating a blog on Joosy
 
-* ### [0. Joosy basics](guides/joosy-basics.html)
+* ### [Rails preparations](guides/blog/rails-preparations.html)
 
-  This chapter describes ideology of Joosy, compares Joosy to alternatives and shares our vision of JS framework. We will create our Blog application using generators and learn the directory structure.
+  During this chapter we'll setup Joosy application based on a Rails application and prepare tiny REST backend.
 
-* ### [1. Layouts, pages and routing](guides/layouts-pages-and-routing.html)
+* ### [Layouts, pages and routing](guides/layouts-pages-and-routing.html)
 
   In this chapter we'll create basic blog pages with layouts and learn how routing in Joosy works. We'll either learn how to load basic data from server during page load.
 
-* ### [2. Elements, events and filters](guides/elements-events-and-filters.html)
+* ### [Elements, events and filters](guides/blog/elements-events-and-filters.html)
 
   This chapter describes HTML elements and events binding. We'll add simple events to show number of comments next to blog's title. We'll also discuss Filters, the powerful system of interaction with layouts/pages bootstrap.
 
-* ### [3. Resources](guides/resources.md)
+* ### [Resources](guides/blog/resources.md)
 
   With help of Resources we'll improve our pages' fetch process, will add ability to delete posts. We'll either learn how to do inline resources mapping (like when you have `has_many` in Rails).
 
-* ### [4. Dynamic rendering](guides/dynamic-rendering.html)
+* ### [Dynamic rendering](guides/blog/dynamic-rendering.html)
 
   This chapter will show you what you can do with your resources and dynamic binding. We'll learn how to link variable value and its HTML representation which will automatically update after variable changes. Using that we'll add inline title editor to our blog.
 
-* ### [5. Widgets](guides/widgets.html)
+* ### [Widgets](guides/blog/widgets.html)
 
   In this chapter we'll move our inline title editor to a widget and will reuse it on all blog posts pages.
 
-* ### [6. Helpers](guides/helpers.html)
+* ### [Helpers](guides/blog/helpers.html)
 
   Using helpers we'll format blog posts content. This chapter either learns how to create local helpers accessible only inside views of one page.
 
-* ### [7. Forms](guides/forms.html)
+* ### [Forms](guides/blog/forms.html)
 
   With help of Forms we'll finally add posts management to our blog. We'll make tiny admin pages to create and edit posts.
 
-* ### [8. Preloaders](guides/preloaders.html)
+* ### [Preloaders](guides/blog/preloaders.html)
 
   Now that our blog is ready we'll improve its loading. This chapter will learn you how to use two different kind of preloaders that come with Joosy. You'll know their advantages and how you can use them.
 
-* ### [9. Load, unload and 'in progress' animations](guides/load-unload-and-in-progress-animations.html)
+* ### [Load, unload and 'in progress' animations](guides/load-unload-and-in-progress-animations.html)
 
   This is advanced chapter that will show you how you can get some advanced control over the process of pages loading. We'll add fading animation that will both: indicate the process of page loading and just look good :).
 

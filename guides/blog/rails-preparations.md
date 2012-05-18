@@ -102,25 +102,13 @@ Don't forget to run migrations after that
 
     rake db:migrate
 
-Also, we will need for the `Posts` controller to return posts _with_ comments in json, so replace the `index` method with the following code
-
-     def index
-      @posts = Post.all
-
-      respond_to do |format|
-        format.html # index.html.erb
-        format.json { render json: @posts.to_json(include: [:comments]) }
-      end
-     end
-
 Let's fill our database with sample data. Put the following into
 `db/seeds.rb`
 
-    posts = Post.create([
-      { title: 'Welcome there', body: 'Hey, welcome to the joosy blog example' },
-      { title: 'Test post',     body: 'Nothing there. Really' }
-    ])
-    Comment.create(body: 'Great article!', post: posts.first)
+{% highlight ruby lineno %}
+posts = Post.create([{ title: 'Welcome there', body: 'Hey, welcome to the joosy blog example' }, { title: 'Test post', body: 'Nothing there. Really' }])
+Comment.create(body: 'Great article!', post: posts.first)
+{% endhighlight %}
 
 After running `rake db:seed` we are ready to go.
 
