@@ -59,3 +59,5 @@ Just to make sure you get it right here's the full list of functionality highlig
 Joosy is intended to ease building of modern medium and large-sized browser-based applications using Rails as a backend. To minimize code base while providing more features and what's most important, giving you ready conventions for typical tasks.
 
 Compare Joosy to Backbone like Rails to Sinatra. While Rails engine is much more powerful, Sinatra still has a lot of cases to be used at. If all you need is to enable some RICHness on one of your pages, Joosy can handle that. But Backbone will do the trick with lesser dependencies. If you need to move complete web-resource to browser Joosy will do the task at its Best.
+
+So what do you waiting for? [Go look for some guides!](/)
