@@ -60,4 +60,4 @@ Joosy is intended to ease building of modern medium and large-sized browser-base
 
 Compare Joosy to Backbone like Rails to Sinatra. While Rails engine is much more powerful, Sinatra still has a lot of cases to be used at. If all you need is to enable some RICHness on one of your pages, Joosy can handle that. But Backbone will do the trick with lesser dependencies. If you need to move complete web-resource to browser Joosy will do the task at its Best.
 
-So what do you waiting for? [Go look for some guides!](/)
+So what are you waiting for? [Go look for some guides!](/)
