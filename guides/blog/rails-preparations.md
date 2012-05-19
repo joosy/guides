@@ -3,6 +3,11 @@ layout: guide
 title: "Joosy Basics"
 ---
 
+TODO: Write this guide.
+TODO: Potential content: generate Rails scaffolds, include Twitter bootstrap, generate Joosy app
+
+<h1 style="color: red">EVERYTHING BELOW IS OUTDATED</h1>
+
 ## Creating basic Rails blog app
 
 Assuming you already have Ruby & Rails installed, let's proceed to creating a new rails project.

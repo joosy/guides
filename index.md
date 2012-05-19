@@ -29,17 +29,18 @@ Finally, Joosy boosts your development drastically. Just like the Rails do.
 
   During this chapter we'll setup Joosy application based on a Rails application and prepare tiny REST backend.
 
-* ### [Layouts, pages and routing](guides/layouts-pages-and-routing.html)
+* ### [Resources](guides/blog/resources.html)
+
+  Resources are your models data representations. Before we get to the application itself, we'll learn how to fetch
+  the backend and manage the data after you received it.
+
+* ### [Layouts, pages and routing](guides/blog/layouts-pages-and-routing.html)
 
   In this chapter we'll create basic blog pages with layouts and learn how routing in Joosy works. We'll either learn how to load basic data from server during page load.
 
 * ### [Elements, events and filters](guides/blog/elements-events-and-filters.html)
 
-  This chapter describes HTML elements and events binding. We'll add simple events to show number of comments next to blog's title. We'll also discuss Filters, the powerful system of interaction with layouts/pages bootstrap.
-
-* ### [Resources](guides/blog/resources.html)
-
-  With help of Resources we'll improve our pages' fetch process, will add ability to delete posts. We'll either learn how to do inline resources mapping (like when you have `has_many` in Rails).
+  This chapter describes HTML elements and events binding. We'll add simple events to show number of comments next to blog's title.
 
 * ### [Dynamic rendering](guides/blog/dynamic-rendering.html)
 

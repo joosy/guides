@@ -3,6 +3,10 @@ layout: guide
 title: "Elements, events and filters"
 ---
 
+TODO: Write this guide.
+
+<h1 style="color: red">EVERYTHING BELOW IS OUTDATED</h1>
+
 ## Elements & Events
 
 At the lower level `elements` is a hash, whose keys are internal variable names and values are jQuery selectors for them. If you had following in some of your pages

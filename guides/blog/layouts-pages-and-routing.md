@@ -3,6 +3,10 @@ layout: guide
 title: "Layouts, pages and routing"
 ---
 
+TODO: Write this guide.
+
+<h1 style="color: red">EVERYTHING BELOW IS OUTDATED</h1>
+
 ### Pages & Layouts
 
 Let's create a simple Joosy page and see what's going on.
