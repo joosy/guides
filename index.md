@@ -37,7 +37,7 @@ Finally, Joosy boosts your development drastically. Just like the Rails do.
 
   This chapter describes HTML elements and events binding. We'll add simple events to show number of comments next to blog's title. We'll also discuss Filters, the powerful system of interaction with layouts/pages bootstrap.
 
-* ### [Resources](guides/blog/resources.md)
+* ### [Resources](guides/blog/resources.html)
 
   With help of Resources we'll improve our pages' fetch process, will add ability to delete posts. We'll either learn how to do inline resources mapping (like when you have `has_many` in Rails).
 
