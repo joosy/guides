@@ -1,6 +1,6 @@
 ---
 layout: guide
-title: "Rails preprations"
+title: "Rails preparations"
 ---
 
 {% assign gist_id = 2759363 %}
