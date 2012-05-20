@@ -1,11 +1,11 @@
 ---
-layout: index
+layout: guide
 title: "Joosy vs X"
 ---
 
-## How is Joosy different from X
+### How is Joosy different from X
 
-Joosy was created to be a foundation of a large browser applications. Since large applications are always tightly bound to a server implementation Joosy is not trying to achieve abstraction and independency. It uses Rails as an Application Server and lives among Views terms.
+Joosy was created to be the foundation of a large browser applications. Since large applications are always tightly bound to a server implementation Joosy is not trying to achieve abstraction and independency. It uses Rails as an Application Server and lives among Views terms.
 
 Talking about an MVC paradigm, Joosy is a View part while Controllers and Models are still in Rails. The great description of Joosy paradigm can be met at [Getting Started](/guides/basics/getting-started.html) guide. Please read it before passing on to direct comparison parts so you are sure to understand it correctly.
 

@@ -1,6 +1,6 @@
 ---
 layout: guide
-title: "Joosy Basics"
+title: "Rails preprations"
 ---
 
 TODO: Write this guide.

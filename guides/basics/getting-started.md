@@ -1,11 +1,9 @@
 ---
-layout: index
+layout: guide
 title: "Getting started"
 ---
 
 {% assign gist_id = 2731308 %}
-
-## Getting started
 
 ### ZOMG! Another MVC Framework...
 
