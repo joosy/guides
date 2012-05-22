@@ -9,11 +9,11 @@ title: "Getting started"
 
 Heres is the typical transport flow for the Rails web application:
 
-http://f.cl.ly/items/322w1b1j2y2X0C212O1U/typical.png
+![Typical](http://f.cl.ly/items/322w1b1j2y2X0C212O1U/typical.png)
 
 Joosy moves the HTML rendering, events handling and everything that is connected to the views right into your browser. During preloading, Joosy gets all the templates from the server and uses Rails backend as a REST data provider. And your application looks like this:
 
-http://f.cl.ly/items/0k3f1W2p1H0B1j0r231Z/joosy.png
+![Joosy](http://f.cl.ly/items/0k3f1W2p1H0B1j0r231Z/joosy.png)
 
 ### ZOMG! Another MVC Framework...
 
