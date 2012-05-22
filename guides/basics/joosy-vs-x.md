@@ -39,6 +39,12 @@ The another thing we inherit from Rails is a passion to have a nice set of ready
     <td class="y">✔</td>
   </tr>  
   <tr>
+    <th>ActiveSupport analog</th>
+    <td class="n">✖</td>
+    <td class="m">~</td>
+    <td class="y">✔</td>
+  </tr>
+  <tr>
     <th>Preloaders</th>
     <td class="n">✖</td>
     <td class="n">✖</td>
