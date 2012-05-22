@@ -25,7 +25,7 @@ Joosy is not an MVC framework. It addresses the same problems as Backbone or Emb
 * Use CoffeeScript heavily
 * Like HAML (not really required)
 
-The first point is required to fill Joosy the right way. It was greatly inspired by the approach Rails promotes. Unlike most of alternatives we don't stay away from a real-life troubles. Nor we expect the community to decide on it's own. We try to give some kind of convention for each of them. Just like in Rails you should concetrate on what you do. Not how you do it.
+The first point is required to feel Joosy the right way. It was greatly inspired by the approach Rails promotes. Unlike most of alternatives we don't stay away from a real-life troubles. Nor we expect the community to decide on it's own. We try to give some kind of convention for each of them. Just like in Rails you should concetrate on what you do. Not how you do it.
 
 [CoffeeScript](http://rubyonrails.org/) is an alma-mater of Joosy. In theory you can use Joosy with a plain JS but you won't be happy. We use the Coffee meta posibilities heavily. Joosy is class-based and relays on CoffeeScript static methods prototype magic. Without having requirement to stay JS-compatible we created an interface that is as clear as possible.
 
@@ -40,7 +40,11 @@ The idea is simple. REST in not an SQL. Application Server is not an RDBMS. You 
 ![Scheme](http://cl.ly/1M470v24220L2e080h1L/scheme.png)
 
 Inside Rails you pass your data to your templates through controller and then get it back from forms or AJAX-queries. That's exactly how Joosy works. 
-The central entity is a `Page`. Each time URL changes new page gets loaded. Joosy loads the layout for the first page or if the requested page requires another layout. After the container is prepared, you request your Resources and render the templates using it. Remeber, your templates are HAML with inline Coffee support. They even have mature helpers support.
+The central entity is a `Page`. Each time URL changes new page gets loaded. Joosy loads the layout for the first page or if the requested page requires another layout. After the container is prepared, you request your Resources and render the templates using it. Remeber, your templates are HAML with inline Coffee support. They even have mature helpers support. Finally it looks like this:
+
+![Initialization](http://f.cl.ly/items/1K2W1w2N1g1h2O2v3r0V/initialization.png)
+
+And here's the Page and a Template at a glance:
 
 {% assign gist_file = 'Page Sample.coffee' %}
 {% include gist.html %}
