@@ -15,9 +15,11 @@ Joosy moves the HTML rendering, events handling and everything that is connected
 
 ![Joosy](http://f.cl.ly/items/0k3f1W2p1H0B1j0r231Z/joosy.png)
 
+With Joosy your views are truly ready for a massive client-side logic. You get application state, defined structure, lot of conventions for typical day-to-day problems and even DOM rendering control points.
+
 ### ZOMG! Another MVC Framework...
 
-Joosy is not an MVC framework. It addresses the same problems but it's not based clearly on a popular MVC paradigm. Nor it is an MVVM. Joosy is an active view for your server-side framework (mainly the [Rails](http://rubyonrails.org/)). It was created to complement and cooperate with backend. Not to be an abstraction. Therefore you'll probably like it if you are:
+Joosy is not an MVC framework. It addresses the same problems as Backbone or Ember.js but it's not based clearly on a popular MVC paradigm. Nor it is an MVVM. Joosy is an active view for your server-side framework (mainly the [Rails](http://rubyonrails.org/)). It was created to complement and cooperate with backend. Not to be an abstraction. Therefore you'll probably like it if you are:
 
 * Rails developer
 * Use CoffeeScript heavily
