@@ -40,9 +40,13 @@ The idea is simple. REST in not an SQL. Application Server is not an RDBMS. You 
 ![Scheme](http://cl.ly/1M470v24220L2e080h1L/scheme.png)
 
 Inside Rails you pass your data to your templates through controller and then get it back from forms or AJAX-queries. That's exactly how Joosy works. 
-The central entity is a `Page`. Each time URL changes new page gets loaded. Joosy loads the layout for the first page or if the requested page requires another layout. After the container is prepared, you request your Resources and render the templates using it. Remeber, your templates are HAML with inline Coffee support. They even have mature helpers support. Finally it looks like this:
+The central entity is a `Page`. Each time URL changes new page gets loaded. Joosy loads the layout for the first page or if the requested page requires another layout. After the container is prepared, you request your Resources and render the templates using it. Remeber, your templates are HAML with inline Coffee support. They even have mature helpers support.
+
+Finally it looks like this:
 
 ![Initialization](http://f.cl.ly/items/1K2W1w2N1g1h2O2v3r0V/initialization.png)
+
+Note that most of this stuff is happening asynchronously!
 
 And here's the Page and a Template at a glance:
 
