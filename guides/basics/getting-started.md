@@ -25,7 +25,7 @@ And last but no the least: viva la [HAML](http://haml.info/)! Joosy uses templat
 
 The idea is simple. REST in not an SQL. Application Server is not an RDBMS. You can't have real logic inside your models. Therefore you don't have models. Inside your browser you don't need to be linked to REST structure since your only goal is an interaction with user. That's why you don't need controllers. Joosy operates with View terms. It has pages, layouts and widgets. Each of them works with templates, resources (doh... models) and forms. That's pretty much it, the typical separation for the View part.
 
-![Scheme](http://cl.ly/301c0G0K300C011U3701/Joosy%20Basics.png)
+![Scheme](http://cl.ly/1M470v24220L2e080h1L/scheme.png)
 
 Inside Rails you pass your data to your templates through controller and then get it back from forms or AJAX-queries. That's exactly how Joosy works. 
 The central entity is a `Page`. Each time URL changes new page gets loaded. Joosy loads the layout for the first page or if the requested page requires another layout. After the container is prepared, you request your Resources and render the templates using it. Remeber, your templates are HAML with inline Coffee support. They even have mature helpers support.
