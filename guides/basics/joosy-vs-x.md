@@ -16,9 +16,9 @@ The another thing we inherit from Rails is a passion to have a nice set of ready
 <table class="comparison">
   <tr>
     <th style="width: 1%"></th>
-    <th><a href="http://documentcloud.github.com/backbone/">Backbone</a></th>
-    <th><a href="http://emberjs.com/">Ember.js</a></th>
-    <th>Joosy</th>
+    <th class="title"><a href="http://documentcloud.github.com/backbone/">Backbone</a></th>
+    <th class="title"><a href="http://emberjs.com/">Ember.js</a></th>
+    <th class="title">Joosy</th>
   </tr>
   <tr>
     <th>Backend-indepent</th>
@@ -83,7 +83,7 @@ The another thing we inherit from Rails is a passion to have a nice set of ready
   <tr>
     <th>Forms</th>
     <td class="n">✖</td>
-    <td class="n">✖</td>
+    <td class="m">~</td>
     <td class="y">✔</td>
   </tr>
   <tr>
@@ -91,5 +91,23 @@ The another thing we inherit from Rails is a passion to have a nice set of ready
     <td class="m">~</td>
     <td class="m">~</td>
     <td class="y">✔</td>
+  </tr>
+  <tr>
+    <th>Size</th>
+    <td>
+      Raw: <b>5.6 Kb</b>
+      <br />
+      Bundled: <b>38 Kb</b>
+    </td>
+    <td>
+      Raw: <b>42 Kb</b>
+      <br />
+      Bundled: <b>80 Kb</b>
+    </td>
+    <td>
+      Raw: <b>12 Kb</b>
+      <br />
+      Bundled: <b>87 Kb</b>
+    </td>
   </tr>
 </table>

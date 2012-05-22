@@ -312,10 +312,13 @@ table.comparison {
   border: 1px gray dashed;
 }
 
+table.comparison b {
+  font-weight: bold;
+}
+
 table.comparison th, td {
   padding: 10px;
   text-align: center;
-  font-weight: bold;
 }
 
 table.comparison td.y {
@@ -332,7 +335,11 @@ table.comparison td.m {
 
 table.comparison th {
   text-align: left;
-  font-weight: bold;
   background-color: #EEE;
   white-space: nowrap;
+  font-weight: normal;
+}
+
+table.comparison th.title {
+  font-weight: bold;
 }
