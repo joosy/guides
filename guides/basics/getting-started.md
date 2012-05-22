@@ -7,7 +7,7 @@ title: "Getting started"
 
 ### What is Joosy?
 
-Heres is the typical transport flow for the Rails web application:
+Here is the typical transport flow for the Rails web application:
 
 ![Typical](http://f.cl.ly/items/322w1b1j2y2X0C212O1U/typical.png)
 
