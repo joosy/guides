@@ -306,3 +306,33 @@ a.index {
   position: relative;
   z-index: 15;
 }
+
+table.comparison {
+  width: 100%;
+  border: 1px gray dashed;
+}
+
+table.comparison th, td {
+  padding: 10px;
+  text-align: center;
+  font-weight: bold;
+}
+
+table.comparison td.y {
+  background-color: #AFFF9C;
+}
+
+table.comparison td.n {
+  background-color: #FF9C9C;
+}
+
+table.comparison td.m {
+  background-color: #FCFF9C;
+}
+
+table.comparison th {
+  text-align: left;
+  font-weight: bold;
+  background-color: #EEE;
+  white-space: nowrap;
+}

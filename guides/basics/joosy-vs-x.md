@@ -11,10 +11,79 @@ Talking about an MVC paradigm, Joosy is a View part while Controllers and Models
 
 The another thing we inherit from Rails is a passion to have a nice set of ready conventions to solve common problems you meet day to day. Real-life orientation is a great Joosy feature. Most of conventions are shamelessly copied from Rails to ease adaptation and cooperation.
 
-#### [Backbone](http://documentcloud.github.com/backbone/)
+### Highlights comparison
 
-TODO: Write this part.
-
-#### [Ember](http://emberjs.com/)
-
-TODO: Write this part.
+<table class="comparison">
+  <tr>
+    <th style="width: 1%"></th>
+    <th><a href="http://documentcloud.github.com/backbone/">Backbone</a></th>
+    <th><a href="http://emberjs.com/">Ember.js</a></th>
+    <th>Joosy</th>
+  </tr>
+  <tr>
+    <th>Backend-indepent</th>
+    <td class="y">✔</td>
+    <td class="y">✔</td>
+    <td class="n">✖</td>
+  </tr>
+    <tr>
+    <th>JS-compatible</th>
+    <td class="y">✔</td>
+    <td class="y">✔</td>
+    <td class="m">~</td>
+  </tr>
+    <tr>
+    <th>Routing</th>
+    <td class="y">✔</td>
+    <td class="y">✔</td>
+    <td class="y">✔</td>
+  </tr>  
+  <tr>
+    <th>Preloaders</th>
+    <td class="n">✖</td>
+    <td class="n">✖</td>
+    <td class="y">✔</td>
+  </tr>
+  <tr>
+    <th>Different template engines</th>
+    <td class="y">✔</td>
+    <td class="n">✖</td>
+    <td class="y">✔</td>
+  </tr>
+  <tr>
+    <th>HAML support</th>
+    <td class="n">✖</td>
+    <td class="n">✖</td>
+    <td class="y">✔</td>
+  </tr>
+  <tr>
+    <th>Dynamic rendering</th>
+    <td class="n">✖</td>
+    <td class="y">✔</td>
+    <td class="y">✔</td>
+  </tr>
+  <tr>
+    <th>Helpers</th>
+    <td class="n">✖</td>
+    <td class="n">✖</td>
+    <td class="y">✔</td>
+  </tr>
+  <tr>
+    <th>Identity map</th>
+    <td class="n">✖</td>
+    <td class="n">✖</td>
+    <td class="y">✔</td>
+  </tr>
+  <tr>
+    <th>Forms</th>
+    <td class="n">✖</td>
+    <td class="n">✖</td>
+    <td class="y">✔</td>
+  </tr>
+  <tr>
+    <th>Code generators</th>
+    <td class="m">~</td>
+    <td class="m">~</td>
+    <td class="y">✔</td>
+  </tr>
+</table>
