@@ -111,3 +111,10 @@ The another thing we inherit from Rails is a passion to have a nice set of ready
     </td>
   </tr>
 </table>
+<br /><br />
+
+Bundled means:
+
+* **Backbone**: jQuery
+* **Ember.js**: jQuery
+* **Joosy**: jQuery, Sugar.js
