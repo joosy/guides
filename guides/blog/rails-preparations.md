@@ -52,31 +52,35 @@ First command will create the application itself. The second one will generate r
 
 According to Rails Assets Pipeline your application is now situated in `app/assets/javascripts` folder. At top level we have:
 
-    blog_preloader.js.coffee
-    blog_railties.js.coffee
-    blog/
+<div class="black_wheel">
+  <pre>blog_preloader.js.coffee
+blog_railties.js.coffee
+blog/</pre>
+</div>
 
 First one is required to boot the application. The `railties` file contains some options for backend integration. While `blog` directory contains application sources in it. We'll discuss bootstrap and preloaders in latter parts of blog creation so for now you should consider `app/assets/javascripts/blog` as a baseline.
 
-    .
-    ├── helpers
-    │   └── application.js.coffee
-    ├── layouts
-    │   └── application.js.coffee
-    ├── pages
-    │   ├── application.js.coffee
-    │   └── welcome
-    │       └── index.js.coffee
-    ├── resources
-    ├── routes.js.coffee
-    ├── templates
-    │   ├── layouts
-    │   │   └── application.jst.hamlc
-    │   ├── pages
-    │   │   └── welcome
-    │   │       └── index.jst.hamlc
-    │   └── widgets
-    └── widgets
+<div class="black_wheel">
+  <pre>.
+├── helpers
+│   └── application.js.coffee
+├── layouts
+│   └── application.js.coffee
+├── pages
+│   ├── application.js.coffee
+│   └── welcome
+│       └── index.js.coffee
+├── resources
+├── routes.js.coffee
+├── templates
+│   ├── layouts
+│   │   └── application.jst.hamlc
+│   ├── pages
+│   │   └── welcome
+│   │       └── index.jst.hamlc
+│   └── widgets
+└── widgets</pre>
+</div>
 
 Together with your first application structure you get sample page and layout. You either get your first templates and they are in HAML. If you never used HAML before you should [go try now](http://haml-lang.com/). Joosy bundles and uses excellent [CoffeScript-enabled HAML notation](https://github.com/9elements/haml-coffee). Within advanced topics we'll cover it how to change the template engine to anything like ECO or Jade. But you are encouraged to use HAML for now since all this guide is built on top of that. And it's just awesome, seriously.
 

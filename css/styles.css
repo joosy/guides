@@ -371,3 +371,44 @@ hr.additional {
   margin-top: 40px;
   margin-bottom: 40px;
 }
+
+.black_wheel {
+  background: url("/img/tab_grey.gif") no-repeat scroll left top #EEEEEE;
+  padding: 0.25em 1em 0.5em 48px;
+  margin-bottom: 1.5em;
+  line-height: 1.25em !important;
+}
+
+.black_wheel p, .black_wheel pre
+{
+  margin: 0 0;
+}
+
+.warning 
+{
+  background: url("/img/tab_red.gif") no-repeat scroll left top #F9D9D8;
+  border: medium none;
+  margin-left: 0;
+  margin-top: 0.25em;
+  padding: 1.25em 1.25em 1.25em 48px;
+  margin-bottom: 1.5em;
+  line-height: 1.25em !important;
+}
+
+.warning  p {
+    margin: 0 0 20px;
+}
+.info {
+  background: url("/img/tab_info.gif") no-repeat scroll left top #D5E9F6;
+  border: medium none;
+  margin: 0.25em 0 1.5em;
+  padding: 1em 1em 0.25em 48px;
+  margin-bottom: 1.5em;
+  line-height: 1.25em !important;
+}
+.info p {
+    margin: 0 0 20px;
+}
+.info a {
+ color: #980905 !important;
+}

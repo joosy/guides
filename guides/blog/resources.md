@@ -5,6 +5,12 @@ title: "Resources"
 
 {% assign gist_id = 2775191 %}
 
+<div class="info">
+  <p>
+    During this familiarization chapter we won't use our Application but your browser's console. Still the source code is given in Coffee so you can see how it is going to look at your day to day use. If you want to try some snippets, you can use perfect <a href="http://js2coffee.org/">js2coffee</a> resource to compile the code and evaluate at your browser.
+  </p>
+</div>
+
 ### Generation
 
 One of the most important parts of your application is the data you get from your server to work with. While most of other frameworks call this a `Model` at Joosy we call it `Resource`. Your application logic will always remain at server. This is something we can't change. And since Joosy allows you to create helpers, extending your Resource is truly a rare case. So it's much more a definition of your server data container than a Model.
