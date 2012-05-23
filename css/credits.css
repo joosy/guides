@@ -1,6 +1,6 @@
 #container {
     background: none repeat scroll 0 0 #FFFFFF;
-    color: #333333;
+    color: #222222;
     padding: 0.5em 0 1.5em;
     font-family: Helvetica,Arial,sans-serif;
     font-size: 87.5%;
@@ -44,7 +44,6 @@
 
 #container img {
 	float:left;
-    margin-bottom: 10px;
 }
 
 #container p {
@@ -60,3 +59,27 @@
     color: #980905;
     text-decoration: underline;
 }
+/*
+
+#footer {
+    background: none repeat scroll 0 0 #222222;
+    padding: 2em 0;
+    font: 16px 'Open Sans',Arial,serif
+
+}
+#footer .wrapper {
+    padding-left: 2em;
+    margin: 0 auto;
+    text-align: left;
+    width:51em;
+}
+
+#footer p {
+    margin: 0 0 1.5em;
+    color:grey;
+    margin-left: 1em;
+}
+#footer a {
+    text-decoration: underline;
+}
+  */

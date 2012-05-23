@@ -53,9 +53,10 @@ First command will create the application itself. The second one will generate r
 According to Rails Assets Pipeline your application is now situated in `app/assets/javascripts` folder. At top level we have:
 
     blog_preloader.js.coffee
+    blog_railties.js.coffee
     blog/
 
-First one is required to boot the application while `blog` directory contains application sources in it. We'll discuss bootstrap and preloaders in latter parts of blog creation so for now you should consider `app/assets/javascripts/blog` as a baseline.
+First one is required to boot the application. The `railties` file contains some options for backend integration. While `blog` directory contains application sources in it. We'll discuss bootstrap and preloaders in latter parts of blog creation so for now you should consider `app/assets/javascripts/blog` as a baseline.
 
     .
     ├── helpers
