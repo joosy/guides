@@ -35,7 +35,6 @@
 }
 #container .right p {
 	margin:0;
-	padding-bottom:3em;
 }
 #container .module {
 	margin-bottom:1em;
@@ -44,6 +43,7 @@
 
 #container img {
 	float:left;
+    padding-bottom:2em;
 }
 
 #container p {
