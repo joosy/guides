@@ -396,7 +396,7 @@ hr.additional {
 }
 
 .warning  p {
-    margin: 0 0 20px;
+    margin: 0px;
 }
 .info {
   background: url("/img/tab_info.gif") no-repeat scroll left top #D5E9F6;

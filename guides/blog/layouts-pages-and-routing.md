@@ -3,9 +3,37 @@ layout: guide
 title: "Layouts, pages and routing"
 ---
 
-TODO: Write this guide.
+In Rails each page is the action template. It gets wrapped into the layout and includes number of partials. As the result you get your HTML generated.
 
-<h1 style="color: red">EVERYTHING BELOW IS OUTDATED</h1>
+Joosy behaves the same way but unlike elder brother it has to deal with events and user interaction logic so it's not just a renderer. Joosy separates the templates layer and a logic level. Logic level consists of the `Page`, the `Layout` which wraps the page and set of `Widget`s that can be included in both, `Page` and `Layout`. Each element of the logic level uses templates to describe rendering.
+
+![](http://f.cl.ly/items/1c0M2d0n0u1o0I1T380E/pages.png)
+
+<div class="info">
+  <p>
+    Joosy tries to keep logic elements alive as long as possible. When the new page gets loaded, current layout (object instance, bindings, DOM, included widgets, etc.) will stay untouched unless new pages requires another layout. In this case Page will be linked to an existing instance.
+  </p>
+</div>
+
+With your first app you got your first page and layout generated. They are situated in
+
+<div class="black_wheel">
+  <pre>pages/application.js.coffee
+layouts/application.js.coffee</pre>
+</div>
+
+And the templates they use are situated at:
+
+<div class="black_wheel">
+  <pre>templates/pages/application.js.coffee
+templates/layouts/application.js.coffee</pre>
+</div>
+
+<div class="warning">
+  <p style="font-weight: bold">
+    EVERYTHING BELOW IS OUTDATED
+  </p>
+</div>
 
 ### Pages & Layouts
 
