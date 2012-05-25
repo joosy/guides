@@ -7,9 +7,15 @@
     <link rel="stylesheet" href="/css/base.css">
     <link rel="stylesheet" href="/css/skeleton.css">
     <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/credits.css">
     <link rel="stylesheet" href="http://yandex.st/highlightjs/6.2/styles/default.min.css">
     <script src="http://cachedcommons.org/cache/modernizr/1.5.0/javascripts/modernizr-min.js"></script>
     <script src="/js/prefixfree.min.js"></script>
+    <script>
+      function toggle(element) {
+        element.style.display = (element.style.display == 'none') ? 'block' : 'none'
+      }
+    </script>
   </head>
   <body>
     <section class="topbar">
@@ -37,7 +43,35 @@
         <div class="ten columns">
           <ul class="nav">
             <li><a href="/">Home</a></li>
-            <li><a href="#" class="index">Guides Index &#9660;</a></li>
+            <li>
+              <a href="#" onclick="toggle(document.getElementById('guides'))" class="index">Guides Index &#9660;</a>
+              <div style="display: none;" class="clearfix" id="guides">
+                <hr />
+                <dl class="L">
+                  <dt>Joosy basics</dt>
+                  <dd><a href="/guides/basics/getting-started.html">Getting Started</a></dd>
+                  <dd><a href="/guides/basics/joosy-vs-x.html">Joosy vs X</a></dd>
+                  <dt>Creating a blog on Joosy</dt>
+                  <dd><a href="/guides/blog/rails-preparations.html">Rails preparations</a></dd>
+                  <dd><a href="/guides/blog/resources.html">Resources</a></dd>
+                  <dd><a href="/guides/blog/layouts-pages-and-routing.html">Layouts, Pages and Routing</a></dd>
+                  <dd><a href="/guides/blog/elements-events-and-filters.html">Elements, Events and Filters</a></dd>
+                  <dd><a href="/guides/blog/dynamic-rendering.html">Dynamic rendering</a></dd>
+                  <dd><a href="/guides/blog/widgets.html">Widgets</a></dd>
+                  <dd><a href="/guides/blog/helpers.html">Helpers</a></dd>
+                  <dd><a href="/guides/blog/forms.html">Forms</a></dd>
+                  <dd><a href="/guides/blog/preloaders.html">Preloaders</a></dd>
+                  <dd><a href="/guides/blog/load-unload-and-in-progress-animations.html">Load, unload, animations</a></dd>
+                </dl>
+                <dl class="R">
+                  <dt>Advanced guides</dt>
+                  <dd><a href="/guides/advanced/search-engine-indexing.html">Search engine indexing</a></dd>
+                  <dd><a href="/guides/advanded/authentication.html">Authentication</a></dd>
+                  <dd><a href="/guides/advanced/permissions.html">Permissions and ACL</a></dd>
+                  <dd><a href="/guides/advanced/template-engine.html">Template engines</a></dd>
+                </dl>
+              </div>      
+            </li> 
             <li><a href="/contribute.html">Contribute</a></li>
             <li><a href="/credits.html">Credits</a></li>
           </ul>
@@ -50,6 +84,12 @@
           {{ content }}
         </div>
       </section>
+    </div>
+    <div id="footer">
+        <div class="wrapper">
+            <p>This work is licensed under a <a href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-Share Alike 3.0</a> License</p>
+            <p>Sources of this guide are available <a href="https://github.com/roundlake/joosy-guides">on Github</a>.</p>
+        </div>
     </div>
     <script type="text/javascript">
       var _gauges = _gauges || [];

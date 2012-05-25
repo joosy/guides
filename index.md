@@ -62,7 +62,7 @@ Finally, Joosy boosts your development drastically. Just like the Rails do.
 
   Now that our blog is ready we'll improve its loading. This chapter will learn you how to use two different kind of preloaders that come with Joosy. You'll know their advantages and how you can use them.
 
-* ### [Load, unload and 'in progress' animations](guides/load-unload-and-in-progress-animations.html)
+* ### [Load, unload and 'in progress' animations](guides/blog/load-unload-and-in-progress-animations.html)
 
   This is advanced chapter that will show you how you can get some advanced control over the process of pages loading. We'll add fading animation that will both: indicate the process of page loading and just look good :).
 
