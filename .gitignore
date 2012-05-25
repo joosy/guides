@@ -1,3 +1,10 @@
 _site
 .DS_Store
 tmp/
+.idea
+/app/assets/javascripts/front/templates/pages/sandbox/.idea/*.*
+.idea/*.*
+/vendor/assets/javascripts/visual.js
+.idea/workspace.xml
+workspace.xml
+/app/assets/javascripts/front/templates/pages/sandbox/.idea
