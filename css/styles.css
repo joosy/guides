@@ -412,3 +412,6 @@ hr.additional {
 .info a {
  color: #980905 !important;
 }
+.container section.row .sixteen.columns {
+    min-height: 35.99em;
+}
