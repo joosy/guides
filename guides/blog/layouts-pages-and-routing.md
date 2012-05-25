@@ -3,11 +3,13 @@ layout: guide
 title: "Layouts, pages and routing"
 ---
 
+{% assign gist_id = 2785784 %}
+
 In Rails each page is the action template. It gets wrapped into the layout and includes number of partials. As the result you get your HTML generated.
 
 Joosy behaves the same way but unlike elder brother it has to deal with events and user interaction logic so it's not just a renderer. Joosy separates the templates layer and a logic level. Logic level consists of the `Page`, the `Layout` which wraps the page and set of `Widget`s that can be included in both, `Page` and `Layout`. Each element of the logic level uses templates to describe rendering.
 
-![](http://f.cl.ly/items/1c0M2d0n0u1o0I1T380E/pages.png)
+![](http://f.cl.ly/items/1S130q3C0n1s2R1I1T0S/pages.png)
 
 <div class="info">
   <p>
@@ -18,111 +20,19 @@ Joosy behaves the same way but unlike elder brother it has to deal with events a
 With your first app you got your first page and layout generated. They are situated in
 
 <div class="black_wheel">
-  <pre>pages/application.js.coffee
+  <pre>pages/welcome/index.js.coffee
 layouts/application.js.coffee</pre>
 </div>
 
-And the templates they use are situated at:
+We'll start from the Layout. The only option it sets makes Joosy seek for a template for this layout at `templates/layouts/application.jst.hamlc`. Since we don't really need any logic at our Layout for now let's just modify the HAML. Using twitter bootstrap we can come up with something like this:
 
-<div class="black_wheel">
-  <pre>templates/pages/application.js.coffee
-templates/layouts/application.js.coffee</pre>
-</div>
+{% assign gist_file = 'Layout.haml' %}
+{% include gist.html %}
 
-<div class="warning">
-  <p style="font-weight: bold">
-    EVERYTHING BELOW IS OUTDATED
+Take a look at the last tricky line. Using `{:id => @yield()}` we mark the `.container` div with the special ID Joosy will use to include page's HTML. Again, with that, we'll get page HTML right inside our `.container` div. And that's pretty much everything we need from the Layout for now.
+
+<div class="info">
+  <p>
+    This may look like a silly name cause it clearly is not an `yield` in it's real meaning. But wait! Listen! We had a reason to use this name. It helps you to not remember another `longMethodToCall`. It mimics Rails in the closest possible way. 
   </p>
 </div>
-
-### Pages & Layouts
-
-Let's create a simple Joosy page and see what's going on.
-
-    rails g joosy:page blog/welcome/hi
-
-It will create `blog/pages/welcome/hi.js.coffee` with the page class, and an empty template at `blog/templates/pages/welcome/hi.jst.hamlc`. Put some simple HAML into the template, like
-
-    %h1 Hi there
-    %p P.S.: Joosy rocks!
-
-In most Joosy applications HAML is used to do markup. However you're free to use any other templating engine. 
-
-The page class looks as follows
-
-    Joosy.namespace 'Welcome', ->
-        
-      class @HiPage extends ApplicationPage
-        @layout ApplicationLayout
-        @view   'hi'
-
-it describes what layout and view to use.
-
-### Routing
-
-In order to be able to navigate to this page, we need to add a route for it. Open `routes.js` and add
-
-    '/hi'           : Welcome.HiPage
-
-after the index (`/`) route. Now we can fire up the browser and navigate to [localhost:3000/blog/#!/hi](http://localhost:3000/blog/#!/hi)
-
-![](http://f.cl.ly/items/2n261D1D2M2C0J0c1M0B/Screen%20Shot%202012-02-19%20at%2010.28.52%20PM.png)
-
-As you can see, we pass params to our Joosy app after the she-bang (`!#`). It's common behavior for most modern web apps, like Twitter, iCloud, etc.
-
-### Layouts
-
-As you use Rails, you're familiar with the concept behind them. Basically, layouts are used to keep your templates DRY. You can have as many nest levels in your layouts as you want.
-
-Layouts in Joosy are made up of a class and a template
-
-Let's change the main layout a bit, so that, there is a small copyright in the bottom of the page. Add the following to `templates/layouts/application.jst.hamlc` 
-
-    %p &copy; 2012
-
-Hi page now looks like
-
-![](http://f.cl.ly/items/3m3g2w0z2f1G0J3c1k2F/Screen%20Shot%202012-02-19%20at%2010.27.17%20PM.png)
-
-## Let's proceed with out blog app
-
-For first, let's create a new page for post listings.
-
-    rails g joosy:page blog/post/index
-
-Don't forget to add routes for it
-
-    '/posts'        :
-      '/'           : Post.IndexPage
-
-Note we now define routes a bit special way. To declare routes for resource in joosy you basically do the following
-
-    '/resources':
-      '/': Resource.IndexPage
-      '/:id': Resource.ShowPage
-    # and so forth
-
-It's like writing `resources :resources` in Rails and specifying each resource method manually.
-
-Now let's allow the app to fetch our posts. Open the Index Post page (`pages/post/index.js.coffee`). To fetch data via the REST API we should declare `@fetch` inside the page class
-
-    @fetch (complete) ->
-      $.get '/posts.json', (result) =>
-        @data = posts: result
-        complete()
-
-There we tell Joosy to get the list of posts, and assign it to the `posts` local for the template (via `@data`).
-
-(For those of you wondering about Resources (that's how Models are called in Joosy), we'll cover them in the following chapters. For now let's proceed with manual json fetching.)
-
-To make our templates show posts, we just need to iterate through the `posts` local (`@posts`). Enter the following into `templates/pages/posts/index.jst.hamlc`
-
-    - @posts.each (post) =>
-      %h1= post['title']
-      %p= post['body']
-
-If you followed everything correctly, now you'd be able to see post listing at [localhost:3000/blog/#!/posts](http://localhost:3000/blog/#!/posts).
-
-![](http://f.cl.ly/items/3a0r2c240c2P0D0P202j/Screen%20Shot%202012-02-19%20at%2010.25.50%20PM.png)
-
-So we've built a simple Joosy application able to show the post index. In the [next chapter](elements-events-and-filters.html) we will learn how pretty can be adding behavior to pages.
