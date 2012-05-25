@@ -19,7 +19,7 @@ Besides basic functionality Rails has to offer we'll need to include `joosy` gem
 {% assign gist_file = 'Gemfile.rb' %}
 {% include gist.html %}
 
-Now make bundler handle the dependencies:
+Now make bundler handle the dependencies and make twitter-bootstrap gem prepare to do the job:
 
 {% assign gist_file = 'Bundle.sh' %}
 {% include gist.html %}
