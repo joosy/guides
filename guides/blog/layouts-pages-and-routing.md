@@ -36,3 +36,29 @@ Take a look at the last tricky line. Using `{:id => @yield()}` we mark the `.con
     This may look like a silly name cause it clearly is not an `yield` in it's real meaning. But wait! Listen! We had a reason to use this name. It helps you to not remember another `longMethodToCall`. It mimics Rails in the closest possible way. 
   </p>
 </div>
+
+Let's move on to the pages. To structure application better we will not use the default pregenerated page (we'll remove it later) but create a set of new ones! We'll need three pages: the list of posts, single post view and two forms – to create the post and edit it. We'll get to modification while working with forms and now let's generate list and view pages:
+
+{% assign gist_file = 'Generate.sh' %}
+{% include gist.html %}
+
+Let's put the a tiny mock haml to both pages' templates to check if everything went well:
+
+{% assign gist_file = 'Pages mocks.haml' %}
+{% include gist.html %}
+
+Before we check them in a browser, we have to bind them to the routes. The routes are situated at `routes.js.coffe` file. Here's the required routing description:
+
+{% assign gist_file = 'Routes.coffee' %}
+{% include gist.html %}
+
+Open your browser and go to: 
+
+<div style="text-align:center">
+  <pre>http://localhost:3000/blog/#!/posts/1</pre>
+  <img src="http://f.cl.ly/items/1J1I1S3O3C1J3X3Z2j1G/posts.png" />
+  <pre>http://localhost:3000/blog/#!/posts/1</pre>
+  <img src="http://f.cl.ly/items/3x0B2i1L3D2V1G0k242B/post.png" />
+</div>
+
+The only thing left to do is to get the real data from server and put it into the template. Joosy defines `fetch` hook that should be used to load required data.
