@@ -61,4 +61,16 @@ Open your browser and go to:
   <img src="http://f.cl.ly/items/3x0B2i1L3D2V1G0k242B/post.png" />
 </div>
 
-The only thing left to do is to get the real data from server and put it into the template. Joosy defines `fetch` hook that should be used to load required data.
+The only thing left to do is to get the real data from server and put it into the template. Joosy defines `fetch` hook that should be used to load required data. Page, Layout and Widget will expect `@data` to contain hash of template's local variable. So this is how it's supposed to look:
+
+{% assign gist_file = 'Fetch.coffee' %}
+{% include gist.html %}
+
+Now insert the proper variables into your templates:
+
+{% assign gist_file = 'Pages.haml' %}
+{% include gist.html %}
+
+That's it, your pages now contain real data from server. Note that we did not replaced the blog post date field. Moreover we don't even have such a field inside our model. That's a good chance to practice a bit: try to add this field to your model and templates to consolidate your knowledges.
+
+And further we go with [elements, evends and filters](/guides/blog/elements-events-and-filters.html)!
