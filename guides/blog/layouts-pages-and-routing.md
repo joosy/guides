@@ -71,6 +71,12 @@ Now insert the proper variables into your templates:
 {% assign gist_file = 'Pages.haml' %}
 {% include gist.html %}
 
-That's it, your pages now contain real data from server. Note that we did not replaced the blog post date field. Moreover we don't even have such a field inside our model. That's a good chance to practice a bit: try to add this field to your model and templates to consolidate your knowledges.
+That's it, your pages now contain real data from server. 
 
-And further we go with [elements, evends and filters](/guides/blog/elements-events-and-filters.html)!
+<div class="info">
+  <p>
+    We did not replaced the blog post date field. Moreover we don't even have such a field inside our model. That's a good chance to practice a bit: try to add this field to your model and templates to consolidate your knowledges.
+  </p>
+</div>
+
+At this stage we got our Rails backend, Resources and two pages with actual data from server. And further we go with [elements, evends and filters](/guides/blog/elements-events-and-filters.html).

@@ -5,7 +5,11 @@ title: "Rails preparations"
 
 {% assign gist_id = 2759363 %}
 
-Before you start, please ensure your system has Rails version >= 3.1. Versions prior to that are not supported due to lack of assets pipeline support.
+<div class="info">
+  <p>
+    Before you start, please ensure your system has Rails version >= 3.1. Versions prior to that are not supported due to lack of assets pipeline support.
+  </p>
+</div>
 
 ### Dependencies and scaffolds
 

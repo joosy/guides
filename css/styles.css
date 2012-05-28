@@ -394,10 +394,13 @@ hr.additional {
   margin-bottom: 1.5em;
   line-height: 1.25em !important;
 }
-
 .warning  p {
     margin: 0px;
 }
+.warning a {
+ color: #980905 !important;
+}
+
 .info {
   background: url("/img/tab_info.gif") no-repeat scroll left top #D5E9F6;
   border: medium none;

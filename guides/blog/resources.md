@@ -76,7 +76,20 @@ REST is not SQL. That's why REST consumer does not really needs the relations. Y
 {% assign gist_file = 'Mappings.coffee' %}
 {% include gist.html %}
 
-This is pretty enough to complete our Blog implementation goal. So if you want, you can skip to [next chapter](/guides/blog/layouts-pages-and-routing) and study additional resources capabilities later.
+### Modificators
+
+The last but not the least goes the ability to modify data before it gets accepted by the resource. This is a typical task if we want make resource to contain `Date` instances instead of strings. Note that `@beforeLoad` should explicitly return the full data set. 
+
+{% assign gist_file = 'Modificators.coffee' %}
+{% include gist.html %}
+
+You can chain this hooks: they will be evalutated in the order they appear at your resource. And by the way, `@map` is a syntax sugar for exactly this function. It will register specific `@beforeLoad` in its internals.
+
+<div class="warning">
+  <p>
+    This is pretty enough to complete our Blog implementation goal. So if you want, you can skip to the <a href="/guides/blog/layouts-pages-and-routing">next chapter</a> and study additional resources capabilities later.
+  </p>
+</div>
 
 <hr class="additional" />
 
