@@ -17,6 +17,8 @@ Joosy behaves the same way but unlike elder brother it has to deal with events a
   </p>
 </div>
 
+## Layouts
+
 With your first app you got your first page and layout generated. They are situated in
 
 <div class="black_wheel">
@@ -36,6 +38,8 @@ Take a look at the last tricky line. Using `{:id => @yield()}` we mark the `.con
     This may look like a silly name cause it clearly is not an `yield` in it's real meaning. But wait! Listen! We had a reason to use this name. It helps you to not remember another `longMethodToCall`. It mimics Rails in the closest possible way. 
   </p>
 </div>
+
+## Pages
 
 Let's move on to the pages. To structure application better we will not use the default pregenerated page (we'll remove it later) but create a set of new ones! We'll need three pages: the list of posts, single post view and two forms – to create the post and edit it. We'll get to modification while working with forms and now let's generate list and view pages:
 
@@ -60,6 +64,8 @@ Open your browser and go to:
   <pre>http://localhost:3000/blog/#!/posts/1</pre>
   <img src="http://f.cl.ly/items/3x0B2i1L3D2V1G0k242B/post.png" />
 </div>
+
+## Fetching
 
 The only thing left to do is to get the real data from server and put it into the template. Joosy defines `fetch` hook that should be used to load required data. Page, Layout and Widget will expect `@data` to contain hash of template's local variable. So this is how it's supposed to look:
 
