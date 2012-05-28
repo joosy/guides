@@ -40,7 +40,7 @@ Finally, Joosy boosts your development drastically. Just like the Rails do.
 
 * ### [Elements, events and filters](guides/blog/elements-events-and-filters.html)
 
-  This chapter describes HTML elements and events binding. We'll add simple events to show number of comments next to blog's title.
+  This chapter describes HTML elements and events binding. We'll add useless hiding clocks to our header, yay!
 
 * ### [Dynamic rendering](guides/blog/dynamic-rendering.html)
 
