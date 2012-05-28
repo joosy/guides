@@ -88,7 +88,7 @@ The another thing we inherit from Rails is a passion to have a nice set of ready
   </tr>
   <tr>
     <th>Code generators</th>
-    <td class="m">~</td>
+    <td class="n">✖</td>
     <td class="m">~</td>
     <td class="y">✔</td>
   </tr>
