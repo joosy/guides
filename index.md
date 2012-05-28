@@ -40,30 +40,37 @@ Finally, Joosy boosts your development drastically. Just like the Rails do.
 
 * ### [Elements, events and filters](guides/blog/elements-events-and-filters.html)
 
+  <span style="color:red">In progress.</span>
   This chapter describes HTML elements and events binding. We'll add simple events to show number of comments next to blog's title.
 
 * ### [Dynamic rendering](guides/blog/dynamic-rendering.html)
 
+  <span style="color:red">In progress.</span>
   This chapter will show you what you can do with your resources and dynamic binding. We'll learn how to link variable value and its HTML representation which will automatically update after variable changes. Using that we'll add inline title editor to our blog.
 
 * ### [Widgets](guides/blog/widgets.html)
 
+  <span style="color:red">In progress.</span>
   In this chapter we'll move our inline title editor to a widget and will reuse it on all blog posts pages.
 
 * ### [Helpers](guides/blog/helpers.html)
 
+  <span style="color:red">In progress.</span>
   Using helpers we'll format blog posts content. This chapter either learns how to create local helpers accessible only inside views of one page.
 
 * ### [Forms](guides/blog/forms.html)
 
+  <span style="color:red">In progress.</span>
   With help of Forms we'll finally add posts management to our blog. We'll make tiny admin pages to create and edit posts.
 
 * ### [Preloaders](guides/blog/preloaders.html)
 
+  <span style="color:red">In progress.</span>
   Now that our blog is ready we'll improve its loading. This chapter will learn you how to use two different kind of preloaders that come with Joosy. You'll know their advantages and how you can use them.
 
 * ### [Load, unload and 'in progress' animations](guides/blog/load-unload-and-in-progress-animations.html)
 
+  <span style="color:red">In progress.</span>
   This is advanced chapter that will show you how you can get some advanced control over the process of pages loading. We'll add fading animation that will both: indicate the process of page loading and just look good :).
 
 ## Advanced guides
