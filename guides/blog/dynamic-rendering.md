@@ -3,5 +3,8 @@ layout: guide
 title: "Dynamic rendering"
 ---
 
-TODO: Write this guide.
-
+<div class="warning">
+  <p>
+    Guide is in progress
+  </p>
+</div>

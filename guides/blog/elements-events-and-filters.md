@@ -47,3 +47,5 @@ Together with `afterLoad` Joosy gives you the `beforeLoad` hook. Within beforeLo
 {% include gist.html %}
 
 Both `afterLoad` and `beforeLoad` can be chanined. They will be called in exact order you define those among your container. Moreover, if you use classes inheritance, Joosy will call parents hooks. The order is still under controll. Joosy will start from the upper parent and step down towards children.
+
+The next chapter will describe one of the most exciting features, the [Dynamic Rendering](/guides/blog/dynamic-rendering.html).
