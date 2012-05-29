@@ -42,6 +42,10 @@ Finally, Joosy boosts your development drastically. Just like the Rails do.
 
   This chapter describes HTML elements and events binding. We'll add useless hiding clocks to our header, yay!
 
+* ### [Forms](guides/blog/forms.html)
+
+  With help of Forms we'll finally add posts management to our blog. We'll make tiny admin pages to create and edit posts.
+
 * ### [Dynamic rendering](guides/blog/dynamic-rendering.html)
 
   <span style="color:red">In progress.</span>
@@ -56,11 +60,6 @@ Finally, Joosy boosts your development drastically. Just like the Rails do.
 
   <span style="color:red">In progress.</span>
   Using helpers we'll format blog posts content. This chapter either learns how to create local helpers accessible only inside views of one page.
-
-* ### [Forms](guides/blog/forms.html)
-
-  <span style="color:red">In progress.</span>
-  With help of Forms we'll finally add posts management to our blog. We'll make tiny admin pages to create and edit posts.
 
 * ### [Preloaders](guides/blog/preloaders.html)
 
