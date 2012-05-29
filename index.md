@@ -48,7 +48,6 @@ Finally, Joosy boosts your development drastically. Just like the Rails do.
 
 * ### [Dynamic rendering](guides/blog/dynamic-rendering.html)
 
-  <span style="color:red">In progress.</span>
   This chapter will show you what you can do with your resources and dynamic binding. We'll learn how to link variable value and its HTML representation which will automatically update after variable changes. Using that we'll add inline title editor to our blog.
 
 * ### [Widgets](guides/blog/widgets.html)
