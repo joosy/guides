@@ -69,10 +69,18 @@ Finally, Joosy boosts your development drastically. Just like the Rails do.
 
 ## Advanced guides
 
-* ### Search engines indexing
+* ### [Search engines indexing](guides/advanced/search-engines-indexing.html)
 
-* ### Authentication
+  <span style="color:red">In progress.</span>
 
-* ### Permissions and ACL management
+* ### [Authentication](guides/advanced/authentication.html)
 
-* ### How to switch template engine
+  <span style="color:red">In progress.</span>
+
+* ### [Permissions and ACL management](guides/advanced/permissions-and-acl.html)
+
+  <span style="color:red">In progress.</span>
+
+* ### [How to switch template engine](guides/advanced/how-to-switch-template-engine.html)
+
+  <span style="color:red">In progress.</span>
