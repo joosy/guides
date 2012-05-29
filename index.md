@@ -56,11 +56,10 @@ Finally, Joosy boosts your development drastically. Just like the Rails do.
 
 * ### [Helpers](guides/blog/helpers.html)
 
-  Using helpers we'll format blog posts content. This chapter either learns how to create local helpers accessible only inside views of one page.
+  Using helpers we'll add piratish flavour to our blog. This chapter either learns how to create local helpers accessible only inside views of one page.
 
 * ### [Preloaders](guides/blog/preloaders.html)
 
-  <span style="color:red">In progress.</span>
   Now that our blog is ready we'll improve its loading. This chapter will learn you how to use two different kind of preloaders that come with Joosy. You'll know their advantages and how you can use them.
 
 * ### [Load, unload and 'in progress' animations](guides/blog/load-unload-and-in-progress-animations.html)
