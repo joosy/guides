@@ -52,7 +52,6 @@ Finally, Joosy boosts your development drastically. Just like the Rails do.
 
 * ### [Widgets](guides/blog/widgets.html)
 
-  <span style="color:red">In progress.</span>
   In this chapter we'll move our inline title editor to a widget and will reuse it on all blog posts pages.
 
 * ### [Helpers](guides/blog/helpers.html)
