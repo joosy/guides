@@ -57,7 +57,12 @@ We are not going to piratize anything but blog post titles and they are concectr
 
 ## Namespaces and inclusions
 
-Helpers namespaces is a thing that will help you to avoid pollution. Let's move our helper to the new non-global namespace called 'Pirates'. To add this namespace to our widget use this string inside your widget class:
+Helpers namespaces is a thing that will help you to avoid pollution. Let's move our helper to the new non-global namespace called 'Pirates'.
+
+{% assign gist_file = 'Pirates Helper.coffee' %}
+{% include gist.html %}
+
+To include this namespace to our widget use this string inside your widget class:
 
 {% assign gist_file = 'Helpers Inclusion.coffee' %}
 {% include gist.html %}

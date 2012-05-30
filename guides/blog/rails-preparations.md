@@ -18,7 +18,7 @@ Generate new Rails project:
 {% assign gist_file = 'Create project.sh' %}
 {% include gist.html %}
 
-Besides basic functionality Rails has to offer we'll need to include `joosy` gem and the Twitter bootstrap assets to make our blog look better. This is the gemfile we are supposed to work with:
+Besides basic functionality Rails has to offer, we'll need to include `joosy` gem and the Twitter bootstrap assets to make our blog look better. This is the gemfile we are supposed to work with:
 
 {% assign gist_file = 'Gemfile.rb' %}
 {% include gist.html %}
@@ -41,7 +41,7 @@ We'll have to modify our models a bit to define an association. Another thing to
 {% assign gist_file = 'Seeds.rb' %}
 {% include gist.html %}
 
-Run `rake db:seed` to make your seeds real and that's pretty much it. Joosy is totally compatible with Rails basic scaffolds generators. You'll have an option to improve your code with better JSON builders and some logic but we'll concentrate on Joosy part for now.
+Run `rake db:migrate` and `rake db:seed` to make your seeds real and that's pretty much it. Joosy is totally compatible with Rails basic scaffolds generators. You'll have an option to improve your code with better JSON builders and some logic but we'll concentrate on Joosy part for now.
 
 ### Joosy application generation
 

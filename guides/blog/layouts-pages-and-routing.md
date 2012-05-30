@@ -59,7 +59,7 @@ Before we check them in a browser, we have to bind them to the routes. The route
 Open your browser and go to: 
 
 <div style="text-align:center">
-  <pre>http://localhost:3000/blog/#!/posts</pre>
+  <pre>http://localhost:3000/blog/</pre>
   <img src="http://f.cl.ly/items/1J1I1S3O3C1J3X3Z2j1G/posts.png" />
   <pre>http://localhost:3000/blog/#!/posts/1</pre>
   <img src="http://f.cl.ly/items/3x0B2i1L3D2V1G0k242B/post.png" />
