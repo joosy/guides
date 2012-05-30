@@ -5,7 +5,7 @@ title: "Forms"
 
 {% assign gist_id = 2822781 %}
 
-Joosy includes a very powerfull tool to make forms handling really comfortable. `Joosy.Form` wraps your html form and makes it totally AJAXified. No matter if it contains text data or files. So you wrap it and whenver it gets submited you get one of your hooks called (they can be `success`, `error`, `progress`) with the response data passed in.
+Joosy includes a very powerful tool to make forms handling really comfortable. `Joosy.Form` wraps your html form and makes it totally AJAXified. No matter if it contains text data or files. So you wrap it and whenever it gets submited you get one of your hooks called (they can be `success`, `error`, `progress`) with the response data passed in.
 
 Besides "AJAXification" it either helps you handle fields management (in conjuction with resources) and invalidation. Both of these will be greatly covered among this chapter.
 
@@ -85,7 +85,7 @@ So the default basic look of `attach` call is:
 {% assign gist_file = 'Basic attach.coffee' %}
 {% include gist.html %}
 
-This call will not modify (or set) the method of form. And will only affect its action if it was explicitly passed as an `action` parameter. So if you have no resource for the form you still can "activate" it and unleash the power of success/error/progress callbacks.
+This call will not modify (or set) the method (POST, PUT etc) of form. And will only affect its action if it was explicitly passed as an `action` parameter. So if you have no resource for the form you still can "activate" it and unleash the power of success/error/progress callbacks.
 
 While success and progress events are very straightforward, the `error` hook plays an important role of validation. If this was not specified Joosy will fallback to default invalidation proccess (which is described below). And more, even if it was specified and did return `true` explicitly, Joosy will still run it's invalidation proccess. This is supposed to ease your form validation handling dramatically.
 
@@ -111,3 +111,5 @@ The last thing that changes with the resource binding is the invalidation procce
 </div>
 
 Forms are very important part of Joosy. This chapter gave you the very basics of its possibilities. You can find partial info among other chapters or guides but anyway, please, check out the <a href="http://api.joosy.ws/classes/Joosy/Form.html">API doc</a>. Inside Joosy there's no other class like this that deserves reading it that much.
+
+Next Chapter - [dynamic rendering](/guides/blog/dynamic-rendering.html).

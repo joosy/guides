@@ -51,7 +51,7 @@ Let's put the a tiny mock haml to both pages' templates to check if everything w
 {% assign gist_file = 'Pages mocks.haml' %}
 {% include gist.html %}
 
-Before we check them in a browser, we have to bind them to the routes. The routes are situated at `routes.js.coffe` file. Here's the required routing description:
+Before we check them in a browser, we have to bind them to the routes. The routes are situated at `routes.js.coffee` file. Here's the required routing description:
 
 {% assign gist_file = 'Routes.coffee' %}
 {% include gist.html %}
@@ -59,7 +59,7 @@ Before we check them in a browser, we have to bind them to the routes. The route
 Open your browser and go to: 
 
 <div style="text-align:center">
-  <pre>http://localhost:3000/blog/#!/posts/1</pre>
+  <pre>http://localhost:3000/blog/#!/posts</pre>
   <img src="http://f.cl.ly/items/1J1I1S3O3C1J3X3Z2j1G/posts.png" />
   <pre>http://localhost:3000/blog/#!/posts/1</pre>
   <img src="http://f.cl.ly/items/3x0B2i1L3D2V1G0k242B/post.png" />
@@ -85,4 +85,4 @@ That's it, your pages now contain real data from server.
   </p>
 </div>
 
-At this stage we got our Rails backend, Resources and two pages with actual data from server. And further we go with [elements, evends and filters](/guides/blog/elements-events-and-filters.html).
+At this stage we got our Rails backend, Resources and two pages with actual data from server. And further we go with [elements, events and filters](/guides/blog/elements-events-and-filters.html).

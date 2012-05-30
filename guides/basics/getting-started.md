@@ -29,7 +29,7 @@ The first point is required to feel Joosy the right way. It was greatly inspired
 
 [CoffeeScript](http://rubyonrails.org/) is an alma-mater of Joosy. In theory you can use Joosy with a plain JS but you won't be happy. We use the Coffee meta posibilities heavily. Joosy is class-based and relays on CoffeeScript static methods prototype magic. Without having requirement to stay JS-compatible we created an interface that is as clear as possible.
 
-We've added some spice to the Rails+Coffee combo. Applause, the [Sugar.js](http://sugarjs.com/). This incredible library extends the JS the way you are used to with an ActiveSupport. All the comfortable features are here: `[].first`, `'foo'.camelize`, `'fluffy'.pluralize` and many-many more. This sause really make the Coffee feel just like Ruby.
+We've added some spice to the Rails+Coffee combo. Applause, the [Sugar.js](http://sugarjs.com/). This incredible library extends the JS the way you are used to with an ActiveSupport. All the comfortable features are here: `[].first`, `'foo'.camelize`, `'fluffy'.pluralize` and many-many more. This sauce really make the Coffee feel just like Ruby.
 
 And last but no the least: viva la [HAML](http://haml.info/)! Joosy uses templaters abstraction so in theory you can use anything you are used to. But if you ever tried HAML and fell in love like we did, Joosy is shipped with amazing HAML-Coffee template engine.
 

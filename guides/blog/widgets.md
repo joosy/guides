@@ -17,7 +17,7 @@ Just like pages and layouts, widgets can have elements, events, filters and temp
 {% assign gist_file = 'Widget.coffee' %}
 {% include gist.html %}
 
-Remember to remove all this stuff from the Show page! It's not neede anymore!
+Remember to remove all this stuff from the Show page! It's not needed anymore!
 
 The next step is to move all the required HAML into widget's template. And don't forget the dynamic partial that should be moved to `templates/widgets` directory either.
 
@@ -50,17 +50,19 @@ And actually this is it. Nothing more is required to do. If only expand our widg
 
 ## Alternative widget registration
 
-If your widgets are about to control the existing DOM structures (please ensure you don't break encapsulation) or you are going to interact between widget and it's container, you have an option to directly bind the widget from a page. This look similar to the elements and events bindings. You just define the `widgets` hash:
+If your widgets are about to control the existing DOM structures (please ensure you don't break encapsulation) or you are going to interact between widget and it's container, you have an option to directly bind the widget from a page. This looks similar to the elements and events bindings. You just define the `widgets` hash:
 
 {% assign gist_file = 'Widgets Hash.coffee' %}
 {% include gist.html %}
 
-To maintain direct bridget between the container and the widget you can assign creating instance of widet instance variable. That's exactly what we do at the third example. But **beware**! If the selector matches several DOM elements, each of them will be passed to a separate widget. And therefore with this lambda `@testWidget` will always contain the last loaded widget.
+To maintain direct bridge between the container and the widget you can assign creating instance of widet instance variable. That's exactly what we do at the third example. But **beware**! If the selector matches several DOM elements, each of them will be passed to a separate widget. And therefore with this lambda `@testWidget` will always contain the last loaded widget.
 
 ## Manual registration and destruction
 
-You can either register and unregister widgets manually. Page and Layout define two methods to help you with this. They are: `registerWidget(container, widget)` and `unregisterWidget(widget)`. 
+You can either register and unregister widgets manually. Page and Layout define two methods to help you with this. They are: `@registerWidget(container, widget)` and `@unregisterWidget(widget)`. 
 
 The first one takes the reference to the DOM node (container) and the widget. The widget can be pased in the same manner, as a Class or as a lambda. `registerWidget` will return you the widget instance. It will be unloaded in process of page/layout destruction.
 
 In cases when you want to control the lifetime of this widget manually, use `unregisterWidget` that accepts the instance of widget to shutdown. Note that still widgets never survive destruction of page/layout they are contained by.
+
+Next Chapter - [helpers](/guides/blog/helpers.html).

@@ -108,3 +108,5 @@ Sometimes you might want to use Joosy for existing REST providers which are not 
 
 {% assign gist_file = 'Resource setup.coffee' %}
 {% include gist.html %}
+
+You can proceed building a blog with Joosy in the next chapter - [layouts, pages and routing](/guides/blog/layouts-pages-and-routing.html).

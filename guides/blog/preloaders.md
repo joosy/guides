@@ -5,7 +5,7 @@ title: "Preloaders"
 
 {% assign gist_id = 2830293 %}
 
-RICH applications that we create with Joosy can weight a lot. While 200k look not that much for modern internet it still can be a pain for mobile tethering. And it always is better to allow client see load progress. Joosy bundles preloaders that implement several strategies.
+RICH applications that we create with Joosy can weight a lot. While 200KB look not that much for modern internet it still can be a pain for mobile tethering. And it always is better to allow client see load progress. Joosy bundles preloaders that implement several strategies.
 
 ## Caching (default one)
 
@@ -32,7 +32,7 @@ Using this line you can controll which strategy will be used. Force option is so
   </p>
 </div>
 
-The layout your loading progress counter is based on is situated in `app/views/blog.html.erb`. This is the place to add some CSS for a better look.
+The layout for your loading progress counter is situated in `app/views/blog.html.erb`. This is the place to add some CSS for a better look.
 
 But let's get back to the available options of the Preloader.
 
@@ -52,6 +52,6 @@ And the last thing we have to discuss here does not directly touches the preload
 {% assign gist_file = 'Bootstrap.coffee' %}
 {% include gist.html %}
 
-Application bootstrap accepts some options that you may find useful. Environment option has no direct use at this moment but the debug option does. As soon as you turn it on Joosy will start spamming your console with a lot of info that happens inside classes you use. Just give it a try. Sometimes it can save you a hour of debugging.
+Application bootstrap accepts some options that you may find useful. Environment option has no direct use at this moment but the debug option does. As soon as you turn it on Joosy will start spamming your console with a lot of info that happens inside classes you use. Just give it a try. Sometimes it can save you an hour of debugging.
 
 Our blog is ready and prepared to load properly. This already is a finished product but there's still one interesting feature Joosy has to offer. Pass on to the [final chapter](/guides/blog/load-unload-and-in-progress-animations.html) to learn how to controll page switch animation.
