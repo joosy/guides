@@ -64,7 +64,6 @@ Finally, Joosy boosts your development drastically. Just like the Rails do.
 
 * ### [Load, unload and 'in progress' animations](guides/blog/load-unload-and-in-progress-animations.html)
 
-  <span style="color:red">In progress.</span>
   This is advanced chapter that will show you how you can get some advanced control over the process of pages loading. We'll add fading animation that will both: indicate the process of page loading and just look good :).
 
 ## Advanced guides
