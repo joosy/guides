@@ -21,14 +21,14 @@ This section defines three useful helpers:
 {% assign gist_file = 'Wrapped.haml' %}
 {% include gist.html %}
 
-Being a indentation-dependent syntax, HAML has a weak part: wrapping. You can easily insert inline part of code as a partial but opposite turns into a hell. This helper was meant to solve the problem. The partial you render will get the same context as the current template. The content given to the helper as the second parameter will be put at `@yield` variable inside wrapping partial.
+Being an indentation-dependent syntax, HAML has a weak part: wrapping. You can easily insert inline part of code as a partial but opposite turns into a hell. This helper was meant to solve the problem. The partial you render will get the same context as the current template. The content given to the helper as the second parameter will be put at `@yield` variable inside wrapping partial.
 
 #### Nl2Br
 
 {% assign gist_file = 'Nl2br.haml' %}
 {% include gist.html %}
 
-Simple replaces all the newlines with the `<br />` tag.
+Simply replaces all the newlines with the `<br />` tag.
 
 ## Forms
 

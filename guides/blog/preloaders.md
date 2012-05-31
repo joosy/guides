@@ -11,7 +11,7 @@ RICH applications that we create with Joosy can weight a lot. While 200KB look n
 
 This preloader will use localStorage of client browser to manually load and save all the assets. This will guarantee stable cache and proper reloading. Beware though: client browser is supposed to support the localStorage feature. Shims are not doing very well here since for the elder browsers the amount of available storage is often not enough. Remember that 200k is your gziped value while it saves the unarchived JS inside localStorage.
 
-The practice shows however that even extremely large application always fit under 1Mb of minified JS. Which is far away from basicly available 5Mb limit.
+The practice shows, however, that even extremely large application always fit under 1Mb of minified JS. Which is far away from basicly available 5Mb limit.
 
 ## Inline
 
