@@ -13,7 +13,7 @@ Joosy behaves the same way but unlike elder brother it has to deal with events a
 
 <div class="info">
   <p>
-    Joosy tries to keep logic elements alive as long as possible. When the new page gets loaded, current layout (object instance, bindings, DOM, included widgets, etc.) will stay untouched unless new pages requires another layout. In this case Page will be linked to an existing instance.
+    Joosy tries to keep logic elements alive as long as possible. When the new page gets loaded, current layout (object instance, bindings, DOM, included widgets, etc.) will stay untouched unless new pages require another layout. In this case Page will be linked to an existing instance.
   </p>
 </div>
 
@@ -35,7 +35,7 @@ Take a look at the last tricky line. Using `{:id => @yield()}` we mark the `.con
 
 <div class="info">
   <p>
-    This may look like a silly name cause it clearly is not an `yield` in it's real meaning. But wait! Listen! We had a reason to use this name. It helps you to not remember another `longMethodToCall`. It mimics Rails in the closest possible way. 
+    This may look like a silly name 'cause it clearly is not an `yield` in it's real meaning. But wait! Listen! We had a reason to use this name. It helps you to not remember another `longMethodToCall`. It mimics Rails in the closest possible way. 
   </p>
 </div>
 

@@ -64,7 +64,7 @@ And you can go check your forms again. Invalidated fields will get it's class an
 
 <div class="warning">
   <p>
-    Forms is one of the most important parts of Joosy. You really should finish reading this chapter sooner or later. We won't need more info about forms for the whole blog guide though. But you realy should come back later even if decide to pass on to a <a href="/guides/blog/dynamic-rendering.html">Dynamic rendering</a> chapter.
+    Forms are one of the most important parts of Joosy. You really should finish reading this chapter sooner or later. We won't need more info about forms for the whole blog guide though. But you realy should come back later even if decide to pass on to a <a href="/guides/blog/dynamic-rendering.html">Dynamic rendering</a> chapter.
   </p>
 </div>
 
@@ -95,7 +95,7 @@ For the basic form (no resource) invalidation convention is something really eas
 
 As soon as your form is "attached" you can fill it with the Resource. Do it with `form.fill(resource)` call. In fact passing the `resource` parameter to attach is a shortcut to `fill`. Resource will modify form's behavior slightly.
 
-At firt this will try to fill the form with the actual fields values. Joosy will seek the fields by input names. According to Rails conventions you are supposed to call them `model[field]`. Same rule is applied to Joosy. Earlier in this guide we've already seen this convention at our edit form.
+At first this will try to fill the form with the actual fields values. Joosy will seek the fields by input names. According to Rails conventions you are supposed to call them `model[field]`. Same rule applies to Joosy. Earlier in this guide we've already seen this convention at our edit form.
 
 At second it will properly modify the action and method of form. If the given resource was new, it gets targeted to POST /models. Otherwise it gets targeted to PUT /models/:id. So you just bind your resource, no matter new or existing and form just works.
 

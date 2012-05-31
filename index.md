@@ -11,7 +11,7 @@ Joosy allows you to create web apps which work completely in the browser. So tha
 
 Besides Rails, Joosy is based on top of [CoffeeScript](http://coffeescript.org/), [jQuery](http://jquery.com/) and [Sugar.js](http://sugarjs.com/) in role of ActiveSupport.
 
-Finally, Joosy boosts your development drastically. Just like the Rails do.
+Finally, Joosy boosts your development drastically. Just like Rails does.
 
 ## Joosy basics
 
@@ -32,11 +32,11 @@ Finally, Joosy boosts your development drastically. Just like the Rails do.
 * ### [Resources](guides/blog/resources.html)
 
   Resources are your models data representations. Before we get to the application itself, we'll learn how to fetch
-  the backend and manage the data after you received it.
+  from the backend and manage the data after you received it.
 
 * ### [Layouts, pages and routing](guides/blog/layouts-pages-and-routing.html)
 
-  In this chapter we'll create basic blog pages with layouts and learn how routing in Joosy works. We'll either learn how to load basic data from server during page load.
+  In this chapter we'll create basic blog pages with layouts and learn how routing in Joosy works. We'll alse learn how to load basic data from server during page load.
 
 * ### [Elements, events and filters](guides/blog/elements-events-and-filters.html)
 

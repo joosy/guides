@@ -5,7 +5,7 @@ title: "Dynamic rendering"
 
 {% assign gist_id = 2827878 %}
 
-During this chapter we'll implement inline post title edit. It will be available at `post/show` page. As you click on the title it gets replaced with the inline form. After that the submit title shows up again, but with the new value.
+During this chapter we'll implement inline post title editing. It will be available at `post/show` page. As you click on the title it gets replaced with the inline form. After that the submit title shows up again, but with the new value.
 
 ## Templates and partials scopes
 
