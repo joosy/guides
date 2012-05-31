@@ -11,7 +11,7 @@ Here is the typical transport flow for the Rails web application:
 
 ![Typical](http://f.cl.ly/items/322w1b1j2y2X0C212O1U/typical.png)
 
-Joosy moves the HTML rendering, events handling and everything that is connected to the views right into your browser. During preloading, Joosy gets all the templates from the server and uses Rails backend as a REST data provider. And your application looks like this:
+Joosy moves HTML rendering, event handling and everything that is connected to the views right to your browser. During preloading, Joosy gets all the templates from the server and uses Rails backend as a REST data provider. And your application looks like this:
 
 ![Joosy](http://f.cl.ly/items/0k3f1W2p1H0B1j0r231Z/joosy.png)
 
@@ -35,7 +35,7 @@ And last but no the least: viva la [HAML](http://haml.info/)! Joosy uses templat
 
 ### Not am MVC? But...
 
-The idea is simple. REST in not an SQL. Application Server is not an RDBMS. You can't have real logic inside your models. Therefore you don't have models. Inside your browser you don't need to be linked to REST structure since your only goal is an interaction with user. That's why you don't need controllers. Joosy operates with View terms. It has pages, layouts and widgets. Each of them works with templates, resources (doh... models) and forms. That's pretty much it, the typical separation for the View part.
+The idea is simple. REST in not SQL. Application Server is not an RDBMS. You can't have real logic inside your models. Therefore you don't have models. Inside your browser you don't need to be linked to REST structure since your only goal is the interaction with user. That's why you don't need controllers. Joosy operates with View terms. It has pages, layouts and widgets. Each of them works with templates, resources (doh... models) and forms. That's pretty much it, the typical separation for the View part.
 
 ![Scheme](http://cl.ly/1M470v24220L2e080h1L/scheme.png)
 
@@ -60,7 +60,7 @@ To send data back Joosy has a `Form`. It wraps your basic HTML form and turns it
 
 ### Okay, it's like Rails. Anything else?
 
-Unlike Rails server application it has a state. For example if you use the only `Layout` for every page it will never get reloaded. Unlike the data it holds. To ease the DOM updates Joosy has `dynamic rendering` feature. It allows you to bind your resource to a template to automatically update DOM whenever resource changes. No manual events handling and rerendering. You just call `@renderDynamic` for a partial and it always stays actual.
+Unlike Rails server application it has the state. For example if you use the only `Layout` for every page it will never get reloaded. Unlike the data it holds. To ease the DOM updates Joosy has `dynamic rendering` feature. It allows you to bind your resource to a template to automatically update DOM whenever resource changes. No manual events handling and rerendering. You just call `@renderDynamic` for a partial and it always stays actual.
 
 {% assign gist_file = 'Partial Sample.haml' %}
 {% include gist.html %}
