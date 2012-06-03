@@ -418,3 +418,10 @@ hr.additional {
 .container section.row .sixteen.columns {
     min-height: 35.99em;
 }
+.twitter img {
+  height: 17px;
+  margin-left: 5px;
+  margin-top: 3px;
+  position: absolute;
+  width: 21px;
+}
