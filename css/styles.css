@@ -15,8 +15,10 @@ a:visited { color: #67BCD5; }
 header { 
   margin-bottom: 30px; 
   padding-top: 20px;
-  background: linear-gradient(#ffa000, #ff8300); 
-  border-bottom: 1px solid #e0e0e0; 
+  background: linear-gradient(#ffa000, #ff8300);
+  -pie-background: linear-gradient(#ffa000, #ff8300);
+  border-bottom: 1px solid #e0e0e0;
+  behavior: url(css/PIE.htc);
 }
 
 header h1 { 
@@ -97,9 +99,16 @@ header .nav li a {
 header .nav .index {
   padding: .4em 1em;
   background: #f23900;
-  border-radius: .5em;
+  border-radius: 0.5em;
   position: relative;
+  z-index: 100;
+  -webkit-border-radius: 0.5em;
+  -moz-border-radius: 0.5em;;
+  border-radius: 0.5em;
+  display: inline-block;
+  behavior: url(css/PIE.htc)
 }
+
 
 h2.section { 
   font-size: 13px;
@@ -239,7 +248,7 @@ small { font-size: 80%; }
     left:5.2em;
     font-family: Helvetica,Arial,sans-serif;
     line-height: 1.3em !important;
-    behavior: url(PIE.htc);
+    behavior: url(css/PIE.htc);
    }
 
 #guides hr {
@@ -286,7 +295,7 @@ small { font-size: 80%; }
 
 #header .nav .index a {
   position: relative;
-  z-index: 15;
+
 }
 
 #header .nav a {
@@ -305,6 +314,7 @@ small { font-size: 80%; }
 a.index {
   position: relative;
   z-index: 15;
+
 }
 
 table.comparison {
