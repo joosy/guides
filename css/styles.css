@@ -51,7 +51,7 @@ header .nav {
   margin-top: 2em;
   font-size: 17px;
 }
-
+/*
 section.topbar {
   background: #3c3c3c;
   background: linear-gradient(#3c3c3c, #2a2a2a);
@@ -80,6 +80,72 @@ section.topbar li {
 
 section.topbar li:last-child {
   border-right: none;
+}
+*/
+
+
+.topbar {
+  background: #3c3c3c;
+  background: -moz-linear-gradient(#3C3C3C, #2A2A2A) repeat scroll 0 0 transparent;
+  background-image:-webkit-linear-gradient(top, #3C3C3C, #2A2A2A);
+  padding-top: .8em;
+  margin-bottom: -1em;
+  font-size: .7em;
+  text-align: center;
+  height: 4em;
+  
+}
+.topbar .topbar_wrap {
+  width:734px;
+  margin: 3px auto 0;
+}
+.twitter {
+  border-right: 0px solid #000000;
+}
+  .topbar .twitter img {
+    height: 17px;
+    margin-left: 26px;
+    position: absolute;
+    top: 11px;
+    width: 21px;
+  }
+
+.topbar a {
+   color: #ffa000;
+  font-weight: bold;
+  display: block;
+  margin-top:-4px;
+  position: relative;
+  top: 1px;
+}
+
+.topbar td.disabled a{
+  color: gray;
+  text-decoration: none;
+  font-weight: bold;
+}
+.topbar td.active a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.topbar td {
+  margin: 0;
+  padding: 0 0.7em;
+  border-right: .1em solid #626262;
+}
+
+.topbar td:last-child {
+  border-right: none;
+}
+
+.topbar .container {
+  width: 734px !important;
+}
+
+header {
+	border-top:#ffcf80 1px solid;
 }
 
 header .nav li, section.topbar li {
@@ -427,11 +493,4 @@ hr.additional {
 }
 .container section.row .sixteen.columns {
     min-height: 35.99em;
-}
-.twitter img {
-  height: 17px;
-  margin-left: 5px;
-  margin-top: 3px;
-  position: absolute;
-  width: 21px;
 }
