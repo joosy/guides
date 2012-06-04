@@ -27,7 +27,7 @@ Joosy is not an MVC framework. It addresses the same problems as Backbone or Emb
 
 The first point is required to feel Joosy the right way. It was greatly inspired by the approach Rails promotes. Unlike most of alternatives we don't stay away from a real-life troubles. Nor we expect the community to decide on it's own. We try to give some kind of convention for each of them. Just like in Rails you should concetrate on what you do. Not how you do it.
 
-[CoffeeScript](http://rubyonrails.org/) is an alma-mater of Joosy. In theory you can use Joosy with a plain JS but you won't be happy. We use the Coffee meta posibilities heavily. Joosy is class-based and relays on CoffeeScript static methods prototype magic. Without having requirement to stay JS-compatible we created an interface that is as clear as possible.
+[CoffeeScript](http://rubyonrails.org/) is an alma-mater of Joosy. In theory you can use Joosy with a plain JS but you won't be happy. We use the Coffee meta posibilities heavily. Joosy is class-based and relies on CoffeeScript static methods prototype magic. Without having requirement to stay JS-compatible we created an interface that is as clear as possible.
 
 We've added some spice to the Rails+Coffee combo. Applause, the [Sugar.js](http://sugarjs.com/). This incredible library extends the JS the way you are used to with an ActiveSupport. All the comfortable features are here: `[].first`, `'foo'.camelize`, `'fluffy'.pluralize` and many-many more. This sauce really make the Coffee feel just like Ruby.
 
