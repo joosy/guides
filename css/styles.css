@@ -144,8 +144,22 @@ section.topbar li:last-child {
   width: 734px !important;
 }
 
+
+.webkit .topbar .twitter img, .msie .topbar .twitter img  {
+  height:17px;
+  margin-left:47px;
+  position:absolute;
+}
+.msie .topbar .twitter{
+	border-right: 0px black solid;
+}
+.webkit .topbar {
+	height:4.1em;
+}
+
 header {
 	border-top:#ffcf80 1px solid;
+	position:relative;
 }
 
 header .nav li, section.topbar li {
