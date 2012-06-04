@@ -96,8 +96,14 @@ section.topbar li:last-child {
   
 }
 .topbar .topbar_wrap {
-  width:  764px;
+  width:  734px;
   margin: 3px auto 0;
+}
+.topbar .topbar_wrap table {
+  width: 100%;
+}
+.topbar .topbar_wrap td {
+  white-space: nowrap;
 }
 .twitter {
   border-right: 0px solid #000000;
