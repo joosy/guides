@@ -70,8 +70,6 @@ Finally, Joosy boosts your development drastically. Just like Rails does.
 
 * ### [Search engines indexing](guides/advanced/search-engines-indexing.html)
 
-  <span style="color:red">In progress.</span>
-
 * ### [Authentication](guides/advanced/authentication.html)
 
   <span style="color:red">In progress.</span>
