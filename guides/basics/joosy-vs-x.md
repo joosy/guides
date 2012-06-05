@@ -21,7 +21,7 @@ The another thing we inherit from Rails is a passion to have a nice set of ready
     <th class="title">Joosy</th>
   </tr>
   <tr>
-    <th>Backend-indepent</th>
+    <th>Backend-independent</th>
     <td class="y">✔</td>
     <td class="y">✔</td>
     <td class="n">✖</td>
