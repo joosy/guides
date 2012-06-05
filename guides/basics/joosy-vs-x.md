@@ -97,7 +97,7 @@ The another thing we inherit from Rails is a passion to have a nice set of ready
     <td>
       Raw: <b>5.6 Kb</b>
       <br />
-      Bundled: <b>38 Kb</b>
+      Bundled: <b>42 Kb</b>
     </td>
     <td>
       Raw: <b>42 Kb</b>
@@ -116,6 +116,6 @@ The another thing we inherit from Rails is a passion to have a nice set of ready
 Bundled size is the size of the framework and related assets and
 libraries:
 
-* **Backbone**: jQuery
+* **Backbone**: jQuery, Underscore
 * **Ember.js**: jQuery
 * **Joosy**: jQuery, Sugar.js
