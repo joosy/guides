@@ -11,7 +11,7 @@ Besides "AJAXification" it either helps you handle fields management (in conjuct
 
 ## Preparations
 
-To imlpement creation and modification of posts we'll have to add two more pages: `posts/edit` and `posts/new`.
+To implement creation and modification of posts we'll have to add two more pages: `posts/edit` and `posts/new`.
 
 {% assign gist_file = 'Generate pages.sh' %}
 {% include gist.html %}
