@@ -53,7 +53,7 @@ The other thing you can do with Resource is to subscribe to it's modification ev
 {% assign gist_file = 'Entity monitor.coffee' %}
 {% include gist.html %}
 
-You can get a Resource not only by a retrieving if from the server but either by creating it:
+You can get a Resource not only by a retrieving it from the server but either by creating it:
 
 {% assign gist_file = 'Entry creation.coffee' %}
 {% include gist.html %}
