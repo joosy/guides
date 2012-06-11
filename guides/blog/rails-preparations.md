@@ -23,9 +23,14 @@ Besides basic functionality Rails has to offer, we'll need to include `joosy` ge
 {% assign gist_file = 'Gemfile.rb' %}
 {% include gist.html %}
 
-Now make bundler handle the dependencies and make twitter-bootstrap gem prepare to do the job:
+Now make bundler handle the dependencies:
 
 {% assign gist_file = 'Bundle.sh' %}
+{% include gist.html %}
+
+We need one more thing to do to include twitter bootstrap. Rename your `app/assets/stylesheets/application.css` to `app/assets/stylesheets/application.css.scss` and fill it with following content:
+
+{% assign gist_file = 'application.css.scss' %}
 {% include gist.html %}
 
 Using Rails scaffold let's prepare some entities we will need inside our blog:
