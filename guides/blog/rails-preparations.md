@@ -50,7 +50,7 @@ Run `rake db:migrate` and `rake db:seed` to make your seeds real and that's pret
 
 ### Joosy application generation
 
-Each Rails application can have several Joosy applications inside it. You can, for example, have seperate applications for your front part and the admin one.
+Each Rails application can have several Joosy applications inside it. You can, for example, have separate applications for your front part and the admin one.
 
 Let's start from generating the front part:
 
