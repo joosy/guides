@@ -21,39 +21,39 @@ As before let's add some routes to ginger our new pages up:
 {% assign gist_file = 'Routes.coffee' %}
 {% include gist.html %}
 
-Ensure your `posts/new` route goes _before_ the `posts/:id` one. Routing does always seek for the first match and id matcher will either consume `posts/new` if defined first.
+Ensure your `posts/new` route goes _before_ the `posts/:id` one. Routing always use the first match and id matcher will also consume `posts/new` if defined first.
 
-Both pages will actually use the same form. So it's a good candidate to be a partial. Put the following haml to something like `templates/pages/posts/_form.jst.hamlc`:
+Both pages will actually use the same form, so it's a good candidate to be a partial. Put the following haml in `templates/pages/posts/_form.jst.hamlc`:
 
 {% assign gist_file = 'Form.haml' %}
 {% include gist.html %}
 
-Joosy has built-in Rails `form_for` analog and we'll get back to this in later chapters. But for now having just two fields hand-writen in HAML is not that bad, so we pass on.
+Joosy has a built-in Rails `form_for` analog and we'll get back to this in later chapters. But for now having just two fields hand-writen in HAML is not that bad, so we will leave it for now.
 
-Including this partial to both pages is pretty easy task. Here's how both of our pages templates are going to look:
+Including this partial to both pages is a pretty easy task. Here's how both of our pages templates are going to look:
 
 {% assign gist_file = 'Include.haml' %}
 {% include gist.html %}
 
 ## Basic binding
 
-We'll work on both pages in parallel since code is going to be pretty similar. In real life you will probably want to refactor it along. But let's keep some duplication to maintain simplicity. We are just learning after all.
+We'll work on both pages in parallel since code is going to be quite similar. In real life you will probably want to refactor it, but let's keep some duplication to maintain simplicity. We are just learning, after all.
 
-`Joosy.Form` works in conjuction with Resource. So what we need to go forward is to get resources for the both pages. And we'll need to address the form so let's bind actual element.
+`Joosy.Form` works in conjuction with Resource. So what we need to go forward is to get resources for the both pages. And we'll need to address the form so let's bind the actual element (TODO: rewrite this sentence).
 
 {% assign gist_file = 'Fetch.coffee' %}
 {% include gist.html %}
 
-With this code we'll make `@data.post` to contain the resource for the form at both pages. The next code is absolutely identical for either creation and modification so just clone it.
+With this code we'll make a `@data.post` to contain the resource for the form for both pages. The next code is absolutely identical for either creation or modification, so just clone it.
 
 {% assign gist_file = 'Bind.coffee' %}
 {% include gist.html %}
 
-Go and check. Your forms are ready. Everything else will be covered by inner magic. Even the validation. But to make it work we'll have to add proper CSS classes and, khm, actually validate something on the server.
+Go and check. Your forms are ready. Everything else will be covered by inner magic. Even the validation. But to make it work we'll have to add proper CSS classes and, khm, actually validate something on the server. (TODO: Rewrite this paragraph.)
 
 ## Invalidation
 
-In our case we don't really need to modify styles since we use the same CSS rule name with Rails. And therefore proper CSS is already specified at `scaffold.css`. But if you want to give it a better look search for `.field_with_errors`.
+In our case we don't really need to modify styles since we use the same CSS rule name with Rails. And therefore proper CSS is already specified at `scaffold.css.scss`. But if you want to give it a better look search for `.field_with_errors`.(TODO: Either include an example, or drop this paragraph entirely.)
 
 At the server part we'll have to modify our `Post` model:
 
@@ -64,7 +64,7 @@ And you can go check your forms again. Invalidated fields will get it's class an
 
 <div class="warning">
   <p>
-    Forms are one of the most important parts of Joosy. You really should finish reading this chapter sooner or later. We won't need more info about forms for the whole blog guide though. But you realy should come back later even if decide to pass on to a <a href="/guides/blog/dynamic-rendering.html">Dynamic rendering</a> chapter.
+    Forms are one of the most important parts of Joosy. You really should finish reading this chapter sooner or later. We won't need more info about forms for the whole blog guide though. But you really should come back later even if decide to pass on to a <a href="/guides/blog/dynamic-rendering.html">Dynamic rendering</a> chapter.
   </p>
 </div>
 
@@ -80,16 +80,16 @@ The main goal of `Joosy.Form` is to turn your forms into AJAX to avoid page relo
 * If `error` callback was not defined but we got error, try to highlight invalidations
 * During form upload call `progress` callback periodically and pass in the upload progress
 
-So the default basic look of `attach` call is:
+So the default basic look of `attach` call is: (TODO: Please clarify this paragraph)
 
 {% assign gist_file = 'Basic attach.coffee' %}
 {% include gist.html %}
 
-This call will not modify (or set) the method (POST, PUT etc) of form. And will only affect its action if it was explicitly passed as an `action` parameter. So if you have no resource for the form you still can "activate" it and unleash the power of success/error/progress callbacks.
+This call (TODO: what 'call'?) will not modify (or set) the method (POST, PUT etc) of the form, it will only affect its action if it was explicitly passed as an `action` parameter. So if you have no resource for the form you still can "activate" it and unleash the power of success/error/progress callbacks.(TODO: Why?)
 
-While success and progress events are very straightforward, the `error` hook plays an important role of validation. If this was not specified Joosy will fallback to default invalidation proccess (which is described below). And more, even if it was specified and did return `true` explicitly, Joosy will still run it's invalidation proccess. This is supposed to ease your form validation handling dramatically.
+While success and progress events are very straightforward, the `error` hook plays an important role of validation. If this was not specified Joosy will fallback to default validation proccess (which is described below). And more, even if it was specified and did return `true` explicitly, Joosy will still run it's validation proccess. This is supposed to ease your form validation handling dramatically.
 
-For the basic form (no resource) invalidation convention is something really easy. `{field: 'error message'}` – this response will make Joosy seek for `input name=field` and mark it as invalid. It matches Rails conventions perfectly.
+For the basic form (no resource) validation convention is something really easy. `{field: 'error message'}` – this response will make Joosy seek for `input name=field` and mark it as invalid. It matches Rails conventions perfectly.
 
 ## Resources
 
