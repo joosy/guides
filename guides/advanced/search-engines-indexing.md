@@ -5,7 +5,7 @@ title: "Search engines indexing"
 
 {% assign gist_id = 2127685 %}
 
-Javascript frameworks are widely criticized for the potential problems with search engines indexing. While this is not the case for private parts of your site, sometimes you might want use Joosy for the front part either. Fortunately, to solve this problem Google introduced [AJAX Crawling API](https://developers.google.com/webmasters/ajax-crawling/). Nowadays it is supported not only by Google but either by Bing (and therefore Yahoo) and local market players.
+Javascript frameworks are widely criticized for the potential problems with search engines indexing. While this is not the case for private parts of your site, sometimes you might want use Joosy for the publicly visible part as well. Fortunately, to solve this problem Google introduced [AJAX Crawling API](https://developers.google.com/webmasters/ajax-crawling/). Nowadays it is supported not only by Google but also by Bing (and therefore Yahoo) and local market players.
 
 It works by replacing the hashbang (#!) in your url.
 
@@ -23,7 +23,7 @@ You setup your http balancer to proxy everything containing `_escaped_fragment_`
 
 Internally Hashbang consists of two parts. The gem with Rack layer itself and the [Sunscraper](https://github.com/roundlake/sunscraper) gem that does the dirty job. Sunscraper is the independent gem that bundles QT Webkit and is able to grab  your RICH applications. It loads the application and waits for the special JS function to be called. As soon as it happens, it takes current window HTML and returns it.
 
-To make debugging comfortable, Hashbang has a special workflow for the Rails development mode. It uses middleware stack to capture `_escaped_fragment_` requests without HTTP balancer. On a local machine you can just check your urls with a single limitation. It won't work with a typical single-threaded webrick server run. If you want to test Hashbang, run your server with `rake hashbang:rails`. It will start double-threaded Unicorn.
+To make debugging comfortable, Hashbang has a special workflow for the Rails development mode. It uses middleware stack to capture `_escaped_fragment_` requests without HTTP balancer. On a local machine you can just check your urls with a single limitation:  it won't work with a typical single-threaded webrick server run. If you want to test Hashbang, run your server with `rake hashbang:rails`. It will start a double-threaded Unicorn.
 
 Let's walk through step by step proccess.
 
@@ -56,7 +56,7 @@ Inside the config.rb file hashbang keeps its settings. It has just two directive
 * **url**: allows you to specify regular expression that will keep hashbang from loading anything else. By default hashbang will work with any url and that's totally wrong. So ensure to add correct domain check here.
 * **timeout**: this is the maximum time it will wait for the page to load and finish JS preparations.
 
-Now that hashbang is ready, we need to add proper JS call to notify crawler that page is ready. To do this you have to call `Sunscraper.finish()`. Remember that for the direct queries, you wont'get Sunscraper object defined. So if you are using CoffeeScript, it should be inserted like `Sunscraper?.finish()` to not break your default bootstrap process.
+Now that hashbang is ready, we need to add proper JS call to notify crawler that page is ready. To do this you have to call `Sunscraper.finish()`. Remember that for the direct queries, you won't get a Sunscraper object defined. So if you are using CoffeeScript, you should call `Sunscraper?.finish()` to not break your default bootstrap process.
 
 Joosy has a special page event that could be used:
 
@@ -67,7 +67,7 @@ Run your application with `rake hashbang:rails` and check any local url replaced
 
 ## Server setup (nginx + passenger)
 
-Here is the typical Nginx setup that worth a thousand words:
+Here is the typical Nginx setup that is worth a thousand words:
 
 {% assign gist_file = 'nginx.conf' %}
 {% include gist.html %}
