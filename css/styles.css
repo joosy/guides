@@ -412,7 +412,7 @@ table.comparison b {
   font-weight: bold;
 }
 
-table.comparison th, td {
+table.comparison th, table.comparison td {
   padding: 10px;
   text-align: center;
 }
