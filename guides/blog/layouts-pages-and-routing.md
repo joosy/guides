@@ -5,9 +5,9 @@ title: "Layouts, pages and routing"
 
 {% assign gist_id = 2785784 %}
 
-In Rails each page is the action template. It gets wrapped into the layout and includes number of partials. As the result you get your HTML generated.
+In Rails each page is the action template. It gets wrapped into the layout and includes a number of partials. As a result you get your HTML generated.
 
-Joosy behaves the same way but unlike elder brother it has to deal with events and user interaction logic so it's not just a renderer. Joosy separates the templates layer and a logic level. Logic level consists of the `Page`, the `Layout` which wraps the page and set of `Widget`s that can be included in both, `Page` and `Layout`. Each element of the logic level uses templates to describe rendering.
+Joosy behaves the same way but unlike its elder brother it has to deal with events and user interaction logic so it's not just a renderer. Joosy separates the templates layer from a logic level. Logic level consists of the `Page`, the `Layout` which wraps the page and set of `Widget`s that can be included in both, `Page` and `Layout`. Each element of the logic level uses templates to describe rendering.
 
 ![](http://f.cl.ly/items/1S130q3C0n1s2R1I1T0S/pages.png)
 
@@ -26,7 +26,7 @@ With your first app you got your first page and layout generated. They are situa
 layouts/application.js.coffee</pre>
 </div>
 
-We'll start from the Layout. The only option it sets makes Joosy seek for a template for this layout at `templates/layouts/application.jst.hamlc`. Since we don't really need any logic at our Layout for now let's just modify the HAML. Using twitter bootstrap we can come up with something like this:
+We'll start from the Layout. The only option it sets makes Joosy look for a template for this layout at `templates/layouts/application.jst.hamlc`. Since we don't really need any logic at our Layout for now let's just modify the HAML. Using twitter bootstrap we can come up with something like this:
 
 {% assign gist_file = 'Layout.haml' %}
 {% include gist.html %}
@@ -41,7 +41,7 @@ Take a look at the last tricky line. Using `{:id => @yield()}` we mark the `.con
 
 ## Pages
 
-Let's move on to the pages. To structure application better we will not use the default pregenerated page (we'll remove it later) but create a set of new ones! We'll need three pages: the list of posts, single post view and two forms – to create the post and edit it. We'll get to modification while working with forms and now let's generate list and view pages:
+Let's move on to the pages. To structure application better we will not use the default pregenerated page (we'll remove it later) but create a set of new ones! We'll need three pages: the list of posts, single post view and two forms – to create the post and edit it. We'll get to modification while working with forms, so now let's generate the list and view pages:
 
 {% assign gist_file = 'Generate.sh' %}
 {% include gist.html %}
@@ -67,7 +67,7 @@ Open your browser and go to:
 
 ## Fetching
 
-The only thing left to do is to get the real data from server and put it into the template. Joosy defines `fetch` hook that should be used to load required data. Page, Layout and Widget will expect `@data` to contain hash of template's local variable. So this is how it's supposed to look:
+The only thing left to do is to get the real data from the server and put it into the template. Joosy defines `fetch` hook that should be used to load the required data. Page, Layout and Widget will expect `@data` to contain a hash of the template's local variables. So this is how it's supposed to look:
 
 {% assign gist_file = 'Fetch.coffee' %}
 {% include gist.html %}
@@ -77,12 +77,12 @@ Now insert the proper variables into your templates:
 {% assign gist_file = 'Pages.haml' %}
 {% include gist.html %}
 
-That's it, your pages now contain real data from server. 
+That's it, your pages now contain real data from the server. 
 
 <div class="info">
   <p>
-    We did not replaced the blog post date field. Moreover we don't even have such a field inside our model. That's a good chance to practice a bit: try to add this field to your model and templates to consolidate your knowledges.
+    We did not replace the blog post date field. Moreover we don't even have such a field inside our model. This is a good opportunity to practice a bit: try to add this field to your model and templates to consolidate your knowledge.
   </p>
 </div>
 
-At this stage we got our Rails backend, Resources and two pages with actual data from server. And further we go with [elements, events and filters](/guides/blog/elements-events-and-filters.html).
+At this stage we got our Rails backend, Resources and two pages with actual data from server. Now, we go further with [elements, events and filters](/guides/blog/elements-events-and-filters.html).
