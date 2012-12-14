@@ -23,7 +23,7 @@ If you try the same for the `Comment` resource you'll see quite another result:
 
 ![Comment](http://f.cl.ly/items/1L2j3r1V1H333v430F1v/comment.png)
 
-The reason of this is that Joosy resources predefiner is not destructive. And since W3C defines top-level Comment object it was not rewriten. To carry this out we'll have to generate required resource manually (this is either something you should do if you turn automatic generation off).
+The reason for this is that Joosy resources predefiner is not destructive. And since W3C defines a top-level Comment object it was not rewriten. To carry this out we'll have to generate the required resource manually (this is also something you should do if you turn automatic generation off).
 
 {% assign gist_file = 'Generate.sh' %}
 {% include gist.html %}
@@ -39,7 +39,7 @@ Here's the short list of the commands that load and modify the resource:
 {% assign gist_file = 'Basic entry actions.coffee' %}
 {% include gist.html %}
 
-Did you notice the `save` method was not mentioned? Joosy uses Forms to notify server about modifications. We'll discuss creation and modification in later chapters and now let's focus on the additionals options we can find and create entities with. And the way we can monitor Resource changes.
+Did you notice the `save` method was not mentioned? Joosy uses Forms to notify the server about modifications. We'll discuss creation and modification in later chapters but for now let's focus on the additional options we can find and create entities with, and the way we can monitor Resource changes.
 
 Here are extended `find` options that can be extremely useful for your REST implementation:
 
@@ -53,12 +53,12 @@ The other thing you can do with Resource is to subscribe to it's modification ev
 {% assign gist_file = 'Entity monitor.coffee' %}
 {% include gist.html %}
 
-You can get a Resource not only by a retrieving it from the server but either by creating it:
+You can get a Resource not only by a retrieving it from the server but also by creating it:
 
 {% assign gist_file = 'Entry creation.coffee' %}
 {% include gist.html %}
 
-As it was mentioned, Joosy uses identity map. So every object sharing the same ID will either share the same instance. No matter if it was created using `build` or retrieved several times. This gets really useful with events. No matter where and how you got your Resource. If someone is subscribed to modification of instance with id X it will get its notification.
+As it was mentioned, Joosy uses an identity map. So every object sharing the same ID will also share the same instance, no matter if it was created using `build` or retrieved several times. This gets really useful with events. No matter where and how you got your Resource. If someone is subscribed to modification of an instance with id X it will get its notification.
 
 ### Collections
 
@@ -71,23 +71,23 @@ Just like single entries collections allow events subscriptions (same name, 'cha
 
 ### Relations
 
-REST is not SQL. That's why REST consumer does not really needs the relations. Your typical task is to _reduce_ number of HTTP queries that's why it's a common practice to load top instance that has children inlines. However inlined children are still separate resources that's why Joosy supports some kind of `has_many` mapping.
+REST is not SQL. That's why a REST consumer does not really need the relations. Your typical task is to _reduce_ the number of HTTP queries that's why it's a common practice to load a top instance that has children inlines. However, inlined children are still separate resources that's why Joosy supports some kind of `has_many` mapping.
 
 {% assign gist_file = 'Mappings.coffee' %}
 {% include gist.html %}
 
 ### Modificators
 
-The last but not the least goes the ability to modify data before it gets accepted by the resource. This is a typical task if we want make resource to contain `Date` instances instead of strings. Note that `@beforeLoad` should explicitly return the full data set. 
+Last but not the least is the ability to modify data before it gets accepted by the resource. This is a typical task if we want make a resource to contain `Date` instances instead of strings. Note that `@beforeLoad` should explicitly return the full data set. 
 
 {% assign gist_file = 'Modificators.coffee' %}
 {% include gist.html %}
 
-You can chain this hooks: they will be evalutated in the order they appear at your resource. And by the way, `@map` is a syntax sugar for exactly this function. It will register specific `@beforeLoad` in its internals.
+You can chain these hooks: they will be evalutated in the order they appear at your resource. And by the way, `@map` is simply syntax sugar for exactly this function. It will register a specific `@beforeLoad` in its internals.
 
 <div class="warning">
   <p>
-    This is pretty enough to complete our Blog implementation goal. So if you want, you can skip to the <a href="/guides/blog/layouts-pages-and-routing">next chapter</a> and study additional resources capabilities later.
+    This is quite enough to complete our Blog implementation goal. So if you want, you can skip to the <a href="/guides/blog/layouts-pages-and-routing">next chapter</a> and study additional resources capabilities later.
   </p>
 </div>
 
