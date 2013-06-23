@@ -3,7 +3,7 @@ layout: index
 title: "Guides"
 ---
 
-# Joosy Guides (v1.0.0)
+# Joosy Guides (v1.1.0)
 
 Joosy is a javascript framework. Being a harmonious extensions to Rails it introduces everything you like about this framework right to your browser. Ready conventions set, extensive CoffeeScript, HAML support, Helpers, seamless backend integration, automatic code generation and more.
 
