@@ -13,7 +13,7 @@ The another thing we inherit from Rails is a passion to have a nice set of ready
 
 ### Highlights comparison
 
-<table class="comparison">
+&#x20;<table class="comparison">
   <tr>
     <th style="width: 1%"></th>
     <th class="title"><a href="http://documentcloud.github.com/backbone/">Backbone</a></th>
@@ -110,8 +110,7 @@ The another thing we inherit from Rails is a passion to have a nice set of ready
       Bundled: <b>87 Kb</b>
     </td>
   </tr>
-</table>
-<br /><br />
+</table><br /><br />
 
 Bundled size is the size of the framework and related assets and
 libraries:
