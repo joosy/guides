@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Resources — Joosy Guides</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="/css/base.css">
+    <link rel="stylesheet" href="/css/skeleton.css">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/credits.css">
+    <link rel="stylesheet" href="http://yandex.st/highlightjs/6.2/styles/default.min.css">
+    <script src="http://cachedcommons.org/cache/modernizr/1.5.0/javascripts/modernizr-min.js"></script>
+    <script src="/js/common.js"></script>
+    <script src="/js/prefixfree.min.js"></script>
+    <script src="/js/jquery-1.7.2.min.js"></script>
+	<script src="/js/jquery.browser.js"></script>
+    <script>
+      function toggle(element) {
+        element.style.display = (element.style.display == 'none') ? 'block' : 'none'
+      }
+    </script>
+  </head>
+  <body>
+     <div class="topbar">
+       <div class="topbar_wrap">
+         <table cellpadding="0" cellspacing="0">
+		   <tbody>
+		     <tr>		    
+			   <td><a href="http://joosy.ws">Joosy (1.1.0)</a></td>
+			   <td class="disabled"><a href="#" >Who's using</a></td>
+  			   <td><a href="http://sample.joosy.ws">Annotated sample</a></td>
+			   <td class="active"><a href="http://guides.joosy.ws">Guides</a></td>
+			   <td class="disabled"><a href="#" >Screencasts</a></td>
+			   <td><a href="http://api.joosy.ws">API</a></td>
+			   <td><a href="http://github.com/joosy/joosy">Code</a></td>
+			   <td><a href="http://github.com/joosy/joosy/issues">Bugs/Patches</a></td>
+			   <td  class="disabled"><a href="#">Community</a></td>
+			   <td class="twitter">
+  			     <a href="http://twitter.com/joosy_web">Twitter</a>
+			     <img src="/img/twit_sign_orange.png" alt="">
+			   </td>
+		     </tr>
+		   </tbody>
+	     </table>
+       </div>
+     </div>
+     <header>
+      <div class="container">
+        <div class="six columns">
+          <h1><a href="/">Joosy Guides</a></h1>
+        </div>
+        <div class="ten columns">
+          <ul class="nav">
+            <li><a href="/">Home</a></li>
+            <li>
+              <a href="#" onclick="toggle(document.getElementById('guides'))" class="index">Guides Index &#9660;</a>
+              <div style="display: none;" class="clearfix" id="guides">
+                <hr />
+                <dl class="L">
+                  <dt>Joosy basics</dt>
+                  <dd><a href="/guides/basics/getting-started.html">Getting Started</a></dd>
+                  <dd><a href="/guides/basics/joosy-vs-x.html">Joosy vs X</a></dd>
+                  <dt>Creating a blog on Joosy</dt>
+                  <dd><a href="/guides/blog/rails-preparations.html">Rails preparations</a></dd>
+                  <dd><a href="/guides/blog/resources.html">Resources</a></dd>
+                  <dd><a href="/guides/blog/layouts-pages-and-routing.html">Layouts, Pages and Routing</a></dd>
+                  <dd><a href="/guides/blog/elements-events-and-filters.html">Elements, Events and Filters</a></dd>
+                  <dd><a href="/guides/blog/dynamic-rendering.html">Dynamic rendering</a></dd>
+                  <dd><a href="/guides/blog/widgets.html">Widgets</a></dd>
+                  <dd><a href="/guides/blog/helpers.html">Helpers</a></dd>
+                  <dd><a href="/guides/blog/forms.html">Forms</a></dd>
+                  <dd><a href="/guides/blog/preloaders.html">Preloaders</a></dd>
+                  <dd><a href="/guides/blog/load-unload-and-in-progress-animations.html">Load, unload, animations</a></dd>
+                </dl>
+                <dl class="R">
+                  <dt>Advanced guides</dt>
+                  <dd><a href="/guides/advanced/search-engine-indexing.html">Search engine indexing</a></dd>
+                  <dd><a href="/guides/advanded/authentication.html">Authentication</a></dd>
+                  <dd><a href="/guides/advanced/permissions.html">Permissions and ACL</a></dd>
+                  <dd><a href="/guides/advanced/template-engine.html">Template engines</a></dd>
+                </dl>
+              </div>
+            </li> 
+            <li><a href="/contribute.html">Contribute</a></li>
+            <li><a href="/credits.html">Credits</a></li>
+          </ul>
+        </div>
+      </div>
+    </header>
+    <div class="container">
+      <section class="row">
+        <div class="sixteen columns">
+          <article class="hentry">
+  <div class="entry-header">
+    <h2>Resources</h2>
+  </div>
+  <div class="entry-content">
+    <div class="info">
+  <p>
+    During this familiarization chapter we won't use our Application but your browser's console. Still the source code is given in Coffee so you can see how it is going to look at your day to day use. If you want to try some snippets, you can use perfect <a href="http://js2coffee.org/">js2coffee</a> resource to compile the code and evaluate at your browser.
+  </p>
+</div>
+
+<h3>Generation</h3>
+
+<p>One of the most important parts of your application is the data you get from your server to work with. While most of other frameworks call this a <code>Model</code> at Joosy we call it <code>Resource</code>. Your application logic will always remain at server. This is something we can&#39;t change. And since Joosy allows you to create helpers, extending your Resource is truly a rare case. So it&#39;s much more a definition of your server data container than a Model.</p>
+
+<p>Having a ready set of Rails REST routes Joosy predefines resources for you inside <code>blog_railties.js.coffee.erb</code> class. We&#39;ll discuss pregeneration options later and now let&#39;s move on the magic! At the previous chapter we&#39;ve generated two scaffolds for <code>Post</code> and <code>Comment</code> models. In a default setup it means that you already have two classes ready to use. Open your browser console and check if <code>Post</code> is accessible.</p>
+
+<p><img src="http://f.cl.ly/items/3R3420150W0x3A0k1m2q/post.png" alt="Post"></p>
+
+<p>If you try the same for the <code>Comment</code> resource you&#39;ll see quite another result:</p>
+
+<p><img src="http://f.cl.ly/items/1L2j3r1V1H333v430F1v/comment.png" alt="Comment"></p>
+
+<p>The reason for this is that Joosy resources predefiner is not destructive. And since W3C defines a top-level Comment object it was not rewriten. To carry this out we&#39;ll have to generate the required resource manually (this is also something you should do if you turn automatic generation off).</p>
+
+<script src="http://gist.github.com/2775191.js?file=Generate.sh">// Gist is loading...</script>
+
+<p><img src="http://f.cl.ly/items/3n0Y3R1Q1M130z3J0F0Q/real_comment.png" alt="Comment"></p>
+
+<p>Way better now. We have both resources defined. One of those is manually generated and is located at <code>blog/resources/comment.js.coffee</code>.</p>
+
+<h3>Entries</h3>
+
+<p>Here&#39;s the short list of the commands that load and modify the resource:</p>
+
+<script src="http://gist.github.com/2775191.js?file=Basic entry actions.coffee">// Gist is loading...</script>
+
+<p>Did you notice the <code>save</code> method was not mentioned? Joosy uses Forms to notify the server about modifications. We&#39;ll discuss creation and modification in later chapters but for now let&#39;s focus on the additional options we can find and create entities with, and the way we can monitor Resource changes.</p>
+
+<p>Here are extended <code>find</code> options that can be extremely useful for your REST implementation:</p>
+
+<script src="http://gist.github.com/2775191.js?file=Entry find.coffee">// Gist is loading...</script>
+
+<p>You can combine any of these three options inside your <code>find</code> call to retrieve from the URL like <code>/posts/1/posts/2/foo?foo=bar</code>.</p>
+
+<p>The other thing you can do with Resource is to subscribe to it&#39;s modification event. Each time you modify any field or it gets reloaded it will let you know:</p>
+
+<script src="http://gist.github.com/2775191.js?file=Entity monitor.coffee">// Gist is loading...</script>
+
+<p>You can get a Resource not only by a retrieving it from the server but also by creating it:</p>
+
+<script src="http://gist.github.com/2775191.js?file=Entry creation.coffee">// Gist is loading...</script>
+
+<p>As it was mentioned, Joosy uses an identity map. So every object sharing the same ID will also share the same instance, no matter if it was created using <code>build</code> or retrieved several times. This gets really useful with events. No matter where and how you got your Resource. If someone is subscribed to modification of an instance with id X it will get its notification.</p>
+
+<h3>Collections</h3>
+
+<p>Among your pages you&#39;ll often want to work with a number of entities instead of just one. Joosy introduces collections as a resources sets.</p>
+
+<script src="http://gist.github.com/2775191.js?file=Collections basics.coffee">// Gist is loading...</script>
+
+<p>Just like single entries collections allow events subscriptions (same name, &#39;changed&#39;) and accept same additional options to <code>find</code> method.</p>
+
+<h3>Relations</h3>
+
+<p>REST is not SQL. That&#39;s why a REST consumer does not really need the relations. Your typical task is to <em>reduce</em> the number of HTTP queries that&#39;s why it&#39;s a common practice to load a top instance that has children inlines. However, inlined children are still separate resources that&#39;s why Joosy supports some kind of <code>has_many</code> mapping.</p>
+
+<script src="http://gist.github.com/2775191.js?file=Mappings.coffee">// Gist is loading...</script>
+
+<h3>Modificators</h3>
+
+<p>Last but not the least is the ability to modify data before it gets accepted by the resource. This is a typical task if we want make a resource to contain <code>Date</code> instances instead of strings. Note that <code>@beforeLoad</code> should explicitly return the full data set. </p>
+
+<script src="http://gist.github.com/2775191.js?file=Modificators.coffee">// Gist is loading...</script>
+
+<p>You can chain these hooks: they will be evalutated in the order they appear at your resource. And by the way, <code>@map</code> is simply syntax sugar for exactly this function. It will register a specific <code>@beforeLoad</code> in its internals.</p>
+
+<div class="warning">
+  <p>
+    This is quite enough to complete our Blog implementation goal. So if you want, you can skip to the <a href="/guides/blog/layouts-pages-and-routing">next chapter</a> and study additional resources capabilities later.
+  </p>
+</div>
+
+<hr class="additional" />
+
+<h3>Raw HTTP calls</h3>
+
+<p>Resources also allow you to do direct HTTP calls. Both the class and the object of Resource have same number of methods: get, post, put, delete. The difference is the actual request URL they will use:</p>
+
+<script src="http://gist.github.com/2775191.js?file=Raw queries.coffee">// Gist is loading...</script>
+
+<p>You can see that each of them accepts path modifiers just like <code>find</code> does.</p>
+
+<h3>Accurate Resource setup</h3>
+
+<p>Sometimes you might want to use Joosy for existing REST providers which are not able to fullfill our conventions. Each manually-generated Resource contains several points of controll. Here are the most of them:</p>
+
+<script src="http://gist.github.com/2775191.js?file=Resource setup.coffee">// Gist is loading...</script>
+
+<p>You can proceed building a blog with Joosy in the next chapter - <a href="/guides/blog/layouts-pages-and-routing.html">layouts, pages and routing</a>.</p>
+
+  </div>
+</article>
+
+        </div>
+      </section>
+    </div>
+    <div id="footer">
+        <div class="wrapper">
+            <p>This work is licensed under a <a href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-Share Alike 3.0</a> License</p>
+            <p>Sources of this guide are available <a href="https://github.com/joosy/guides">on Github</a>.</p>
+        </div>
+    </div>
+    <script type="text/javascript">
+      var _gauges = _gauges || [];
+      (function() {
+        var t   = document.createElement('script');
+        t.type  = 'text/javascript';
+        t.async = true;
+        t.id    = 'gauges-tracker';
+        t.setAttribute('data-site-id', '4fb67f54f5a1f56550000016');
+        t.src = '//secure.gaug.es/track.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(t, s);
+      })();
+    </script>
+  </body>
+</html>

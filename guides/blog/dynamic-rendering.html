@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Contributors — Joosy Guides</title>
+    <title>Dynamic rendering — Joosy Guides</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <link rel="stylesheet" href="/css/base.css">
@@ -90,46 +90,47 @@
     <div class="container">
       <section class="row">
         <div class="sixteen columns">
-          <section id="content" class="post-list">
-  <div class="entry-content" id="container">
-  <div class="wrapper">
-  <div id="mainCol">
-    <h3 class="section">Joosy Authors</h3>
-    <div class="module">
-      <img height="91" width="91" src="http://www.gravatar.com/avatar/7c4ac3f00d81fbb8ba329163b3dc6b2a.png?size=91" class="left pic" alt="Boris Staal">
-      <div class="right">
-        <h3>Boris Staal</h3>
-        <p>
-          Ruby-world open-source enthusiast working as an evangelist at <a href="http://www.roundlake.ru">Round Lake</a>. Author of several wide-known gems, contributor to several known Node.js packages like <a href="http://netzpirat.github.com/codo/">Codo</a>. Shares strange thoughts at <a href="http://borisstaal.com/">his Tumblr blog</a>.
-        </p>
-      </div>
-    </div>
-    <div class="module">
-      <img height="91" width="91" src="img/photo.gif" class="left pic" alt="Andrew Shaydurov">
-      <div class="right">
-        <h3>Andrew Shaydurov</h3>
-        <p>Ruby fan, CoffeeScript lover. CTO of the MainPeople network. Addicted to start-ups, commercials, web-interfaces and playing piano.</p>
-      </div>
-    </div>
-    <div class="module">
-      <img height="91" width="91" src="http://www.gravatar.com/avatar/0dd4414dec1137cde9a69f41090c6735.png?size=91" class="left pic" alt="Alexander Pavlenko">
-      <div class="right">
-        <h3>Alexander Pavlenko</h3>
-        <p>Impressive description goes here.</p>
-      </div>
-    </div>
-    <h3 class="section">Guides Designers</h3>
-    <div class="module">
-      <img height="91" width="91" src="img/photo.gif" class="left pic" alt="Heiko Webers">
-      <div class="right">
-        <h3><a href="http://guides.rubyonrails.org/credits.html">Rails guides contributors</a></h3>
-        <p>Design was shamelessly copied from original Rails guides. Credit and a deep bow goes to original authors.</p>
-      </div>
-    </div>
+          <article class="hentry">
+  <div class="entry-header">
+    <h2>Dynamic rendering</h2>
   </div>
-</div>
+  <div class="entry-content">
+    <p>During this chapter we&#39;ll implement inline post title editing. It will be available at <code>post/show</code> page. As you click on the title it gets replaced with the inline form. After that the submit title shows up again, but with the new value.</p>
 
-</section>
+<h2>Templates and partials scopes</h2>
+
+<p>While working on forms we already faced partials of templates. Just like in Rails, partials are just other templates that get included. While <code>@render</code> seems a really easy-to-use thing (and it really is), it has its ace in the hole. Common approach for the most of template engines is to accept a Hash as the context of rendering. With Joosy you can either pass in the Resource and the Collection. Remember that any other types besides Object, Resource, Collection will raise an exception.</p>
+
+<script src="http://gist.github.com/2827878.js?file=Template Scopes.coffee">// Gist is loading...</script>
+
+<p>Note that <code>@data</code> variable you use at a page is internally used exactly as a rendering context. So it shares the same rules, you can fill it with Resource or Collection, not only a Hash (like we did everywhere before).</p>
+
+<h2>Dynamic partials</h2>
+
+<p>Joosy has the ability to keep partial up-to-date. It&#39;s being achieved by using <a href="http://api.joosy.ws/mixins/Joosy/Modules/Events.html">Events</a>. As soon as any of partial scope variables triggers <code>changed</code> event, Joosy will rerender exactly this part of page with the same instances. You can use this manually but two typical use cases are Resource and Collection that do trigger <code>changed</code> event on each modification.</p>
+
+<p>Open up your <code>posts/show</code> template and move the title header into partial.</p>
+
+<script src="http://gist.github.com/2827878.js?file=Partial.haml">// Gist is loading...</script>
+
+<p>Now let the magic begin! Open up your console being at <code>/blog/#!/posts/1</code> page. And call something like <code>Joosy.Application.page.data.post(&#39;title&#39;, &#39;test&#39;)</code>. See? It reloads the partial and the new title appears on the page as soon as you modify resource.</p>
+
+<h2>Inline title editor</h2>
+
+<p>We need to modify <code>post/show</code> once more to add the hidden form.</p>
+
+<script src="http://gist.github.com/2827878.js?file=Form.haml">// Gist is loading...</script>
+
+<p>Everything else should be quite familiar if you did read the previous guides. These are the additions to the Posts.ShowPage:</p>
+
+<script src="http://gist.github.com/2827878.js?file=Editor.coffee">// Gist is loading...</script>
+
+<p>Note the Line 14. As soon as server responds successfully, we modify the resource and it immediately gets updated at DOM.</p>
+
+<p>And now that our inline editor is ready why not copy that to index page? To keep code clean and avoid duplication <a href="/guides/blog/widgets.html">the next chapter</a> will describe the clear way to achieve this using Widgets.</p>
+
+  </div>
+</article>
 
         </div>
       </section>

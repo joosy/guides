@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Contributors — Joosy Guides</title>
+    <title>Helpers — Joosy Guides</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <link rel="stylesheet" href="/css/base.css">
@@ -90,46 +90,71 @@
     <div class="container">
       <section class="row">
         <div class="sixteen columns">
-          <section id="content" class="post-list">
-  <div class="entry-content" id="container">
-  <div class="wrapper">
-  <div id="mainCol">
-    <h3 class="section">Joosy Authors</h3>
-    <div class="module">
-      <img height="91" width="91" src="http://www.gravatar.com/avatar/7c4ac3f00d81fbb8ba329163b3dc6b2a.png?size=91" class="left pic" alt="Boris Staal">
-      <div class="right">
-        <h3>Boris Staal</h3>
-        <p>
-          Ruby-world open-source enthusiast working as an evangelist at <a href="http://www.roundlake.ru">Round Lake</a>. Author of several wide-known gems, contributor to several known Node.js packages like <a href="http://netzpirat.github.com/codo/">Codo</a>. Shares strange thoughts at <a href="http://borisstaal.com/">his Tumblr blog</a>.
-        </p>
-      </div>
-    </div>
-    <div class="module">
-      <img height="91" width="91" src="img/photo.gif" class="left pic" alt="Andrew Shaydurov">
-      <div class="right">
-        <h3>Andrew Shaydurov</h3>
-        <p>Ruby fan, CoffeeScript lover. CTO of the MainPeople network. Addicted to start-ups, commercials, web-interfaces and playing piano.</p>
-      </div>
-    </div>
-    <div class="module">
-      <img height="91" width="91" src="http://www.gravatar.com/avatar/0dd4414dec1137cde9a69f41090c6735.png?size=91" class="left pic" alt="Alexander Pavlenko">
-      <div class="right">
-        <h3>Alexander Pavlenko</h3>
-        <p>Impressive description goes here.</p>
-      </div>
-    </div>
-    <h3 class="section">Guides Designers</h3>
-    <div class="module">
-      <img height="91" width="91" src="img/photo.gif" class="left pic" alt="Heiko Webers">
-      <div class="right">
-        <h3><a href="http://guides.rubyonrails.org/credits.html">Rails guides contributors</a></h3>
-        <p>Design was shamelessly copied from original Rails guides. Credit and a deep bow goes to original authors.</p>
-      </div>
-    </div>
+          <article class="hentry">
+  <div class="entry-header">
+    <h2>Helpers</h2>
   </div>
-</div>
+  <div class="entry-content">
+    <p>At Joosy helpers play exactly the same role as in Rails. They are defined on the application level and will work with any templating engine you use. That certainly includes default HAML one. What differs between Rails and Joosy is the default list of helpers we can afford to introduce for you. Browser-loading reality makes us to try hard to reduce bundle size. So we are very limited on the number of helpers we can include.</p>
 
-</section>
+<h2>Views</h2>
+
+<p>This section defines three useful helpers:</p>
+
+<h4>Tag</h4>
+
+<script src="http://gist.github.com/2829817.js?file=Tag.haml">// Gist is loading...</script>
+
+<h4>Render Wrapped</h4>
+
+<script src="http://gist.github.com/2829817.js?file=Wrapped.haml">// Gist is loading...</script>
+
+<p>Being an indentation-dependent syntax, HAML has a weak part: wrapping. You can easily insert inline part of code as a partial but opposite turns into a hell. This helper was meant to solve the problem. The partial you render will get the same context as the current template. The content given to the helper as the second parameter will be put at <code>@yield</code> variable inside wrapping partial.</p>
+
+<h4>Nl2Br</h4>
+
+<script src="http://gist.github.com/2829817.js?file=Nl2br.haml">// Gist is loading...</script>
+
+<p>Simply replaces all the newlines with the <code>&lt;br /&gt;</code> tag.</p>
+
+<h2>Forms</h2>
+
+<p>This set of helpers was meant to ease forms html generation. It was shamelessly cloned from a Rails with a very tiny modifications. Here is the full example of a form:</p>
+
+<script src="http://gist.github.com/2829817.js?file=Form.haml">// Gist is loading...</script>
+
+<p>Only the first argument (name of resource field to draw input for) is required for most of tags. The only exception is a <code>radioButton</code> that requires the second parameter (button value).</p>
+
+<h2>Creating own helpers</h2>
+
+<p>Joosy application skeleton includes <code>helpers</code> directory at its root. <code>helpers/application.js.coffee</code> contains basic sample of a helper. Let&#39;s define our own helper to make our blog a little more piratish:</p>
+
+<script src="http://gist.github.com/2829817.js?file=Helper.coffee">// Gist is loading...</script>
+
+<p>All the helper defined among <code>Application</code> namespace (take a look at line 1) will be accessible at every template. The time has come to prepeate your pirate hook and the parrot:</p>
+
+<script src="http://gist.github.com/2829817.js?file=Pirate Title.haml">// Gist is loading...</script>
+
+<p>And where the hell is rum?</p>
+
+<p>We are not going to piratize anything but blog post titles and they are concectrated in a single widget. In this particular case it&#39;s not recomended to polute the global helpers namespace.</p>
+
+<h2>Namespaces and inclusions</h2>
+
+<p>Helpers namespaces is a thing that will help you to avoid pollution. Let&#39;s move our helper to the new non-global namespace called &#39;Pirates&#39;.</p>
+
+<script src="http://gist.github.com/2829817.js?file=Pirates Helper.coffee">// Gist is loading...</script>
+
+<p>To include this namespace to our widget use this string inside your widget class:</p>
+
+<script src="http://gist.github.com/2829817.js?file=Helpers Inclusion.coffee">// Gist is loading...</script>
+
+<p>Yarr! Now you are officially an encapsulated pirate!</p>
+
+<p>Most of our blog work is complete. As it was mentioned from the start Joosy has set of preloading strategies bundled. Now is the time to ensure our app loads properly with the <a href="/guides/blog/preloaders.html">next chapter</a>.</p>
+
+  </div>
+</article>
 
         </div>
       </section>

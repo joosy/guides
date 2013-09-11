@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Contributors — Joosy Guides</title>
+    <title>Guides — Joosy Guides</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <link rel="stylesheet" href="/css/base.css">
@@ -91,43 +91,77 @@
       <section class="row">
         <div class="sixteen columns">
           <section id="content" class="post-list">
-  <div class="entry-content" id="container">
-  <div class="wrapper">
-  <div id="mainCol">
-    <h3 class="section">Joosy Authors</h3>
-    <div class="module">
-      <img height="91" width="91" src="http://www.gravatar.com/avatar/7c4ac3f00d81fbb8ba329163b3dc6b2a.png?size=91" class="left pic" alt="Boris Staal">
-      <div class="right">
-        <h3>Boris Staal</h3>
-        <p>
-          Ruby-world open-source enthusiast working as an evangelist at <a href="http://www.roundlake.ru">Round Lake</a>. Author of several wide-known gems, contributor to several known Node.js packages like <a href="http://netzpirat.github.com/codo/">Codo</a>. Shares strange thoughts at <a href="http://borisstaal.com/">his Tumblr blog</a>.
-        </p>
-      </div>
-    </div>
-    <div class="module">
-      <img height="91" width="91" src="img/photo.gif" class="left pic" alt="Andrew Shaydurov">
-      <div class="right">
-        <h3>Andrew Shaydurov</h3>
-        <p>Ruby fan, CoffeeScript lover. CTO of the MainPeople network. Addicted to start-ups, commercials, web-interfaces and playing piano.</p>
-      </div>
-    </div>
-    <div class="module">
-      <img height="91" width="91" src="http://www.gravatar.com/avatar/0dd4414dec1137cde9a69f41090c6735.png?size=91" class="left pic" alt="Alexander Pavlenko">
-      <div class="right">
-        <h3>Alexander Pavlenko</h3>
-        <p>Impressive description goes here.</p>
-      </div>
-    </div>
-    <h3 class="section">Guides Designers</h3>
-    <div class="module">
-      <img height="91" width="91" src="img/photo.gif" class="left pic" alt="Heiko Webers">
-      <div class="right">
-        <h3><a href="http://guides.rubyonrails.org/credits.html">Rails guides contributors</a></h3>
-        <p>Design was shamelessly copied from original Rails guides. Credit and a deep bow goes to original authors.</p>
-      </div>
-    </div>
-  </div>
-</div>
+  <h1>Joosy Guides (v1.1.0)</h1>
+
+<p>Joosy is a javascript framework. Being a harmonious extensions to Rails it introduces everything you like about this framework right to your browser. Ready conventions set, extensive CoffeeScript, HAML support, Helpers, seamless backend integration, automatic code generation and more.</p>
+
+<p>Joosy allows you to create web apps which work completely in the browser. So that, it helps you to relocate all your Rails Views to the client side. It also helps you with managing the growing quantity of JS code. On another hand, it makes your backend to have exactly one function --  to be a simple REST provider. That leads to easier development support and improves the scalability greatly.</p>
+
+<p>Besides Rails, Joosy is based on top of <a href="http://coffeescript.org/">CoffeeScript</a>, <a href="http://jquery.com/">jQuery</a> and <a href="http://sugarjs.com/">Sugar.js</a> in role of ActiveSupport.</p>
+
+<p>Finally, Joosy boosts your development drastically. Just like Rails does.</p>
+
+<h2>Joosy basics</h2>
+
+<ul>
+<li><h3><a href="guides/basics/getting-started.html">Getting started</a></h3>
+
+<p>Everything you need to know to get started. Architecture description and incredible features highlight.</p></li>
+<li><h3><a href="guides/basics/joosy-vs-x.html">Joosy vs X</a></h3>
+
+<p>Comparison of Joosy against Backbone and Ember.js.</p></li>
+</ul>
+
+<h2>Creating a blog on Joosy</h2>
+
+<ul>
+<li><h3><a href="guides/blog/rails-preparations.html">Rails preparations</a></h3>
+
+<p>During this chapter we&#39;ll setup Joosy application based on a Rails application and prepare tiny REST backend.</p></li>
+<li><h3><a href="guides/blog/resources.html">Resources</a></h3>
+
+<p>Resources are your models data representations. Before we get to the application itself, we&#39;ll learn how to fetch
+from the backend and manage the data after you received it.</p></li>
+<li><h3><a href="guides/blog/layouts-pages-and-routing.html">Layouts, pages and routing</a></h3>
+
+<p>In this chapter we&#39;ll create basic blog pages with layouts and learn how routing in Joosy works. We&#39;ll alse learn how to load basic data from server during page load.</p></li>
+<li><h3><a href="guides/blog/elements-events-and-filters.html">Elements, events and filters</a></h3>
+
+<p>This chapter describes HTML elements and events binding. We&#39;ll add useless hiding clocks to our header, yay!</p></li>
+<li><h3><a href="guides/blog/forms.html">Forms</a></h3>
+
+<p>With help of Forms we&#39;ll finally add posts management to our blog. We&#39;ll make tiny admin pages to create and edit posts.</p></li>
+<li><h3><a href="guides/blog/dynamic-rendering.html">Dynamic rendering</a></h3>
+
+<p>This chapter will show you what you can do with your resources and dynamic binding. We&#39;ll learn how to link variable value and its HTML representation which will automatically update after variable changes. Using that we&#39;ll add inline title editor to our blog.</p></li>
+<li><h3><a href="guides/blog/widgets.html">Widgets</a></h3>
+
+<p>In this chapter we&#39;ll move our inline title editor to a widget and will reuse it on all blog posts pages.</p></li>
+<li><h3><a href="guides/blog/helpers.html">Helpers</a></h3>
+
+<p>Using helpers we&#39;ll add piratish flavour to our blog. This chapter either learns how to create local helpers accessible only inside views of one page.</p></li>
+<li><h3><a href="guides/blog/preloaders.html">Preloaders</a></h3>
+
+<p>Now that our blog is ready we&#39;ll improve its loading. This chapter will learn you how to use two different kind of preloaders that come with Joosy. You&#39;ll know their advantages and how you can use them.</p></li>
+<li><h3><a href="guides/blog/load-unload-and-in-progress-animations.html">Load, unload and &#39;in progress&#39; animations</a></h3>
+
+<p>This is advanced chapter that will show you how you can get some advanced control over the process of pages loading. We&#39;ll add fading animation that will both: indicate the process of page loading and just look good :).</p></li>
+</ul>
+
+<h2>Advanced guides</h2>
+
+<ul>
+<li><h3><a href="guides/advanced/search-engines-indexing.html">Search engines indexing</a></h3></li>
+<li><h3><a href="guides/advanced/authentication.html">Authentication</a></h3>
+
+<p><span style="color:red">In progress.</span></p></li>
+<li><h3><a href="guides/advanced/permissions-and-acl.html">Permissions and ACL management</a></h3>
+
+<p><span style="color:red">In progress.</span></p></li>
+<li><h3><a href="guides/advanced/how-to-switch-template-engine.html">How to switch template engine</a></h3>
+
+<p><span style="color:red">In progress.</span></p></li>
+</ul>
 
 </section>
 

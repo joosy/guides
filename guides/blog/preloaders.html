@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Contributors — Joosy Guides</title>
+    <title>Preloaders — Joosy Guides</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <link rel="stylesheet" href="/css/base.css">
@@ -90,46 +90,61 @@
     <div class="container">
       <section class="row">
         <div class="sixteen columns">
-          <section id="content" class="post-list">
-  <div class="entry-content" id="container">
-  <div class="wrapper">
-  <div id="mainCol">
-    <h3 class="section">Joosy Authors</h3>
-    <div class="module">
-      <img height="91" width="91" src="http://www.gravatar.com/avatar/7c4ac3f00d81fbb8ba329163b3dc6b2a.png?size=91" class="left pic" alt="Boris Staal">
-      <div class="right">
-        <h3>Boris Staal</h3>
-        <p>
-          Ruby-world open-source enthusiast working as an evangelist at <a href="http://www.roundlake.ru">Round Lake</a>. Author of several wide-known gems, contributor to several known Node.js packages like <a href="http://netzpirat.github.com/codo/">Codo</a>. Shares strange thoughts at <a href="http://borisstaal.com/">his Tumblr blog</a>.
-        </p>
-      </div>
-    </div>
-    <div class="module">
-      <img height="91" width="91" src="img/photo.gif" class="left pic" alt="Andrew Shaydurov">
-      <div class="right">
-        <h3>Andrew Shaydurov</h3>
-        <p>Ruby fan, CoffeeScript lover. CTO of the MainPeople network. Addicted to start-ups, commercials, web-interfaces and playing piano.</p>
-      </div>
-    </div>
-    <div class="module">
-      <img height="91" width="91" src="http://www.gravatar.com/avatar/0dd4414dec1137cde9a69f41090c6735.png?size=91" class="left pic" alt="Alexander Pavlenko">
-      <div class="right">
-        <h3>Alexander Pavlenko</h3>
-        <p>Impressive description goes here.</p>
-      </div>
-    </div>
-    <h3 class="section">Guides Designers</h3>
-    <div class="module">
-      <img height="91" width="91" src="img/photo.gif" class="left pic" alt="Heiko Webers">
-      <div class="right">
-        <h3><a href="http://guides.rubyonrails.org/credits.html">Rails guides contributors</a></h3>
-        <p>Design was shamelessly copied from original Rails guides. Credit and a deep bow goes to original authors.</p>
-      </div>
-    </div>
+          <article class="hentry">
+  <div class="entry-header">
+    <h2>Preloaders</h2>
   </div>
+  <div class="entry-content">
+    <p>RICH applications that we create with Joosy can weight a lot. While 200KB look not that much for modern internet it still can be a pain for mobile tethering. And it always is better to allow client see load progress. Joosy bundles preloaders that implement several strategies.</p>
+
+<h2>Caching (default one)</h2>
+
+<p>This preloader will use localStorage of client browser to manually load and save all the assets. This will guarantee stable cache and proper reloading. Beware though: client browser is supposed to support the localStorage feature. Shims are not doing very well here since for the elder browsers the amount of available storage is often not enough. Remember that 200k is your gziped value while it saves the unarchived JS inside localStorage.</p>
+
+<p>The practice shows, however, that even extremely large application always fit under 1Mb of minified JS. Which is far away from basicly available 5Mb limit.</p>
+
+<h2>Inline</h2>
+
+<p>Unlike caching preloader this one will relay on HTTP caching. Each page load will try to load all the assets over and over. It&#39;s a browser&#39;s choise if it will be loaded from the server or not. This kind of preloader has an unpleasant drawback. It can&#39;t tell you about the progress. It only supports <code>loaded</code> hook.</p>
+
+<h2>Preloaders API</h2>
+
+<p>All the preloaders share the same API (but not all of them use all of available hooks). The bootstrap code that uses the preloader of your blog is situated at <code>blog_preloader.js.coffee.erb</code>.</p>
+
+<script src="http://gist.github.com/2830293.js?file=Helper.coffee">// Gist is loading...</script>
+
+<p>Using this line you can controll which strategy will be used. Force option is something you can use to test your preloaders within development environment. By default preloaders will only be activated at production. Set it to true and reload your page.</p>
+
+<div class="info">
+  <p>
+    Note that within development environment (with `force: true`) caching preloader will never reset its cache. To force this you can call `localStorage.clear()` from your browser console.
+  </p>
 </div>
 
-</section>
+<p>The layout for your loading progress counter is situated in <code>app/views/blog.html.erb</code>. This is the place to add some CSS for a better look.</p>
+
+<p>But let&#39;s get back to the available options of the Preloader.</p>
+
+<script src="http://gist.github.com/2830293.js?file=Preloader.coffee">// Gist is loading...</script>
+
+<p>This is the typical preloader usage. It contains all the available options you can use. Some of preloaders (like Inline) may ignore <code>progress</code> callback but common logic is still the same.</p>
+
+<p>Please note that we do not use jQuery at this stage cause it&#39;s not yet available. You&#39;ll get it when the preloading is done. So it&#39;s safe to start using it inside your <code>bootstrap</code> callback but not before! Same goes to every other library you depend on.</p>
+
+<p>Take a closer look at what happens at the <code>start</code> callback. Before it was called our progress bar stays invisible. If you use the <code>Caching</code> strategy this helps to avoid progress bar blinking. Loading assets from localStorage takes some microseconds and for that time it will hang around. <code>start</code> callback will only be called if preloader is loading something from the server.</p>
+
+<h2>Bootstrap</h2>
+
+<p>And the last thing we have to discuss here does not directly touches the preloaders. It&#39;s about a Joosy application boostrap. Let&#39;s look through the actual <code>boostrap</code> callback</p>
+
+<script src="http://gist.github.com/2830293.js?file=Bootstrap.coffee">// Gist is loading...</script>
+
+<p>Application bootstrap accepts some options that you may find useful. Environment option has no direct use at this moment but the debug option does. As soon as you turn it on Joosy will start spamming your console with a lot of info that happens inside classes you use. Just give it a try. Sometimes it can save you an hour of debugging.</p>
+
+<p>Our blog is ready and prepared to load properly. This already is a finished product but there&#39;s still one interesting feature Joosy has to offer. Pass on to the <a href="/guides/blog/load-unload-and-in-progress-animations.html">final chapter</a> to learn how to controll page switch animation.</p>
+
+  </div>
+</article>
 
         </div>
       </section>

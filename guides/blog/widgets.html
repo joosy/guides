@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Contributors — Joosy Guides</title>
+    <title>Widgets — Joosy Guides</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <link rel="stylesheet" href="/css/base.css">
@@ -90,46 +90,69 @@
     <div class="container">
       <section class="row">
         <div class="sixteen columns">
-          <section id="content" class="post-list">
-  <div class="entry-content" id="container">
-  <div class="wrapper">
-  <div id="mainCol">
-    <h3 class="section">Joosy Authors</h3>
-    <div class="module">
-      <img height="91" width="91" src="http://www.gravatar.com/avatar/7c4ac3f00d81fbb8ba329163b3dc6b2a.png?size=91" class="left pic" alt="Boris Staal">
-      <div class="right">
-        <h3>Boris Staal</h3>
-        <p>
-          Ruby-world open-source enthusiast working as an evangelist at <a href="http://www.roundlake.ru">Round Lake</a>. Author of several wide-known gems, contributor to several known Node.js packages like <a href="http://netzpirat.github.com/codo/">Codo</a>. Shares strange thoughts at <a href="http://borisstaal.com/">his Tumblr blog</a>.
-        </p>
-      </div>
-    </div>
-    <div class="module">
-      <img height="91" width="91" src="img/photo.gif" class="left pic" alt="Andrew Shaydurov">
-      <div class="right">
-        <h3>Andrew Shaydurov</h3>
-        <p>Ruby fan, CoffeeScript lover. CTO of the MainPeople network. Addicted to start-ups, commercials, web-interfaces and playing piano.</p>
-      </div>
-    </div>
-    <div class="module">
-      <img height="91" width="91" src="http://www.gravatar.com/avatar/0dd4414dec1137cde9a69f41090c6735.png?size=91" class="left pic" alt="Alexander Pavlenko">
-      <div class="right">
-        <h3>Alexander Pavlenko</h3>
-        <p>Impressive description goes here.</p>
-      </div>
-    </div>
-    <h3 class="section">Guides Designers</h3>
-    <div class="module">
-      <img height="91" width="91" src="img/photo.gif" class="left pic" alt="Heiko Webers">
-      <div class="right">
-        <h3><a href="http://guides.rubyonrails.org/credits.html">Rails guides contributors</a></h3>
-        <p>Design was shamelessly copied from original Rails guides. Credit and a deep bow goes to original authors.</p>
-      </div>
-    </div>
+          <article class="hentry">
+  <div class="entry-header">
+    <h2>Widgets</h2>
   </div>
+  <div class="entry-content">
+    <p>According to the previous chapter goals we are going to move inline editor functionality to the Widget and include it into index page. Generate Widget:</p>
+
+<script src="http://gist.github.com/2828061.js?file=Generate.sh">// Gist is loading...</script>
+
+<h2>Creating widget</h2>
+
+<p>Just like pages and layouts, widgets can have elements, events, filters and templates. The key difference is the first container you meet that can be created by you. That&#39;s why it has constructor. Our current goal is to move all the functionality we created for the Show page to the widget as-is.</p>
+
+<script src="http://gist.github.com/2828061.js?file=Widget.coffee">// Gist is loading...</script>
+
+<p>Remember to remove all this stuff from the Show page! It&#39;s not needed anymore!</p>
+
+<p>The next step is to move all the required HAML into widget&#39;s template. And don&#39;t forget the dynamic partial that should be moved to <code>templates/widgets</code> directory either.</p>
+
+<script src="http://gist.github.com/2828061.js?file=Templates.haml">// Gist is loading...</script>
+
+<h2>Including widget</h2>
+
+<p>Widget is quite a common entity. Widget you create can wrap around existing DOM, use own templates, interact with page/layout or be completely encapsulated. To fulfill such needs Joosy introduces two methods to require widget.</p>
+
+<p>The first one goes the direct inclusion from within a template. This is a very comfortable way of inclusion if your widget has its own template and is encapsulated. Our new widget fits perfectly.</p>
+
+<script src="http://gist.github.com/2828061.js?file=Widget Template.haml">// Gist is loading...</script>
+
+<p>Look at the line one. The first argument is a container tag for the widget to be put at. Choose something that will not break your layout. And the second parameter is a widget you are going to bind to container tag. It can be a lambda (like in example) or just a widget class. In the latter case it will be created without arguments to constructor.</p>
+
+<p>And actually this is it. Nothing more is required to do. If only expand our widget usage to the Posts.Index page. So was the plan, wasn&#39;t it?</p>
+
+<script src="http://gist.github.com/2828061.js?file=Widget Index Template.haml">// Gist is loading...</script>
+
+<div class="warning">
+  <p>
+    More info about widgets inclusion and manipulation is not required to complete our blog. Skip to the <a href="/guides/blog/helpers.html">next chapter</a> if you want to get back to that later.
+  </p>
 </div>
 
-</section>
+<hr class="additional" />
+
+<h2>Alternative widget registration</h2>
+
+<p>If your widgets are about to control the existing DOM structures (please ensure you don&#39;t break encapsulation) or you are going to interact between widget and it&#39;s container, you have an option to directly bind the widget from a page. This looks similar to the elements and events bindings. You just define the <code>widgets</code> hash:</p>
+
+<script src="http://gist.github.com/2828061.js?file=Widgets Hash.coffee">// Gist is loading...</script>
+
+<p>To maintain direct bridge between the container and the widget you can assign creating instance of widet instance variable. That&#39;s exactly what we do at the third example. But <strong>beware</strong>! If the selector matches several DOM elements, each of them will be passed to a separate widget. And therefore with this lambda <code>@testWidget</code> will always contain the last loaded widget.</p>
+
+<h2>Manual registration and destruction</h2>
+
+<p>You can either register and unregister widgets manually. Page and Layout define two methods to help you with this. They are: <code>@registerWidget(container, widget)</code> and <code>@unregisterWidget(widget)</code>. </p>
+
+<p>The first one takes the reference to the DOM node (container) and the widget. The widget can be pased in the same manner, as a Class or as a lambda. <code>registerWidget</code> will return you the widget instance. It will be unloaded in process of page/layout destruction.</p>
+
+<p>In cases when you want to control the lifetime of this widget manually, use <code>unregisterWidget</code> that accepts the instance of widget to shutdown. Note that still widgets never survive destruction of page/layout they are contained by.</p>
+
+<p>Next Chapter - <a href="/guides/blog/helpers.html">helpers</a>.</p>
+
+  </div>
+</article>
 
         </div>
       </section>

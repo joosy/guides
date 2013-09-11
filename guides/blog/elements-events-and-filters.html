@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Contributors — Joosy Guides</title>
+    <title>Elements, events and filters — Joosy Guides</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <link rel="stylesheet" href="/css/base.css">
@@ -90,46 +90,53 @@
     <div class="container">
       <section class="row">
         <div class="sixteen columns">
-          <section id="content" class="post-list">
-  <div class="entry-content" id="container">
-  <div class="wrapper">
-  <div id="mainCol">
-    <h3 class="section">Joosy Authors</h3>
-    <div class="module">
-      <img height="91" width="91" src="http://www.gravatar.com/avatar/7c4ac3f00d81fbb8ba329163b3dc6b2a.png?size=91" class="left pic" alt="Boris Staal">
-      <div class="right">
-        <h3>Boris Staal</h3>
-        <p>
-          Ruby-world open-source enthusiast working as an evangelist at <a href="http://www.roundlake.ru">Round Lake</a>. Author of several wide-known gems, contributor to several known Node.js packages like <a href="http://netzpirat.github.com/codo/">Codo</a>. Shares strange thoughts at <a href="http://borisstaal.com/">his Tumblr blog</a>.
-        </p>
-      </div>
-    </div>
-    <div class="module">
-      <img height="91" width="91" src="img/photo.gif" class="left pic" alt="Andrew Shaydurov">
-      <div class="right">
-        <h3>Andrew Shaydurov</h3>
-        <p>Ruby fan, CoffeeScript lover. CTO of the MainPeople network. Addicted to start-ups, commercials, web-interfaces and playing piano.</p>
-      </div>
-    </div>
-    <div class="module">
-      <img height="91" width="91" src="http://www.gravatar.com/avatar/0dd4414dec1137cde9a69f41090c6735.png?size=91" class="left pic" alt="Alexander Pavlenko">
-      <div class="right">
-        <h3>Alexander Pavlenko</h3>
-        <p>Impressive description goes here.</p>
-      </div>
-    </div>
-    <h3 class="section">Guides Designers</h3>
-    <div class="module">
-      <img height="91" width="91" src="img/photo.gif" class="left pic" alt="Heiko Webers">
-      <div class="right">
-        <h3><a href="http://guides.rubyonrails.org/credits.html">Rails guides contributors</a></h3>
-        <p>Design was shamelessly copied from original Rails guides. Credit and a deep bow goes to original authors.</p>
-      </div>
-    </div>
+          <article class="hentry">
+  <div class="entry-header">
+    <h2>Elements, events and filters</h2>
   </div>
+  <div class="entry-content">
+    <div class="info">
+  <p>
+    In this chapter we will add the most stupid and useless feature of our blog, a digital clock. This clock that will appear when the mouse hits the header pane. While you probably will never do something like this in a real life, this is a very full example for our case.
+  </p>
 </div>
 
-</section>
+<p>For the start let&#39;s add a tiny mock to our layout HAML to inspect the future look of the clocks we are working on (Lines 4-7).</p>
+
+<script src="http://gist.github.com/2819730.js?file=Mock layout.haml">// Gist is loading...</script>
+
+<h2>Elements, Events</h2>
+
+<p>Inside your page, layout or widget you can define two lists. The list of DOM elements to wrap into jQuery and put into instance variables, and the list of events to bind to. The first thing we are about to do is to make our mock hide/appear when the mouse reaches <code>.navbar</code>. And since it&#39;s a part of a layout, we are going to work within it. Don&#39;t forget to explicitly set <code>style=&quot;display:none&quot;</code> (TODO: which .css.scss file?) right after you check your mock is in place to make your clocks hidden by default.</p>
+
+<script src="http://gist.github.com/2819730.js?file=Events.coffee">// Gist is loading...</script>
+
+<p>At its keys the <code>elements</code> hash contains the names of instance variables to assign, the values being the actual jQuery DOM selectors. As you can see in this example, it not only defines the instance variables but also allows you to avoid duplication while defining events. </p>
+
+<p>In the events hash you write <code>event_name selector</code> as a key and pass in lambdas (TODO: Example?) to call at this event. At the selector position you are allowed to use <code>$element</code> notation or simply put the full selector as-is: <code>click .foo .bar</code>. The lambdas you define accept two arguments: the first is the actual element the event was triggered on, wguke the second is the full jQuery event object. In our case we don&#39;t need any of them, so they are omited.</p>
+
+<p>Here is the alternative notation that can help your keep your code readable for the complex cases:</p>
+
+<script src="http://gist.github.com/2819730.js?file=Events (complex).coffee">// Gist is loading...</script>
+
+<h2>Filters</h2>
+
+<p>Now is the time to make our clocks alive. Joosy defines set of <code>before</code> and <code>after</code> hooks that are similar to Rails controller filters. To make clocks work we need to put actual time on when the pages load and register a javascript <code>interval</code> to update it every second. Put this code into your <code>ApplicationLayout</code>:(TODO: specify file name)</p>
+
+<script src="http://gist.github.com/2819730.js?file=Filters.coffee">// Gist is loading...</script>
+
+<p>The important thing to note is a <code>@setInterval</code> call. Joosy gives you two wrappers for common <code>setInteval</code> and <code>setTimeout</code> functions. There are two important differences between them and native calls. The first is the arguments order. In Joosy the first argument is the actual timeout/interval delay. Arguments were moved to ease callbacks description for Coffee. And the second difference is the garbage collection. Your interval/timeout will be automatically cleared whenever the container (layout/page/widget) is not active anymore. So you just define the interval and Joosy carries out all the rest.</p>
+
+<p>Together with <code>afterLoad</code> Joosy gives you the <code>beforeLoad</code> hook. Within beforeLoad you don&#39;t have your elements/events assigned nor you have your data fetched. But you can control the page loading flow. As soon as your <code>beforeLoad</code> returned false the page load will be aborted. So you can, for example, redirect user to another page.</p>
+
+<script src="http://gist.github.com/2819730.js?file=Flow control.coffee">// Gist is loading...</script>
+
+<p>Both <code>afterLoad</code> and <code>beforeLoad</code> can be chained. They will be called in the exact order you define those in your container. Moreover, if you use classe inheritance, Joosy will call parents hooks. The order is still under your control. Joosy will start from the upper parent and step down toward the children.</p>
+
+<p>The <a href="/guides/blog/forms.html">next chapter</a> is all about forms. We will finally come up with the way to create and edit blog posts.</p>
+
+  </div>
+</article>
 
         </div>
       </section>

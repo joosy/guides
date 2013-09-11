@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Forms — Joosy Guides</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="/css/base.css">
+    <link rel="stylesheet" href="/css/skeleton.css">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/credits.css">
+    <link rel="stylesheet" href="http://yandex.st/highlightjs/6.2/styles/default.min.css">
+    <script src="http://cachedcommons.org/cache/modernizr/1.5.0/javascripts/modernizr-min.js"></script>
+    <script src="/js/common.js"></script>
+    <script src="/js/prefixfree.min.js"></script>
+    <script src="/js/jquery-1.7.2.min.js"></script>
+	<script src="/js/jquery.browser.js"></script>
+    <script>
+      function toggle(element) {
+        element.style.display = (element.style.display == 'none') ? 'block' : 'none'
+      }
+    </script>
+  </head>
+  <body>
+     <div class="topbar">
+       <div class="topbar_wrap">
+         <table cellpadding="0" cellspacing="0">
+		   <tbody>
+		     <tr>		    
+			   <td><a href="http://joosy.ws">Joosy (1.1.0)</a></td>
+			   <td class="disabled"><a href="#" >Who's using</a></td>
+  			   <td><a href="http://sample.joosy.ws">Annotated sample</a></td>
+			   <td class="active"><a href="http://guides.joosy.ws">Guides</a></td>
+			   <td class="disabled"><a href="#" >Screencasts</a></td>
+			   <td><a href="http://api.joosy.ws">API</a></td>
+			   <td><a href="http://github.com/joosy/joosy">Code</a></td>
+			   <td><a href="http://github.com/joosy/joosy/issues">Bugs/Patches</a></td>
+			   <td  class="disabled"><a href="#">Community</a></td>
+			   <td class="twitter">
+  			     <a href="http://twitter.com/joosy_web">Twitter</a>
+			     <img src="/img/twit_sign_orange.png" alt="">
+			   </td>
+		     </tr>
+		   </tbody>
+	     </table>
+       </div>
+     </div>
+     <header>
+      <div class="container">
+        <div class="six columns">
+          <h1><a href="/">Joosy Guides</a></h1>
+        </div>
+        <div class="ten columns">
+          <ul class="nav">
+            <li><a href="/">Home</a></li>
+            <li>
+              <a href="#" onclick="toggle(document.getElementById('guides'))" class="index">Guides Index &#9660;</a>
+              <div style="display: none;" class="clearfix" id="guides">
+                <hr />
+                <dl class="L">
+                  <dt>Joosy basics</dt>
+                  <dd><a href="/guides/basics/getting-started.html">Getting Started</a></dd>
+                  <dd><a href="/guides/basics/joosy-vs-x.html">Joosy vs X</a></dd>
+                  <dt>Creating a blog on Joosy</dt>
+                  <dd><a href="/guides/blog/rails-preparations.html">Rails preparations</a></dd>
+                  <dd><a href="/guides/blog/resources.html">Resources</a></dd>
+                  <dd><a href="/guides/blog/layouts-pages-and-routing.html">Layouts, Pages and Routing</a></dd>
+                  <dd><a href="/guides/blog/elements-events-and-filters.html">Elements, Events and Filters</a></dd>
+                  <dd><a href="/guides/blog/dynamic-rendering.html">Dynamic rendering</a></dd>
+                  <dd><a href="/guides/blog/widgets.html">Widgets</a></dd>
+                  <dd><a href="/guides/blog/helpers.html">Helpers</a></dd>
+                  <dd><a href="/guides/blog/forms.html">Forms</a></dd>
+                  <dd><a href="/guides/blog/preloaders.html">Preloaders</a></dd>
+                  <dd><a href="/guides/blog/load-unload-and-in-progress-animations.html">Load, unload, animations</a></dd>
+                </dl>
+                <dl class="R">
+                  <dt>Advanced guides</dt>
+                  <dd><a href="/guides/advanced/search-engine-indexing.html">Search engine indexing</a></dd>
+                  <dd><a href="/guides/advanded/authentication.html">Authentication</a></dd>
+                  <dd><a href="/guides/advanced/permissions.html">Permissions and ACL</a></dd>
+                  <dd><a href="/guides/advanced/template-engine.html">Template engines</a></dd>
+                </dl>
+              </div>
+            </li> 
+            <li><a href="/contribute.html">Contribute</a></li>
+            <li><a href="/credits.html">Credits</a></li>
+          </ul>
+        </div>
+      </div>
+    </header>
+    <div class="container">
+      <section class="row">
+        <div class="sixteen columns">
+          <article class="hentry">
+  <div class="entry-header">
+    <h2>Forms</h2>
+  </div>
+  <div class="entry-content">
+    <p>Joosy includes a very powerful tool to make forms handling really comfortable. <code>Joosy.Form</code> wraps your html form and makes it totally AJAXified. No matter if it contains text data or files. So you wrap it and whenever it gets submited you get one of your hooks called (they can be <code>success</code>, <code>error</code>, <code>progress</code>) with the response data passed in.</p>
+
+<p>Besides &quot;AJAXification&quot; it either helps you handle fields management (in conjuction with resources) and invalidation. Both of these will be greatly covered among this chapter.</p>
+
+<h2>Preparations</h2>
+
+<p>To implement creation and modification of posts we&#39;ll have to add two more pages: <code>posts/edit</code> and <code>posts/new</code>.</p>
+
+<script src="http://gist.github.com/2822781.js?file=Generate pages.sh">// Gist is loading...</script>
+
+<p>As before let&#39;s add some routes to ginger our new pages up:</p>
+
+<script src="http://gist.github.com/2822781.js?file=Routes.coffee">// Gist is loading...</script>
+
+<p>Ensure your <code>posts/new</code> route goes <em>before</em> the <code>posts/:id</code> one. Routing always use the first match and id matcher will also consume <code>posts/new</code> if defined first.</p>
+
+<p>Both pages will actually use the same form, so it&#39;s a good candidate to be a partial. Put the following haml in <code>templates/pages/posts/_form.jst.hamlc</code>:</p>
+
+<script src="http://gist.github.com/2822781.js?file=Form.haml">// Gist is loading...</script>
+
+<p>Joosy has a built-in Rails <code>form_for</code> analog and we&#39;ll get back to this in later chapters. But for now having just two fields hand-writen in HAML is not that bad, so we will leave it for now.</p>
+
+<p>Including this partial to both pages is a pretty easy task. Here&#39;s how both of our pages templates are going to look:</p>
+
+<script src="http://gist.github.com/2822781.js?file=Include.haml">// Gist is loading...</script>
+
+<h2>Basic binding</h2>
+
+<p>We&#39;ll work on both pages in parallel since code is going to be quite similar. In real life you will probably want to refactor it, but let&#39;s keep some duplication to maintain simplicity. We are just learning, after all.</p>
+
+<p><code>Joosy.Form</code> works in conjuction with Resource. So what we need to go forward is to get resources for the both pages. And we&#39;ll need to address the form so let&#39;s bind the actual element (TODO: rewrite this sentence).</p>
+
+<script src="http://gist.github.com/2822781.js?file=Fetch.coffee">// Gist is loading...</script>
+
+<p>With this code we&#39;ll make a <code>@data.post</code> to contain the resource for the form for both pages. The next code is absolutely identical for either creation or modification, so just clone it.</p>
+
+<script src="http://gist.github.com/2822781.js?file=Bind.coffee">// Gist is loading...</script>
+
+<p>Go and check. Your forms are ready. Everything else will be covered by inner magic. Even the validation. But to make it work we&#39;ll have to add proper CSS classes and, khm, actually validate something on the server. (TODO: Rewrite this paragraph.)</p>
+
+<h2>Invalidation</h2>
+
+<p>In our case we don&#39;t really need to modify styles since we use the same CSS rule name with Rails. And therefore proper CSS is already specified at <code>scaffold.css.scss</code>. But if you want to give it a better look search for <code>.field_with_errors</code>.(TODO: Either include an example, or drop this paragraph entirely.)</p>
+
+<p>At the server part we&#39;ll have to modify our <code>Post</code> model:</p>
+
+<script src="http://gist.github.com/2822781.js?file=Models.rb">// Gist is loading...</script>
+
+<p>And you can go check your forms again. Invalidated fields will get it&#39;s class and will appear highlighted by CSS rule.</p>
+
+<div class="warning">
+  <p>
+    Forms are one of the most important parts of Joosy. You really should finish reading this chapter sooner or later. We won't need more info about forms for the whole blog guide though. But you really should come back later even if decide to pass on to a <a href="/guides/blog/dynamic-rendering.html">Dynamic rendering</a> chapter.
+  </p>
+</div>
+
+<hr class="additional" />
+
+<h2>Basics</h2>
+
+<p>The main goal of <code>Joosy.Form</code> is to turn your forms into AJAX to avoid page reload and improve the control. Resources are secondary. Primaries are:</p>
+
+<ul>
+<li>Catch submit, replace it with AJAX query silently</li>
+<li>If server responded with 200 parse the JSON response and pass it in to the <code>success</code> callback</li>
+<li>If server responded with non-200, parse the JSON response and pass it in to the <code>error</code> callback</li>
+<li>If <code>error</code> callback was not defined but we got error, try to highlight invalidations</li>
+<li>During form upload call <code>progress</code> callback periodically and pass in the upload progress</li>
+</ul>
+
+<p>So the default basic look of <code>attach</code> call is: (TODO: Please clarify this paragraph)</p>
+
+<script src="http://gist.github.com/2822781.js?file=Basic attach.coffee">// Gist is loading...</script>
+
+<p>This call (TODO: what &#39;call&#39;?) will not modify (or set) the method (POST, PUT etc) of the form, it will only affect its action if it was explicitly passed as an <code>action</code> parameter. So if you have no resource for the form you still can &quot;activate&quot; it and unleash the power of success/error/progress callbacks.(TODO: Why?)</p>
+
+<p>While success and progress events are very straightforward, the <code>error</code> hook plays an important role of validation. If this was not specified Joosy will fallback to default validation proccess (which is described below). And more, even if it was specified and did return <code>true</code> explicitly, Joosy will still run it&#39;s validation proccess. This is supposed to ease your form validation handling dramatically.</p>
+
+<p>For the basic form (no resource) validation convention is something really easy. <code>{field: &#39;error message&#39;}</code> – this response will make Joosy seek for <code>input name=field</code> and mark it as invalid. It matches Rails conventions perfectly.</p>
+
+<h2>Resources</h2>
+
+<p>As soon as your form is &quot;attached&quot; you can fill it with the Resource. Do it with <code>form.fill(resource)</code> call. In fact passing the <code>resource</code> parameter to attach is a shortcut to <code>fill</code>. Resource will modify form&#39;s behavior slightly.</p>
+
+<p>At first this will try to fill the form with the actual fields values. Joosy will seek the fields by input names. According to Rails conventions you are supposed to call them <code>model[field]</code>. Same rule applies to Joosy. Earlier in this guide we&#39;ve already seen this convention at our edit form.</p>
+
+<p>At second it will properly modify the action and method of form. If the given resource was new, it gets targeted to POST /models. Otherwise it gets targeted to PUT /models/:id. So you just bind your resource, no matter new or existing and form just works.</p>
+
+<p>The last thing that changes with the resource binding is the invalidation proccess. According to Rails conventions backend will still answer with plain hash <code>{field: &#39;error message&#39;}</code> without reference of model name. Joosy will handle it using the name of the attached resource. So for the invalidation it will seek for <code>input name=&quot;resourceName[field]&quot;</code>.</p>
+
+<div class="info">
+  <p>
+    Rails is really weak at JSON-reporting of inlined entities validations. It will still answer with plain hash and will omit the details. To make possible automatic validation of complex forms, Joosy will either understand the complex notation:
+
+    <pre>#   { foo: { bar: { baz: ['error'] } } }    # backend response
+#   { "foo[bar][baz]": ['error'] }          # field to seek for</pre>
+  </p>
+</div>
+
+<p>Forms are very important part of Joosy. This chapter gave you the very basics of its possibilities. You can find partial info among other chapters or guides but anyway, please, check out the <a href="http://api.joosy.ws/classes/Joosy/Form.html">API doc</a>. Inside Joosy there&#39;s no other class like this that deserves reading it that much.</p>
+
+<p>Next Chapter - <a href="/guides/blog/dynamic-rendering.html">dynamic rendering</a>.</p>
+
+  </div>
+</article>
+
+        </div>
+      </section>
+    </div>
+    <div id="footer">
+        <div class="wrapper">
+            <p>This work is licensed under a <a href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-Share Alike 3.0</a> License</p>
+            <p>Sources of this guide are available <a href="https://github.com/joosy/guides">on Github</a>.</p>
+        </div>
+    </div>
+    <script type="text/javascript">
+      var _gauges = _gauges || [];
+      (function() {
+        var t   = document.createElement('script');
+        t.type  = 'text/javascript';
+        t.async = true;
+        t.id    = 'gauges-tracker';
+        t.setAttribute('data-site-id', '4fb67f54f5a1f56550000016');
+        t.src = '//secure.gaug.es/track.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(t, s);
+      })();
+    </script>
+  </body>
+</html>
