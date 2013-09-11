@@ -2,7 +2,7 @@ deploy_dir = "build"
 
 task :prepare do
   puts "Build directory found, please remove it."; exit if File.exists? deploy_dir
-  system "git clone https://github.com/joosy/guides #{deploy_dir}"
+  system "git clone git@github.com:joosy/guides.git #{deploy_dir}"
   cd(deploy_dir) { system "git checkout gh-pages" }
 end
 
