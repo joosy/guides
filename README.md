@@ -1,4 +1,4 @@
-# :rage:&nbsp;[guides.joosy.ws](http://guides.joosy.ws)
+# :neckbeard:&nbsp;[guides.joosy.ws](http://guides.joosy.ws)
 
 <a href="http://joosy.ws"><img src="http://f.cl.ly/items/3X0f2K1z3r1X3K162W2c/logo.png" align="right" /></a>
 
@@ -17,4 +17,4 @@ Guides are built on top of [Jekyll](jekyllrb.com). To run instance of guides loc
   * Install required gems: `bundle install`
   * Run local server: `bundle exec jekyll serve --watch`
 
-Now point your browser to [http://localhost:4000](http://localhost:4000) and here they are! Patch, improve and send us a pull request! :heart:
+Now point your browser to [http://localhost:4000](http://localhost:4000) and here they are! Go ahead to patch and improve something and then send us a pull request! :heart:
