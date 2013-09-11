@@ -1,0 +1,84 @@
+//= require_tree ./pages
+//= require_tree ./versions
+
+.content
+  header
+    p
+      color: white
+      margin-top: 10px
+      margin-left: 5px
+      font-size: 22px
+
+      a
+        color: white
+        display: block
+        font-size: 13px
+        text-decoration: underline
+
+        &:hover
+          text-decoration: none
+
+    .nav
+      margin-top: 15px
+
+      li.active
+        a
+          background-color: #f23900
+
+          &:hover
+            color: white
+      a
+        color: white
+
+        &:hover
+          color: #f23900
+
+      a.drop:hover
+        background-color: #666
+        color: white
+
+    #guides
+      &.open
+        display: block
+
+      display: none
+      background: none repeat scroll 0 0 #F23900
+      border-radius: 4px
+      box-shadow: 0.25em 0.25em 1em rgba(0, 0, 0, 0.25)
+      color: #F1938C
+      padding: 15px 40px
+      position: absolute
+      right: 0
+      width: 500px
+      z-index: 10
+      line-height: 1.3em !important
+
+      dt.inner
+        margin-top: 25px
+
+      a:hover
+        color: white
+        text-decoration: underline
+
+  section.main
+    padding-top: 10px
+    padding-bottom: 20px
+
+    article
+      p img
+        max-width: 100%
+
+    .versions
+      padding-top: 20px
+      font-size: 25px
+      width: 600px
+      margin: auto
+
+      .pull-right
+        font-size: 13px
+
+      h2
+        font-size: 20px
+
+      .version
+        font-size: 16px

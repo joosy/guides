@@ -1,40 +1,39 @@
 ---
-layout: default
+layout: index
+section: credits
 title: "Credits"
 ---
 
-#container.entry-content
-  .wrapper
-    #mainCol
-      %h3.section Joosy Authors
-      .module
-        %img.left.pic{:alt => "Boris Staal", :height => "91", :src => "http://www.gravatar.com/avatar/7c4ac3f00d81fbb8ba329163b3dc6b2a.png?size=91", :width => "91"}/
-        .right
-          %h3 Boris Staal
-          %p
-            Ruby-world open-source enthusiast working as an evangelist at
-            = succeed "." do
-              %a{:href => "http://www.roundlake.ru"} Round Lake
-            Author of several wide-known gems, contributor to several known Node.js packages like
-            = succeed "." do
-              %a{:href => "http://netzpirat.github.com/codo/"} Codo
-            Shares strange thoughts at
-            = succeed "." do
-              %a{:href => "http://borisstaal.com/"} his Tumblr blog
-      .module
-        %img.left.pic{:alt => "Andrew Shaydurov", :height => "91", :src => '{% asset_path photo.gif %}', :width => "91"}/
-        .right
-          %h3 Andrew Shaydurov
-          %p Ruby fan, CoffeeScript lover. CTO of the MainPeople network. Addicted to start-ups, commercials, web-interfaces and playing piano.
-      .module
-        %img.left.pic{:alt => "Alexander Pavlenko", :height => "91", :src => "http://www.gravatar.com/avatar/0dd4414dec1137cde9a69f41090c6735.png?size=91", :width => "91"}/
-        .right
-          %h3 Alexander Pavlenko
-          %p Impressive description goes here.
-      %h3.section Guides Designers
-      .module
-        %img.left.pic{:alt => "Heiko Webers", :height => "91", :src => "{% asset_path photo.gif %}", :width => "91"}/
-        .right
-          %h3
-            %a{:href => "http://guides.rubyonrails.org/credits.html"} Rails guides contributors
-          %p Design was shamelessly copied from original Rails guides. Credit and a deep bow goes to original authors.
+#credits-page
+
+  %h2
+    Maintainers
+
+  %hr
+
+  %ul.media-list
+    %li.media
+      %a.pull-left{href: 'http://staal.io'}
+        %img{src: 'http://www.gravatar.com/avatar/7c4ac3f00d81fbb8ba329163b3dc6b2a.png?size=91', height: 91, width: 91}
+      .media-body
+        %h4.media-heading
+          Boris Staal
+        Ruby-world open-source enthusiast working as an evangelist at
+        %a{:href => "http://www.evl.ms"} Evil Martians.
+        Makes open-source work and people smile!
+
+    %li.media
+      %a.pull-left
+        %img{src: '{% asset_path pages/anonymous.gif %}', height: 91, width: 91}
+      .media-body
+        %h4.media-heading
+          Andrew Shaydurov
+        Ruby fan, CoffeeScript lover. CTO of the MainPeople network. Addicted to start-ups, commercials, web-interfaces and playing piano.
+
+    %li.media
+      %a.pull-left
+        %img{src: 'http://www.gravatar.com/avatar/0dd4414dec1137cde9a69f41090c6735.png?size=91', height: 91, width: 91}
+      .media-body
+        %h4.media-heading
+          Alexander Pavlenko
+        Impressive description goes here ;).

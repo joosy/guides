@@ -1,0 +1,46 @@
+---
+layout: index
+section: index
+title: "Directory"
+---
+
+.versions
+  .alert.alert-info
+    .well
+      %strong
+        Current stable branch:
+        %a.label.label-info{href: '/guides/1.1/en'}
+          1.1
+      .pull-right
+        %a{href: '/guides/1.1/en'}
+          English
+
+  .alert.alert-warning
+    .well
+      %strong
+        Latest edge branch:
+        .label.label-warning
+          1.2
+      .pull-right
+        .label.label-default{style: 'font-weight: normal'}
+          Preparing...
+        / %a{href: '#'}
+        /   English
+        / &nbsp;
+        / %a{href: '#'}
+        /   Русский
+
+  / %hr
+
+  / %center
+  /   %h2 Other available versions:
+
+  /   .version
+  /     %a{href: '#', style: 'font-weight: bold'}
+  /       1.2.0
+  /     &mdash;
+  /     %a{href: '#'}
+  /       English
+  /     |
+  /     %a{href: '#'}
+  /       Русский

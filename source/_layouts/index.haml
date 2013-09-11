@@ -2,5 +2,27 @@
 layout: default
 ---
 
-%section#content.post-list
-  {{ content }}
+.content
+  %header
+    .container
+      %img.logo{src: 'http://joosy.ws/joosy.png'}
+      %h1
+        Guides
+
+      .menu.pull-right
+        %ul.nav.nav-pills
+          %li{class: '{% if page.section == "index" %}active{% endif %}'}
+            %a{href: '/'}
+              %i.icon-globe
+              Directory
+          %li{class: '{% if page.section == "contribute" %}active{% endif %}'}
+            %a{href: '/contribute.html'}
+              %i.icon-group
+              Contribute
+          %li{class: '{% if page.section == "credits" %}active{% endif %}'}
+            %a{href: '/credits.html'}
+              %i.icon-heart
+              Credits
+
+  %section.main
+    {{content}}

@@ -2,8 +2,32 @@
 layout: default
 ---
 
-%article.hentry
-  .entry-header
-    %h2 
-  .entry-content
-    {{ content }}
+.content
+  %header
+    .container
+      %img.pull-left.logo{src: 'http://joosy.ws/joosy.png'}
+      %p.pull-left
+        Guides for version {{ page.version }}
+        %a{href: '/'}
+          Another version or language?
+
+      .menu.pull-right
+        %ul.nav.nav-pills
+          %li{class: '{% if page.section == "index" %}active{% endif %}'}
+            %a{href: '/guides/{{page.version}}/{{page.language}}'}
+              %i.icon-archive
+              Index
+          %li{class: '{% if page.section != "index" %}active{% endif %}'}
+            #guides
+              {% capture partial %}versions/{{page.version}}/guides.haml{% endcapture %}
+              {% haml partial %}
+            %a.dropdown-toggle{href: '#guides', data: {toggle: 'dropdown', target: '#guides'}}
+              %i.icon-long-arrow-down
+              Guides
+
+  %section.main
+    %article.entry
+      .entry-header
+        %h2 
+      .entry-content{class: 'v-{{page.version|replace:".","-"}} l-{{page.language}}'}
+        {{ content }}

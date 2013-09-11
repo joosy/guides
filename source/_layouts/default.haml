@@ -1,122 +1,77 @@
 !!!
-%html{:lang => "en"}
+%html{lang: 'en'}
   %head
-    %title  — Joosy Guides
-    %meta{:charset => "utf-8"}/
-    %meta{:content => "width=device-width,initial-scale=1", :name => "viewport"}/
-
-    {% stylesheet base %}
-    {% stylesheet skeleton %}
-    {% stylesheet styles %}
-    {% stylesheet credits %}
-    %link{:href => "http://yandex.st/highlightjs/6.2/styles/default.min.css", :rel => "stylesheet"}/
-
-    %script{:src => "http://cachedcommons.org/cache/modernizr/1.5.0/javascripts/modernizr-min.js"}
-    {% javascript common %}
-    {% javascript prefixfree.min %}
-    {% javascript jquery-1.7.2.min %}
-    {% javascript jquery.browser %}
-
-    :javascript
-      function toggle(element) {
-        element.style.display = (element.style.display == 'none') ? 'block' : 'none'
-      }
+    %title {{page.title}} — Joosy Guides
+    %meta{charset: "utf-8"}
+    %link{rel: 'stylesheet', href: 'http://joosy.ws/application.css'}
+    %link{rel: 'stylesheet', href: '//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css'}
+    {% stylesheet application %}
+    %script{type: 'text/javascript', src: 'http://codeorigin.jquery.com/jquery-1.10.2.min.js'}
+    %script{type: 'text/javascript', src: '//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js'}
   %body
-    .topbar
-      .topbar_wrap
-        %table{:cellpadding => "0", :cellspacing => "0"}
-          %tbody
-            %tr
-              %td
-                %a{:href => "http://joosy.ws"} Joosy (1.1.0)
-              %td.disabled
-                %a{:href => "#"} Who's using
-              %td
-                %a{:href => "http://sample.joosy.ws"} Annotated sample
-              %td.active
-                %a{:href => "http://guides.joosy.ws"} Guides
-              %td.disabled
-                %a{:href => "#"} Screencasts
-              %td
-                %a{:href => "http://api.joosy.ws"} API
-              %td
-                %a{:href => "http://github.com/joosy/joosy"} Code
-              %td
-                %a{:href => "http://github.com/joosy/joosy/issues"} Bugs/Patches
-              %td.disabled
-                %a{:href => "#"} Community
-              %td.twitter
-                %a{:href => "http://twitter.com/joosy_web"} Twitter
-                {% image twit_sign_orange.png %}
-    %header
+    %nav.navbar.navbar-inverse
       .container
-        .six.columns
-          %h1
-            %a{:href => "/"} Joosy Guides
-        .ten.columns
-          %ul.nav
+        .collapse.navbar-collapse
+          %ul.nav.navbar-nav
             %li
-              %a{:href => "/"} Home
+              %a{href: 'http://joosy.ws'}
+                Joosy
+            %li.disabled
+              %a{href: 'javascript:void(0)'}
+                Download
+            %li.active
+              %a{href: 'http://guides.joosy.ws'}
+                Guides
             %li
-              %a.index{:href => "#", :onclick => "toggle(document.getElementById('guides'))"} Guides Index ▼
-              #guides.clearfix{:style => "display: none;"}
-                %hr/
-                %dl.L
-                  %dt Joosy basics
-                  %dd
-                    %a{:href => "/guides/basics/getting-started.html"} Getting Started
-                  %dd
-                    %a{:href => "/guides/basics/joosy-vs-x.html"} Joosy vs X
-                  %dt Creating a blog on Joosy
-                  %dd
-                    %a{:href => "/guides/blog/rails-preparations.html"} Rails preparations
-                  %dd
-                    %a{:href => "/guides/blog/resources.html"} Resources
-                  %dd
-                    %a{:href => "/guides/blog/layouts-pages-and-routing.html"} Layouts, Pages and Routing
-                  %dd
-                    %a{:href => "/guides/blog/elements-events-and-filters.html"} Elements, Events and Filters
-                  %dd
-                    %a{:href => "/guides/blog/dynamic-rendering.html"} Dynamic rendering
-                  %dd
-                    %a{:href => "/guides/blog/widgets.html"} Widgets
-                  %dd
-                    %a{:href => "/guides/blog/helpers.html"} Helpers
-                  %dd
-                    %a{:href => "/guides/blog/forms.html"} Forms
-                  %dd
-                    %a{:href => "/guides/blog/preloaders.html"} Preloaders
-                  %dd
-                    %a{:href => "/guides/blog/load-unload-and-in-progress-animations.html"} Load, unload, animations
-                %dl.R
-                  %dt Advanced guides
-                  %dd
-                    %a{:href => "/guides/advanced/search-engine-indexing.html"} Search engine indexing
-                  %dd
-                    %a{:href => "/guides/advanded/authentication.html"} Authentication
-                  %dd
-                    %a{:href => "/guides/advanced/permissions.html"} Permissions and ACL
-                  %dd
-                    %a{:href => "/guides/advanced/template-engine.html"} Template engines
+              %a{href: 'http://api.joosy.ws'}
+                API
             %li
-              %a{:href => "/contribute.html"} Contribute
+              %a{href: 'http://sample.joosy.ws/routes.js.coffee.html'}
+                Annotated sample
+            %li.disabled
+              %a{href: 'javascript:void(0)'}
+                Screencasts
             %li
-              %a{:href => "/credits.html"} Credits
-    .container
-      %section.row
-        .sixteen.columns
-          {{content}}
+              %a{href: 'http://github.com/joosy/joosy/issues'}
+                Bugs
+            %li
+              %a{href: 'javascript:void(0)'}
+                Community
+            %li.twitter
+              {% include twitter.html %}
 
-    #footer
-      .wrapper
+    {{content}}
+
+    %footer.container
+      .pull-left
         %p
-          This work is licensed under a
-          %a{:href => "http://creativecommons.org/licenses/by-sa/3.0/"} Creative Commons Attribution-Share Alike 3.0
-          License
+          %strong
+            Copyright 2012-2013,
+            %a{href: "http://staal.io"}
+              Boris Staal
+          %br
+          %small
+            %span
+              Hosted at
+            %a{href: "http://pages.github.com"}<>
+              Github Pages
+            ,
+            %span
+              generated with
+            %a{href: 'http://jekyllrb.com'}<>
+              Jekyll
+      .pull-right
         %p
-          Sources of this guide are available
-          = succeed "." do
-            %a{:href => "https://github.com/joosy/guides"} on Github
+          Want to improve something on this site?
+          %br
+          %a{href: 'https://github.com/joosy/guides'}<>
+            Pull requests
+          %span
+            are very welcome!
+
+    %a#github{href: "https://github.com/joosy/joosy"}
+      %img{alt: "Fork me on GitHub", src: "https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png", style: "position: absolute; top: 0; right: 0; border: 0;"}
+
     :javascript
       var _gauges = _gauges || [];
       (function() {
