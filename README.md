@@ -2,7 +2,7 @@
 
 <a href="http://joosy.ws"><img src="http://f.cl.ly/items/3X0f2K1z3r1X3K162W2c/logo.png" align="right" /></a>
 
-Theg guides for the **Joosy framework**
+The guides for the **Joosy framework**
 
 If you are seeking for information about Joosy, start with [official site](http://joosy.ws), [guides](http://guides.joosy.ws) or [central repository](https://github.com/joosy/joosy/).
 
