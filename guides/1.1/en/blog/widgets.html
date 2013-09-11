@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang='en'>
+  <head>
+    <title>Widgets — Joosy Guides</title>
+    <meta charset='utf-8'>
+    <link href='http://joosy.ws/application.css' rel='stylesheet'>
+    <link href='//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="/assets/application-181f538c3c91d67834001520f603889f.css">
+    <script src='http://codeorigin.jquery.com/jquery-1.10.2.min.js' type='text/javascript'></script>
+    <script src='//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js' type='text/javascript'></script>
+  </head>
+  <body>
+    <nav class='navbar navbar-inverse'>
+      <div class='container'>
+        <div class='collapse navbar-collapse'>
+          <ul class='nav navbar-nav'>
+            <li>
+              <a href='http://joosy.ws'>
+                Joosy
+              </a>
+            </li>
+            <li class='disabled'>
+              <a href='javascript:void(0)'>
+                Download
+              </a>
+            </li>
+            <li class='active'>
+              <a href='http://guides.joosy.ws'>
+                Guides
+              </a>
+            </li>
+            <li>
+              <a href='http://api.joosy.ws'>
+                API
+              </a>
+            </li>
+            <li>
+              <a href='http://sample.joosy.ws/routes.js.coffee.html'>
+                Annotated sample
+              </a>
+            </li>
+            <li class='disabled'>
+              <a href='javascript:void(0)'>
+                Screencasts
+              </a>
+            </li>
+            <li>
+              <a href='http://github.com/joosy/joosy/issues'>
+                Bugs
+              </a>
+            </li>
+            <li>
+              <a href='javascript:void(0)'>
+                Community
+              </a>
+            </li>
+            <li class='twitter'>
+              <a href="https://twitter.com/joosy_web" class="twitter-follow-button" data-show-count="false" data-show-screen-name="false">Twitter</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class='content'>
+  <header>
+    <div class='container'>
+      <img class='pull-left logo' src='http://joosy.ws/joosy.png'>
+      <p class='pull-left'>
+        Guides for version 1.1
+        <a href='/'>
+          Another version or language?
+        </a>
+      </p>
+      <div class='menu pull-right'>
+        <ul class='nav nav-pills'>
+          <li class=''>
+            <a href='/guides/1.1/en'>
+              <i class='icon-archive'></i>
+              Index
+            </a>
+          </li>
+          <li class='active'>
+            <div id='guides'>
+              
+              <dl class='pull-left'>
+  <dt>Joosy basics</dt>
+  <dd>
+    <a href='/guides/1.1/en/basics/getting-started.html'>Getting Started</a>
+  </dd>
+  <dd>
+    <a href='/guides/1.1/en/basics/joosy-vs-x.html'>Joosy vs X</a>
+  </dd>
+  <dt class='inner'>Creating a blog on Joosy</dt>
+  <dd>
+    <a href='/guides/1.1/en/blog/rails-preparations.html'>Rails preparations</a>
+  </dd>
+  <dd>
+    <a href='/guides/1.1/en/blog/resources.html'>Resources</a>
+  </dd>
+  <dd>
+    <a href='/guides/1.1/en/blog/layouts-pages-and-routing.html'>Layouts, Pages and Routing</a>
+  </dd>
+  <dd>
+    <a href='/guides/1.1/en/blog/elements-events-and-filters.html'>Elements, Events and Filters</a>
+  </dd>
+  <dd>
+    <a href='/guides/1.1/en/blog/dynamic-rendering.html'>Dynamic rendering</a>
+  </dd>
+  <dd>
+    <a href='/guides/1.1/en/blog/widgets.html'>Widgets</a>
+  </dd>
+  <dd>
+    <a href='/guides/1.1/en/blog/helpers.html'>Helpers</a>
+  </dd>
+  <dd>
+    <a href='/guides/1.1/en/blog/forms.html'>Forms</a>
+  </dd>
+  <dd>
+    <a href='/guides/1.1/en/blog/preloaders.html'>Preloaders</a>
+  </dd>
+  <dd>
+    <a href='/guides/1.1/en/blog/load-unload-and-in-progress-animations.html'>Load, unload, animations</a>
+  </dd>
+</dl>
+<dl class='pull-right'>
+  <dt>Advanced guides</dt>
+  <dd>
+    <a href='/guides/1.1/en/advanced/search-engines-indexing.html'>Search engine indexing</a>
+  </dd>
+  <dd>
+    <a href='/guides/1.1/en/advanced/authentication.html'>Authentication</a>
+  </dd>
+  <dd>
+    <a href='/guides/1.1/en/advanced/permissions-and-acl.html'>Permissions and ACL</a>
+  </dd>
+  <dd>
+    <a href='/guides/1.1/en/advanced/how-to-switch-template-engine.html'>Template engines</a>
+  </dd>
+</dl>
+
+            </div>
+            <a class='dropdown-toggle' data-target='#guides' data-toggle='dropdown' href='#guides'>
+              <i class='icon-long-arrow-down'></i>
+              Guides
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </header>
+  <section class='main'>
+    <article class='entry'>
+      <div class='entry-header'>
+        <h2></h2>
+      </div>
+      <div class='entry-content l-en v-1-1'>
+        <p>According to the previous chapter goals we are going to move inline editor functionality to the Widget and include it into index page. Generate Widget:</p>
+
+<script src="http://gist.github.com/2828061.js?file=Generate.sh">// Gist is loading...</script>
+
+<h2>Creating widget</h2>
+
+<p>Just like pages and layouts, widgets can have elements, events, filters and templates. The key difference is the first container you meet that can be created by you. That&#39;s why it has constructor. Our current goal is to move all the functionality we created for the Show page to the widget as-is.</p>
+
+<script src="http://gist.github.com/2828061.js?file=Widget.coffee">// Gist is loading...</script>
+
+<p>Remember to remove all this stuff from the Show page! It&#39;s not needed anymore!</p>
+
+<p>The next step is to move all the required HAML into widget&#39;s template. And don&#39;t forget the dynamic partial that should be moved to <code>templates/widgets</code> directory either.</p>
+
+<script src="http://gist.github.com/2828061.js?file=Templates.haml">// Gist is loading...</script>
+
+<h2>Including widget</h2>
+
+<p>Widget is quite a common entity. Widget you create can wrap around existing DOM, use own templates, interact with page/layout or be completely encapsulated. To fulfill such needs Joosy introduces two methods to require widget.</p>
+
+<p>The first one goes the direct inclusion from within a template. This is a very comfortable way of inclusion if your widget has its own template and is encapsulated. Our new widget fits perfectly.</p>
+
+<script src="http://gist.github.com/2828061.js?file=Widget Template.haml">// Gist is loading...</script>
+
+<p>Look at the line one. The first argument is a container tag for the widget to be put at. Choose something that will not break your layout. And the second parameter is a widget you are going to bind to container tag. It can be a lambda (like in example) or just a widget class. In the latter case it will be created without arguments to constructor.</p>
+
+<p>And actually this is it. Nothing more is required to do. If only expand our widget usage to the Posts.Index page. So was the plan, wasn&#39;t it?</p>
+
+<script src="http://gist.github.com/2828061.js?file=Widget Index Template.haml">// Gist is loading...</script>
+
+<div class="warning">
+  <p>
+    More info about widgets inclusion and manipulation is not required to complete our blog. Skip to the <a href="/guides/blog/helpers.html">next chapter</a> if you want to get back to that later.
+  </p>
+</div>
+
+<hr class="additional" />
+
+<h2>Alternative widget registration</h2>
+
+<p>If your widgets are about to control the existing DOM structures (please ensure you don&#39;t break encapsulation) or you are going to interact between widget and it&#39;s container, you have an option to directly bind the widget from a page. This looks similar to the elements and events bindings. You just define the <code>widgets</code> hash:</p>
+
+<script src="http://gist.github.com/2828061.js?file=Widgets Hash.coffee">// Gist is loading...</script>
+
+<p>To maintain direct bridge between the container and the widget you can assign creating instance of widet instance variable. That&#39;s exactly what we do at the third example. But <strong>beware</strong>! If the selector matches several DOM elements, each of them will be passed to a separate widget. And therefore with this lambda <code>@testWidget</code> will always contain the last loaded widget.</p>
+
+<h2>Manual registration and destruction</h2>
+
+<p>You can either register and unregister widgets manually. Page and Layout define two methods to help you with this. They are: <code>@registerWidget(container, widget)</code> and <code>@unregisterWidget(widget)</code>. </p>
+
+<p>The first one takes the reference to the DOM node (container) and the widget. The widget can be pased in the same manner, as a Class or as a lambda. <code>registerWidget</code> will return you the widget instance. It will be unloaded in process of page/layout destruction.</p>
+
+<p>In cases when you want to control the lifetime of this widget manually, use <code>unregisterWidget</code> that accepts the instance of widget to shutdown. Note that still widgets never survive destruction of page/layout they are contained by.</p>
+
+<p>Next Chapter - <a href="/guides/1.1/en/blog/helpers.html">helpers</a>.</p>
+
+      </div>
+    </article>
+  </section>
+</div>
+
+    <footer class='container'>
+      <div class='pull-left'>
+        <p>
+          <strong>
+            Copyright 2012-2013,
+            <a href='http://staal.io'>
+              Boris Staal
+            </a>
+          </strong>
+          <br>
+          <small>
+            <span>
+              Hosted at
+            </span><a href='http://pages.github.com'>Github Pages</a>,
+            <span>
+              generated with
+            </span><a href='http://jekyllrb.com'>Jekyll</a></small>
+        </p>
+      </div>
+      <div class='pull-right'>
+        <p>
+          Want to improve something on this site?
+          <br><a href='https://github.com/joosy/guides'>Pull requests</a><span>
+            are very welcome!
+          </span>
+        </p>
+      </div>
+    </footer>
+    <a href='https://github.com/joosy/joosy' id='github'>
+      <img alt='Fork me on GitHub' src='https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png' style='position: absolute; top: 0; right: 0; border: 0;'>
+    </a>
+    <script>
+      var _gauges = _gauges || [];
+      (function() {
+        var t   = document.createElement('script');
+        t.type  = 'text/javascript';
+        t.async = true;
+        t.id    = 'gauges-tracker';
+        t.setAttribute('data-site-id', '4fb67f54f5a1f56550000016');
+        t.src = '//secure.gaug.es/track.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(t, s);
+      })();
+    </script>
+  </body>
+</html>

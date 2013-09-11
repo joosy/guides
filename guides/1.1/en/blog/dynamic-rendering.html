@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang='en'>
+  <head>
+    <title>Dynamic rendering — Joosy Guides</title>
+    <meta charset='utf-8'>
+    <link href='http://joosy.ws/application.css' rel='stylesheet'>
+    <link href='//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="/assets/application-181f538c3c91d67834001520f603889f.css">
+    <script src='http://codeorigin.jquery.com/jquery-1.10.2.min.js' type='text/javascript'></script>
+    <script src='//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js' type='text/javascript'></script>
+  </head>
+  <body>
+    <nav class='navbar navbar-inverse'>
+      <div class='container'>
+        <div class='collapse navbar-collapse'>
+          <ul class='nav navbar-nav'>
+            <li>
+              <a href='http://joosy.ws'>
+                Joosy
+              </a>
+            </li>
+            <li class='disabled'>
+              <a href='javascript:void(0)'>
+                Download
+              </a>
+            </li>
+            <li class='active'>
+              <a href='http://guides.joosy.ws'>
+                Guides
+              </a>
+            </li>
+            <li>
+              <a href='http://api.joosy.ws'>
+                API
+              </a>
+            </li>
+            <li>
+              <a href='http://sample.joosy.ws/routes.js.coffee.html'>
+                Annotated sample
+              </a>
+            </li>
+            <li class='disabled'>
+              <a href='javascript:void(0)'>
+                Screencasts
+              </a>
+            </li>
+            <li>
+              <a href='http://github.com/joosy/joosy/issues'>
+                Bugs
+              </a>
+            </li>
+            <li>
+              <a href='javascript:void(0)'>
+                Community
+              </a>
+            </li>
+            <li class='twitter'>
+              <a href="https://twitter.com/joosy_web" class="twitter-follow-button" data-show-count="false" data-show-screen-name="false">Twitter</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class='content'>
+  <header>
+    <div class='container'>
+      <img class='pull-left logo' src='http://joosy.ws/joosy.png'>
+      <p class='pull-left'>
+        Guides for version 1.1
+        <a href='/'>
+          Another version or language?
+        </a>
+      </p>
+      <div class='menu pull-right'>
+        <ul class='nav nav-pills'>
+          <li class=''>
+            <a href='/guides/1.1/en'>
+              <i class='icon-archive'></i>
+              Index
+            </a>
+          </li>
+          <li class='active'>
+            <div id='guides'>
+              
+              <dl class='pull-left'>
+  <dt>Joosy basics</dt>
+  <dd>
+    <a href='/guides/1.1/en/basics/getting-started.html'>Getting Started</a>
+  </dd>
+  <dd>
+    <a href='/guides/1.1/en/basics/joosy-vs-x.html'>Joosy vs X</a>
+  </dd>
+  <dt class='inner'>Creating a blog on Joosy</dt>
+  <dd>
+    <a href='/guides/1.1/en/blog/rails-preparations.html'>Rails preparations</a>
+  </dd>
+  <dd>
+    <a href='/guides/1.1/en/blog/resources.html'>Resources</a>
+  </dd>
+  <dd>
+    <a href='/guides/1.1/en/blog/layouts-pages-and-routing.html'>Layouts, Pages and Routing</a>
+  </dd>
+  <dd>
+    <a href='/guides/1.1/en/blog/elements-events-and-filters.html'>Elements, Events and Filters</a>
+  </dd>
+  <dd>
+    <a href='/guides/1.1/en/blog/dynamic-rendering.html'>Dynamic rendering</a>
+  </dd>
+  <dd>
+    <a href='/guides/1.1/en/blog/widgets.html'>Widgets</a>
+  </dd>
+  <dd>
+    <a href='/guides/1.1/en/blog/helpers.html'>Helpers</a>
+  </dd>
+  <dd>
+    <a href='/guides/1.1/en/blog/forms.html'>Forms</a>
+  </dd>
+  <dd>
+    <a href='/guides/1.1/en/blog/preloaders.html'>Preloaders</a>
+  </dd>
+  <dd>
+    <a href='/guides/1.1/en/blog/load-unload-and-in-progress-animations.html'>Load, unload, animations</a>
+  </dd>
+</dl>
+<dl class='pull-right'>
+  <dt>Advanced guides</dt>
+  <dd>
+    <a href='/guides/1.1/en/advanced/search-engines-indexing.html'>Search engine indexing</a>
+  </dd>
+  <dd>
+    <a href='/guides/1.1/en/advanced/authentication.html'>Authentication</a>
+  </dd>
+  <dd>
+    <a href='/guides/1.1/en/advanced/permissions-and-acl.html'>Permissions and ACL</a>
+  </dd>
+  <dd>
+    <a href='/guides/1.1/en/advanced/how-to-switch-template-engine.html'>Template engines</a>
+  </dd>
+</dl>
+
+            </div>
+            <a class='dropdown-toggle' data-target='#guides' data-toggle='dropdown' href='#guides'>
+              <i class='icon-long-arrow-down'></i>
+              Guides
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </header>
+  <section class='main'>
+    <article class='entry'>
+      <div class='entry-header'>
+        <h2></h2>
+      </div>
+      <div class='entry-content l-en v-1-1'>
+        <p>During this chapter we&#39;ll implement inline post title editing. It will be available at <code>post/show</code> page. As you click on the title it gets replaced with the inline form. After that the submit title shows up again, but with the new value.</p>
+
+<h2>Templates and partials scopes</h2>
+
+<p>While working on forms we already faced partials of templates. Just like in Rails, partials are just other templates that get included. While <code>@render</code> seems a really easy-to-use thing (and it really is), it has its ace in the hole. Common approach for the most of template engines is to accept a Hash as the context of rendering. With Joosy you can either pass in the Resource and the Collection. Remember that any other types besides Object, Resource, Collection will raise an exception.</p>
+
+<script src="http://gist.github.com/2827878.js?file=Template Scopes.coffee">// Gist is loading...</script>
+
+<p>Note that <code>@data</code> variable you use at a page is internally used exactly as a rendering context. So it shares the same rules, you can fill it with Resource or Collection, not only a Hash (like we did everywhere before).</p>
+
+<h2>Dynamic partials</h2>
+
+<p>Joosy has the ability to keep partial up-to-date. It&#39;s being achieved by using <a href="http://api.joosy.ws/mixins/Joosy/Modules/Events.html">Events</a>. As soon as any of partial scope variables triggers <code>changed</code> event, Joosy will rerender exactly this part of page with the same instances. You can use this manually but two typical use cases are Resource and Collection that do trigger <code>changed</code> event on each modification.</p>
+
+<p>Open up your <code>posts/show</code> template and move the title header into partial.</p>
+
+<script src="http://gist.github.com/2827878.js?file=Partial.haml">// Gist is loading...</script>
+
+<p>Now let the magic begin! Open up your console being at <code>/blog/#!/posts/1</code> page. And call something like <code>Joosy.Application.page.data.post(&#39;title&#39;, &#39;test&#39;)</code>. See? It reloads the partial and the new title appears on the page as soon as you modify resource.</p>
+
+<h2>Inline title editor</h2>
+
+<p>We need to modify <code>post/show</code> once more to add the hidden form.</p>
+
+<script src="http://gist.github.com/2827878.js?file=Form.haml">// Gist is loading...</script>
+
+<p>Everything else should be quite familiar if you did read the previous guides. These are the additions to the Posts.ShowPage:</p>
+
+<script src="http://gist.github.com/2827878.js?file=Editor.coffee">// Gist is loading...</script>
+
+<p>Note the Line 14. As soon as server responds successfully, we modify the resource and it immediately gets updated at DOM.</p>
+
+<p>And now that our inline editor is ready why not copy that to index page? To keep code clean and avoid duplication <a href="/guides/1.1/en/blog/widgets.html">the next chapter</a> will describe the clear way to achieve this using Widgets.</p>
+
+      </div>
+    </article>
+  </section>
+</div>
+
+    <footer class='container'>
+      <div class='pull-left'>
+        <p>
+          <strong>
+            Copyright 2012-2013,
+            <a href='http://staal.io'>
+              Boris Staal
+            </a>
+          </strong>
+          <br>
+          <small>
+            <span>
+              Hosted at
+            </span><a href='http://pages.github.com'>Github Pages</a>,
+            <span>
+              generated with
+            </span><a href='http://jekyllrb.com'>Jekyll</a></small>
+        </p>
+      </div>
+      <div class='pull-right'>
+        <p>
+          Want to improve something on this site?
+          <br><a href='https://github.com/joosy/guides'>Pull requests</a><span>
+            are very welcome!
+          </span>
+        </p>
+      </div>
+    </footer>
+    <a href='https://github.com/joosy/joosy' id='github'>
+      <img alt='Fork me on GitHub' src='https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png' style='position: absolute; top: 0; right: 0; border: 0;'>
+    </a>
+    <script>
+      var _gauges = _gauges || [];
+      (function() {
+        var t   = document.createElement('script');
+        t.type  = 'text/javascript';
+        t.async = true;
+        t.id    = 'gauges-tracker';
+        t.setAttribute('data-site-id', '4fb67f54f5a1f56550000016');
+        t.src = '//secure.gaug.es/track.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(t, s);
+      })();
+    </script>
+  </body>
+</html>
