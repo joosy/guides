@@ -8,7 +8,7 @@ end
 
 task :push do
   Dir["#{deploy_dir}/*"].each { |f| rm_rf(f) }
-  system "jekyll build"
+  system "bundle exec jekyll build"
 
   cd "#{deploy_dir}" do
     system "git add -A"
