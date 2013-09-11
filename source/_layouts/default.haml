@@ -1,0 +1,131 @@
+!!!
+%html{:lang => "en"}
+  %head
+    %title  — Joosy Guides
+    %meta{:charset => "utf-8"}/
+    %meta{:content => "width=device-width,initial-scale=1", :name => "viewport"}/
+
+    {% stylesheet base %}
+    {% stylesheet skeleton %}
+    {% stylesheet styles %}
+    {% stylesheet credits %}
+    %link{:href => "http://yandex.st/highlightjs/6.2/styles/default.min.css", :rel => "stylesheet"}/
+
+    %script{:src => "http://cachedcommons.org/cache/modernizr/1.5.0/javascripts/modernizr-min.js"}
+    {% javascript common %}
+    {% javascript prefixfree.min %}
+    {% javascript jquery-1.7.2.min %}
+    {% javascript jquery.browser %}
+
+    :javascript
+      function toggle(element) {
+        element.style.display = (element.style.display == 'none') ? 'block' : 'none'
+      }
+  %body
+    .topbar
+      .topbar_wrap
+        %table{:cellpadding => "0", :cellspacing => "0"}
+          %tbody
+            %tr
+              %td
+                %a{:href => "http://joosy.ws"} Joosy (1.1.0)
+              %td.disabled
+                %a{:href => "#"} Who's using
+              %td
+                %a{:href => "http://sample.joosy.ws"} Annotated sample
+              %td.active
+                %a{:href => "http://guides.joosy.ws"} Guides
+              %td.disabled
+                %a{:href => "#"} Screencasts
+              %td
+                %a{:href => "http://api.joosy.ws"} API
+              %td
+                %a{:href => "http://github.com/joosy/joosy"} Code
+              %td
+                %a{:href => "http://github.com/joosy/joosy/issues"} Bugs/Patches
+              %td.disabled
+                %a{:href => "#"} Community
+              %td.twitter
+                %a{:href => "http://twitter.com/joosy_web"} Twitter
+                {% image twit_sign_orange.png %}
+    %header
+      .container
+        .six.columns
+          %h1
+            %a{:href => "/"} Joosy Guides
+        .ten.columns
+          %ul.nav
+            %li
+              %a{:href => "/"} Home
+            %li
+              %a.index{:href => "#", :onclick => "toggle(document.getElementById('guides'))"} Guides Index ▼
+              #guides.clearfix{:style => "display: none;"}
+                %hr/
+                %dl.L
+                  %dt Joosy basics
+                  %dd
+                    %a{:href => "/guides/basics/getting-started.html"} Getting Started
+                  %dd
+                    %a{:href => "/guides/basics/joosy-vs-x.html"} Joosy vs X
+                  %dt Creating a blog on Joosy
+                  %dd
+                    %a{:href => "/guides/blog/rails-preparations.html"} Rails preparations
+                  %dd
+                    %a{:href => "/guides/blog/resources.html"} Resources
+                  %dd
+                    %a{:href => "/guides/blog/layouts-pages-and-routing.html"} Layouts, Pages and Routing
+                  %dd
+                    %a{:href => "/guides/blog/elements-events-and-filters.html"} Elements, Events and Filters
+                  %dd
+                    %a{:href => "/guides/blog/dynamic-rendering.html"} Dynamic rendering
+                  %dd
+                    %a{:href => "/guides/blog/widgets.html"} Widgets
+                  %dd
+                    %a{:href => "/guides/blog/helpers.html"} Helpers
+                  %dd
+                    %a{:href => "/guides/blog/forms.html"} Forms
+                  %dd
+                    %a{:href => "/guides/blog/preloaders.html"} Preloaders
+                  %dd
+                    %a{:href => "/guides/blog/load-unload-and-in-progress-animations.html"} Load, unload, animations
+                %dl.R
+                  %dt Advanced guides
+                  %dd
+                    %a{:href => "/guides/advanced/search-engine-indexing.html"} Search engine indexing
+                  %dd
+                    %a{:href => "/guides/advanded/authentication.html"} Authentication
+                  %dd
+                    %a{:href => "/guides/advanced/permissions.html"} Permissions and ACL
+                  %dd
+                    %a{:href => "/guides/advanced/template-engine.html"} Template engines
+            %li
+              %a{:href => "/contribute.html"} Contribute
+            %li
+              %a{:href => "/credits.html"} Credits
+    .container
+      %section.row
+        .sixteen.columns
+          {{content}}
+
+    #footer
+      .wrapper
+        %p
+          This work is licensed under a
+          %a{:href => "http://creativecommons.org/licenses/by-sa/3.0/"} Creative Commons Attribution-Share Alike 3.0
+          License
+        %p
+          Sources of this guide are available
+          = succeed "." do
+            %a{:href => "https://github.com/joosy/guides"} on Github
+    :javascript
+      var _gauges = _gauges || [];
+      (function() {
+        var t   = document.createElement('script');
+        t.type  = 'text/javascript';
+        t.async = true;
+        t.id    = 'gauges-tracker';
+        t.setAttribute('data-site-id', '4fb67f54f5a1f56550000016');
+        t.src = '//secure.gaug.es/track.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(t, s);
+      })();
