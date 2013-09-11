@@ -1,2 +1,5 @@
-auto: true
-baseurl: /
+name: Joosy Guides
+markdown: redcarpet
+pygments: true
+source: source
+destination: build

@@ -1,4 +1,4 @@
-_site
+build
 .DS_Store
 tmp/
 .idea
