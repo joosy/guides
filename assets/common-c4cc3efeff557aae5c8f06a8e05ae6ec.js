@@ -23,3 +23,4 @@ for ( var i=0; i< rules.length; i++ ){
     head.appendChild(style);
   }
 }
+;

@@ -1,19 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang='en'>
   <head>
-    <title>Getting started — Joosy Guides</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <link rel="stylesheet" href="/css/base.css">
-    <link rel="stylesheet" href="/css/skeleton.css">
-    <link rel="stylesheet" href="/css/styles.css">
-    <link rel="stylesheet" href="/css/credits.css">
-    <link rel="stylesheet" href="http://yandex.st/highlightjs/6.2/styles/default.min.css">
-    <script src="http://cachedcommons.org/cache/modernizr/1.5.0/javascripts/modernizr-min.js"></script>
-    <script src="/js/common.js"></script>
-    <script src="/js/prefixfree.min.js"></script>
-    <script src="/js/jquery-1.7.2.min.js"></script>
-	<script src="/js/jquery.browser.js"></script>
+    <title>— Joosy Guides</title>
+    <meta charset='utf-8'>
+    <meta content='width=device-width,initial-scale=1' name='viewport'>
+    <link rel="stylesheet" href="/assets/base-2f6d13bb3c51816495f104715e9ee3c1.css">
+    <link rel="stylesheet" href="/assets/skeleton-14b5052deb8c8ced10821b69b9a52fa2.css">
+    <link rel="stylesheet" href="/assets/styles-71ff25841cb21929611316d79ede186e.css">
+    <link rel="stylesheet" href="/assets/credits-e6732939ec05b46566fff3cae65a056a.css">
+    <link href='http://yandex.st/highlightjs/6.2/styles/default.min.css' rel='stylesheet'>
+    <script src='http://cachedcommons.org/cache/modernizr/1.5.0/javascripts/modernizr-min.js'></script>
+    <script src="/assets/common-c4cc3efeff557aae5c8f06a8e05ae6ec.js"></script>
+    <script src="/assets/prefixfree-ee666c3dce685b55f3b5516adf83c1ad.min"></script>
+    <script src="/assets/jquery-1.7.2-beb5f7a7e585d3135f1a1996d48de6cd.min"></script>
+    <script src="/assets/jquery-ebf9d7c82dcfa8fae4579fdea577bd7f.browser"></script>
     <script>
       function toggle(element) {
         element.style.display = (element.style.display == 'none') ? 'block' : 'none'
@@ -21,80 +21,138 @@
     </script>
   </head>
   <body>
-     <div class="topbar">
-       <div class="topbar_wrap">
-         <table cellpadding="0" cellspacing="0">
-		   <tbody>
-		     <tr>		    
-			   <td><a href="http://joosy.ws">Joosy (1.1.0)</a></td>
-			   <td class="disabled"><a href="#" >Who's using</a></td>
-  			   <td><a href="http://sample.joosy.ws">Annotated sample</a></td>
-			   <td class="active"><a href="http://guides.joosy.ws">Guides</a></td>
-			   <td class="disabled"><a href="#" >Screencasts</a></td>
-			   <td><a href="http://api.joosy.ws">API</a></td>
-			   <td><a href="http://github.com/joosy/joosy">Code</a></td>
-			   <td><a href="http://github.com/joosy/joosy/issues">Bugs/Patches</a></td>
-			   <td  class="disabled"><a href="#">Community</a></td>
-			   <td class="twitter">
-  			     <a href="http://twitter.com/joosy_web">Twitter</a>
-			     <img src="/img/twit_sign_orange.png" alt="">
-			   </td>
-		     </tr>
-		   </tbody>
-	     </table>
-       </div>
-     </div>
-     <header>
-      <div class="container">
-        <div class="six columns">
-          <h1><a href="/">Joosy Guides</a></h1>
+    <div class='topbar'>
+      <div class='topbar_wrap'>
+        <table cellpadding='0' cellspacing='0'>
+          <tbody>
+            <tr>
+              <td>
+                <a href='http://joosy.ws'>Joosy (1.1.0)</a>
+              </td>
+              <td class='disabled'>
+                <a href='#'>Who's using</a>
+              </td>
+              <td>
+                <a href='http://sample.joosy.ws'>Annotated sample</a>
+              </td>
+              <td class='active'>
+                <a href='http://guides.joosy.ws'>Guides</a>
+              </td>
+              <td class='disabled'>
+                <a href='#'>Screencasts</a>
+              </td>
+              <td>
+                <a href='http://api.joosy.ws'>API</a>
+              </td>
+              <td>
+                <a href='http://github.com/joosy/joosy'>Code</a>
+              </td>
+              <td>
+                <a href='http://github.com/joosy/joosy/issues'>Bugs/Patches</a>
+              </td>
+              <td class='disabled'>
+                <a href='#'>Community</a>
+              </td>
+              <td class='twitter'>
+                <a href='http://twitter.com/joosy_web'>Twitter</a>
+                <img src="/assets/twit_sign_orange-1fc0877f6185532d65317b6fc4824fd9.png">
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <header>
+      <div class='container'>
+        <div class='six columns'>
+          <h1>
+            <a href='/'>Joosy Guides</a>
+          </h1>
         </div>
-        <div class="ten columns">
-          <ul class="nav">
-            <li><a href="/">Home</a></li>
+        <div class='ten columns'>
+          <ul class='nav'>
             <li>
-              <a href="#" onclick="toggle(document.getElementById('guides'))" class="index">Guides Index &#9660;</a>
-              <div style="display: none;" class="clearfix" id="guides">
-                <hr />
-                <dl class="L">
+              <a href='/'>Home</a>
+            </li>
+            <li>
+              <a class='index' href='#' onclick="toggle(document.getElementById('guides'))">Guides Index ▼</a>
+              <div class='clearfix' id='guides' style='display: none;'>
+                <hr>
+                <dl class='L'>
                   <dt>Joosy basics</dt>
-                  <dd><a href="/guides/basics/getting-started.html">Getting Started</a></dd>
-                  <dd><a href="/guides/basics/joosy-vs-x.html">Joosy vs X</a></dd>
+                  <dd>
+                    <a href='/guides/basics/getting-started.html'>Getting Started</a>
+                  </dd>
+                  <dd>
+                    <a href='/guides/basics/joosy-vs-x.html'>Joosy vs X</a>
+                  </dd>
                   <dt>Creating a blog on Joosy</dt>
-                  <dd><a href="/guides/blog/rails-preparations.html">Rails preparations</a></dd>
-                  <dd><a href="/guides/blog/resources.html">Resources</a></dd>
-                  <dd><a href="/guides/blog/layouts-pages-and-routing.html">Layouts, Pages and Routing</a></dd>
-                  <dd><a href="/guides/blog/elements-events-and-filters.html">Elements, Events and Filters</a></dd>
-                  <dd><a href="/guides/blog/dynamic-rendering.html">Dynamic rendering</a></dd>
-                  <dd><a href="/guides/blog/widgets.html">Widgets</a></dd>
-                  <dd><a href="/guides/blog/helpers.html">Helpers</a></dd>
-                  <dd><a href="/guides/blog/forms.html">Forms</a></dd>
-                  <dd><a href="/guides/blog/preloaders.html">Preloaders</a></dd>
-                  <dd><a href="/guides/blog/load-unload-and-in-progress-animations.html">Load, unload, animations</a></dd>
+                  <dd>
+                    <a href='/guides/blog/rails-preparations.html'>Rails preparations</a>
+                  </dd>
+                  <dd>
+                    <a href='/guides/blog/resources.html'>Resources</a>
+                  </dd>
+                  <dd>
+                    <a href='/guides/blog/layouts-pages-and-routing.html'>Layouts, Pages and Routing</a>
+                  </dd>
+                  <dd>
+                    <a href='/guides/blog/elements-events-and-filters.html'>Elements, Events and Filters</a>
+                  </dd>
+                  <dd>
+                    <a href='/guides/blog/dynamic-rendering.html'>Dynamic rendering</a>
+                  </dd>
+                  <dd>
+                    <a href='/guides/blog/widgets.html'>Widgets</a>
+                  </dd>
+                  <dd>
+                    <a href='/guides/blog/helpers.html'>Helpers</a>
+                  </dd>
+                  <dd>
+                    <a href='/guides/blog/forms.html'>Forms</a>
+                  </dd>
+                  <dd>
+                    <a href='/guides/blog/preloaders.html'>Preloaders</a>
+                  </dd>
+                  <dd>
+                    <a href='/guides/blog/load-unload-and-in-progress-animations.html'>Load, unload, animations</a>
+                  </dd>
                 </dl>
-                <dl class="R">
+                <dl class='R'>
                   <dt>Advanced guides</dt>
-                  <dd><a href="/guides/advanced/search-engine-indexing.html">Search engine indexing</a></dd>
-                  <dd><a href="/guides/advanded/authentication.html">Authentication</a></dd>
-                  <dd><a href="/guides/advanced/permissions.html">Permissions and ACL</a></dd>
-                  <dd><a href="/guides/advanced/template-engine.html">Template engines</a></dd>
+                  <dd>
+                    <a href='/guides/advanced/search-engine-indexing.html'>Search engine indexing</a>
+                  </dd>
+                  <dd>
+                    <a href='/guides/advanded/authentication.html'>Authentication</a>
+                  </dd>
+                  <dd>
+                    <a href='/guides/advanced/permissions.html'>Permissions and ACL</a>
+                  </dd>
+                  <dd>
+                    <a href='/guides/advanced/template-engine.html'>Template engines</a>
+                  </dd>
                 </dl>
               </div>
-            </li> 
-            <li><a href="/contribute.html">Contribute</a></li>
-            <li><a href="/credits.html">Credits</a></li>
+            </li>
+            <li>
+              <a href='/contribute.html'>Contribute</a>
+            </li>
+            <li>
+              <a href='/credits.html'>Credits</a>
+            </li>
           </ul>
         </div>
       </div>
     </header>
-    <div class="container">
-      <section class="row">
-        <div class="sixteen columns">
-          <article class="hentry">
-  <div class="entry-header">
-    <h2>Getting started</h2>
+    <div class='container'>
+      <section class='row'>
+        <div class='sixteen columns'>
+          <article class='hentry'>
+  <div class='entry-header'>
+    <h2></h2>
   </div>
-  <div class="entry-content">
+  <div class='entry-content'>
     <h3>What is Joosy?</h3>
 
 <p>Here is the typical transport flow for a Rails web application:</p>
@@ -191,13 +249,20 @@ Still unsure whether or not Joosy is a better fit for your needs than Backbone o
         </div>
       </section>
     </div>
-    <div id="footer">
-        <div class="wrapper">
-            <p>This work is licensed under a <a href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-Share Alike 3.0</a> License</p>
-            <p>Sources of this guide are available <a href="https://github.com/joosy/guides">on Github</a>.</p>
-        </div>
+    <div id='footer'>
+      <div class='wrapper'>
+        <p>
+          This work is licensed under a
+          <a href='http://creativecommons.org/licenses/by-sa/3.0/'>Creative Commons Attribution-Share Alike 3.0</a>
+          License
+        </p>
+        <p>
+          Sources of this guide are available
+          <a href='https://github.com/joosy/guides'>on Github</a>.
+        </p>
+      </div>
     </div>
-    <script type="text/javascript">
+    <script>
       var _gauges = _gauges || [];
       (function() {
         var t   = document.createElement('script');
