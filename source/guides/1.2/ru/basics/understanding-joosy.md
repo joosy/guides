@@ -1,6 +1,6 @@
 ---
 layout: guide
-title: "Understanding Joosy"
+title: "Как устроен Joosy"
 version: 1.2
 language: ru
 ---

@@ -1,6 +1,6 @@
 ---
 layout: guide
-title: "Install Joosy with RubyOnRails"
+title: "Почему Joosy?"
 version: 1.2
 language: ru
 ---

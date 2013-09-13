@@ -1,6 +1,6 @@
 ---
 layout: guide
-title: "Blog with Joosy, the first"
+title: "Подготовка проектаt"
 version: 1.2
 language: ru
 ---
