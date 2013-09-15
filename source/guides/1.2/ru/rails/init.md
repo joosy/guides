@@ -72,7 +72,7 @@ language: ru
 
 ##### application.js
 {% highlight javascript linenos %}
-  // Комментарии упущены
+  // Комментарии опущены
   //= require jquery
   //= require jquery_ujs
   //= require_tree .
@@ -104,7 +104,7 @@ language: ru
 {% endhighlight %}
 
 
-Теперь мы дополним ассоциации и добавим образцу каждой модели, что бы было с чем работать
+Теперь мы дополним ассоциации и добавим по образцу каждой модели, что бы было с чем работать
 
 ##### app/models/post.rb
 {% highlight ruby linenos%}
@@ -147,6 +147,15 @@ language: ru
   end
 {% endhighlight %}
 
-Запустите <code>rake db:migrate</code> и <code>rake db:migrate</code> для настройки БД и фундамент заложен. Joosy полностью совместима с Rails scaffold генераторами поэтому оставив в стороне всевозможные улучшения в генерации JSON и логике мы сконцентрируемся на сочной стороне нашего приложения - Joosy ;) 
+Запустите <code>rake db:migrate</code> и <code>rake db:seed</code> для настройки БД и фундамент заложен. Joosy полностью совместима с Rails scaffold генераторами поэтому оставив в стороне всевозможные улучшения в генерации JSON и логике мы сконцентрируемся на сочной стороне нашего приложения - Joosy ;) 
 
 ## Создание Joosy приложения
+
+Каждое Rails приложение может содержать внутри несколько Joosy приложений. Например, совершенно раздельные для пользовательского интерфейса и для административной панели.
+
+Давайте начнем с пользовательской части
+
+{% highlight bash linenos %}
+  rails g scaffold Post title:string body:text comments_count:integer
+  rails g scaffold Comment post:references body:text
+{% endhighlight %}
