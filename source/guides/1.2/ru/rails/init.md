@@ -16,18 +16,16 @@ language: ru
 ## Зависимости и настройки
 
 
-Создайте новый Rails проект:
+Нам понадобиться один свежий Rails проект - создайте его коммандой
 
-{% highlight bash linenos%}
-  rails new joosy-blog
-{% endhighlight%}
+  {% highlight bash linenos%}
+    rails new joosy-blog
+  {% endhighlight%}
 
+Joosy использует отдельный layout так, что удалять Turbolinks не обязательно, а вот добавить Bootstrap не помешает. Он значительно облегчит оформление внешнего вида нашего проекта.
+Отредактируйте <code>Gemfile</code> и подключите  необходимые гемы:
 
-Отключите Turbolinks из базового набора Rails и добавьте Joosy вместе с Twitter Bootstrap, благодаря которому приложение будет выглядит красивее.
-
- Для этого удалите строку <code>gem 'turbolinks'</code> из <code>Gemfile</code> и подключите  необходимые гемы
-
-##### Gemfile
+<h5>Gemfile</h5>
 {% highlight ruby linenos %}
   source 'https://rubygems.org'
  
@@ -37,6 +35,7 @@ language: ru
   gem 'uglifier', '>= 1.3.0'
   gem 'coffee-rails', '~> 4.0.0'
   gem 'jquery-rails'
+  gem 'turbolinks'
   gem 'jbuilder', '~> 1.2'
    
   group :doc do
@@ -48,37 +47,7 @@ language: ru
   gem 'font-awesome-sass-rails'       #<- и это
 {% endhighlight %}
 
-В <code>app/views/layouts/application.html.erb</code> удалите две пары ключ/значение <code>"data-turbolinks-track" => true</code>
-
-##### application.html.erb
-{% highlight erb linenos %}
-  <!DOCTYPE html>
-  <html>
-  <head>
-    <title>JoosyBlog</title>
-    <%= stylesheet_link_tag    "application", media: "all"%>
-    <%= javascript_include_tag "application" %>
-    <%= csrf_meta_tags %>
-  </head>
-  <body>
-   
-  <%= yield %>
-   
-  </body>
-  </html>
-{% endhighlight %}
-
-Из <code>app/assets/javascripts/application.js</code> удалите строку <code>//= require turbolinks</code>
-
-##### application.js
-{% highlight javascript linenos %}
-  // Комментарии опущены
-  //= require jquery
-  //= require jquery_ujs
-  //= require_tree .
-{% endhighlight %}
-
-Теперь задействуем Bootstrap. Переименуйте <code>app/assets/stylesheets/application.css</code> в <code>app/assets/stylesheets/application.css.scss</code> и добавьте следующие объявления
+Справившись с этой задачей можно смело его задействовать:  переименуйте <code>app/assets/stylesheets/application.css</code> в <code>app/assets/stylesheets/application.css.scss</code> и добавьте следующие строки:
 {% highlight scss linenos %}
   @import 'bootstrap';
   @import 'font-awesome';
@@ -88,15 +57,15 @@ language: ru
   }
 {% endhighlight %}
 
-Наконец настало время позаботиться о зависимостях и перейти к программированнию! 
+Теперь настало время позаботиться о зависимостях и перейти к программированнию! Выполните
 
 {% highlight bash linenos %}
   bundle install
 {% endhighlight %}
 
-## Генераторы
+<h2>Генераторы</h2>
 
-Используя генераторы Rails давайте создадим несколько сущностей для нашего проекта: 
+Для нашего блога потребуется несколько моделей - Сообщения и Комментарии, даваайте же создадим их незамедлительно!
 
 {% highlight bash linenos %}
   rails g scaffold Post title:string body:text comments_count:integer
@@ -104,23 +73,23 @@ language: ru
 {% endhighlight %}
 
 
-Теперь мы дополним ассоциации и добавим по образцу каждой модели, что бы было с чем работать
+Установим необходимые связи и добавим капельку исходный данных, что бы было с чем работать.
 
-##### app/models/post.rb
+<h5>app/models/post.rb</h5>
 {% highlight ruby linenos%}
   class Post < ActiveRecord::Base
     has_many :comments
   end
 {% endhighlight %}
 
-##### app/models/comment.rb
+<h5>app/models/comment.rb</h5>
 {% highlight ruby linenos%}
   class Comment < ActiveRecord::Base
     belongs_to :post, :counter_cache => true
   end
 {% endhighlight %}
 
-##### db/seeds.rb
+<h5>db/seeds.rb</h5>
 {% highlight ruby linenos %}
   posts = Post.create([
     { title: 'Welcome there', body: 'Hey, welcome to the joosy blog example' },
@@ -129,9 +98,9 @@ language: ru
   Comment.create(body: 'Great article!', post: posts.first)
 {% endhighlight %}
 
-Напоследок осталось добавить идентификатор в список сериализируемых через JSON полей
+Так же Rails 4 по-умолчанию не сереилизирует id через JSON, поэтому их нужно включить принудительно 
 
-##### app/views/posts/index.json.jbuilder
+<h5> app/views/posts/index.json.jbuilder</h5>
 {% highlight ruby linenos %}
   json.array!(@posts) do |post|
     json.extract! post, :id, :title, :body, :comments_count
@@ -139,7 +108,7 @@ language: ru
   end
 {% endhighlight %}
 
-##### app/views/comments/index.json.jbuilder
+<h5>app/views/comments/index.json.jbuilder</h5>
 {% highlight ruby linenos %}
   json.array!(@comments) do |comment|
     json.extract! comment, :id, :post_id, :body
@@ -147,15 +116,26 @@ language: ru
   end
 {% endhighlight %}
 
-Запустите <code>rake db:migrate</code> и <code>rake db:seed</code> для настройки БД и фундамент заложен. Joosy полностью совместима с Rails scaffold генераторами поэтому оставив в стороне всевозможные улучшения в генерации JSON и логике мы сконцентрируемся на сочной стороне нашего приложения - Joosy ;) 
+Запустите <code>rake db:migrate</code> и <code>rake db:seed</code> для настройки БД и фундамент можно считать заложенным. Нам очень повезло, что Joosy полностью совместима с семантикой Rails, поэтому оставив в стороне все возможные потенциальные  улучшения мы незамедлительно переходим к сочной стороне нашего приложения - Joosy ;) 
 
-## Создание Joosy приложения
+<h2> Создание Joosy приложения</h2>
 
-Каждое Rails приложение может содержать внутри несколько Joosy приложений. Например, совершенно раздельные для пользовательского интерфейса и для административной панели.
+Каждый Rails  проект может содержать внутри себя несколько Joosy приложений. Например, совершенно независимые пользовательскую часть и для административную панель!
 
-Давайте начнем с пользовательской части
+Давайте начнем с пользовательской части. 
 
 {% highlight bash linenos %}
-  rails g scaffold Post title:string body:text comments_count:integer
-  rails g scaffold Comment post:references body:text
+  rails g joosy:application blog
 {% endhighlight %}
+
+<div class="info">
+  <p>
+    С полным списком генераторов и их аргументами Вы можете ознакомиться на странице проекта
+  </p>
+</div>
+
+<div class="info">
+  <p>
+    Используйте https://github.com/inossidabile/sprockets-preload для ускорения загрузки Вашего приложения!;)
+  </p>
+</div>
