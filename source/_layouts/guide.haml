@@ -19,7 +19,7 @@ layout: default
               Index
           %li{class: '{% if page.section != "index" %}active{% endif %}'}
             #guides
-              {% capture partial %}versions/{{page.version}}/guides.haml{% endcapture %}
+              {% capture partial %}versions/{{page.version}}/{{page.language}}/guides.haml{% endcapture %}
               {% haml partial %}
             %a.dropdown-toggle{href: '#guides', data: {toggle: 'dropdown', target: '#guides'}}
               %i.icon-long-arrow-down
