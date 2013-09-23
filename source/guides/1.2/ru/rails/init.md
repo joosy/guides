@@ -7,20 +7,18 @@ language: ru
 
 
 
-<div class="info">
-  <p>
-    Пожалуйста, убедитесь, что спользуете версию Rails >= 4.0.0
-  </p>
-</div>
+{% sidenote info%}
+  Пожалуйста, убедитесь, что спользуете версию Rails >= 4.0.0
+{% endsidenote %}
 
-## Зависимости и настройки
+<h2>Зависимости и настройки</h2> 
 
 
 Нам понадобиться один свежий Rails проект - создайте его коммандой
 
-  {% highlight bash linenos%}
-    rails new joosy-blog
-  {% endhighlight%}
+{% highlight bash linenos%}
+  rails new joosy-blog
+{% endhighlight%}
 
 Joosy использует отдельный layout так, что удалять Turbolinks не обязательно, а вот добавить Bootstrap не помешает. Он значительно облегчит оформление внешнего вида нашего проекта.
 Отредактируйте <code>Gemfile</code> и подключите  необходимые гемы:
@@ -128,14 +126,3 @@ Joosy использует отдельный layout так, что удалят
   rails g joosy:application blog
 {% endhighlight %}
 
-<div class="info">
-  <p>
-    С полным списком генераторов и их аргументами Вы можете ознакомиться на странице проекта
-  </p>
-</div>
-
-<div class="info">
-  <p>
-    Используйте https://github.com/inossidabile/sprockets-preload для ускорения загрузки Вашего приложения!;)
-  </p>
-</div>
