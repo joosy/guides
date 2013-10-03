@@ -21,7 +21,7 @@ language: ru
 {% endhighlight%}
 
 Joosy использует отдельный layout так, что удалять Turbolinks не обязательно, а вот добавить Bootstrap не помешает. Он значительно облегчит оформление внешнего вида нашего проекта.
-Отредактируйте <code>Gemfile</code> и подключите  необходимые гемы:
+Отредактируйте `Gemfile` и подключите  необходимые гемы:
 
 ##### Gemfile
 {% highlight ruby linenos %}
@@ -45,7 +45,7 @@ Joosy использует отдельный layout так, что удалят
   gem 'font-awesome-sass-rails'       #<- и это
 {% endhighlight %}
 
-Справившись с этой задачей можно смело его задействовать:  переименуйте <code>app/assets/stylesheets/application.css</code> в <code>app/assets/stylesheets/application.css.scss</code> и добавьте следующие строки:
+Справившись с этой задачей можно смело его задействовать:  переименуйте `app/assets/stylesheets/application.css` в `app/assets/stylesheets/application.css.scss` и добавьте следующие строки:
 
 {% highlight scss linenos %}
   @import 'bootstrap';
@@ -115,7 +115,7 @@ Joosy использует отдельный layout так, что удалят
   end
 {% endhighlight %}
 
-Запустите <code>rake db:migrate</code> и <code>rake db:seed</code> для настройки БД и фундамент можно считать заложенным. Нам очень повезло, что Joosy полностью совместима с семантикой Rails, поэтому оставив в стороне все возможные потенциальные  улучшения мы незамедлительно переходим к сочной стороне нашего приложения - Joosy ;) 
+Запустите `rake db:migrate` и `rake db:seed` для настройки БД и фундамент можно считать заложенным. Нам очень повезло, что Joosy полностью совместима с семантикой Rails, поэтому оставив в стороне все возможные потенциальные  улучшения мы незамедлительно переходим к сочной стороне нашего приложения - Joosy ;) 
 
 ## Создание Joosy приложения
 
@@ -124,23 +124,35 @@ Joosy использует отдельный layout так, что удалят
 Начнем, пожалуй, с пользовательской части. 
 
 {% highlight bash linenos %}
-  rails g joosy:application blog
+  rails g joosy:application
 {% endhighlight %}
 
-Таким образом генерируется каркас приложения, который в соответствии с Assets Pipeline располагается в поддиректории <code>blog</code> директории <code>app/assets/javascripts</code>. Отдельно обратите внимание на две последних строчки приведенного ниже списка. Каждое из приложений Joosy использует свой файл разаметки в поддиректории <code>joosy</code> директории <code>app/views/layouts/</code>, с именем соответствующим имени приложения. Его подключение Joosy берет на себя и программисту неприходиться об этом беспокоиться. 
+Таким образом генерируется каркас приложения, который в соответствии с Assets Pipeline располагается в директории `app/assets/javascripts`. Отдельно обратите внимание на две последних строчки приведенного ниже списка. Каждое из приложений Joosy использует свой файл разметки в директории `app/views/layouts/`, с именем соответствующим имени приложения. Его подключение и и происходит прозрачно и программисту не приходится об этом заботиться. 
 
 {% quotebox %}
-  create  app/assets/javascripts/blog
-  create  app/assets/javascripts/blog/application.coffee
-  create  app/assets/javascripts/blog/helpers/application.coffee
-  create  app/assets/javascripts/blog/layouts/application.coffee
-  create  app/assets/javascripts/blog/pages/application.coffee
-  create  app/assets/javascripts/blog/pages/welcome/index.coffee
-  create  app/assets/javascripts/blog/routes.coffee
-  create  app/assets/javascripts/blog/templates/layouts/application.jst.hamlc
-  create  app/assets/javascripts/blog/templates/pages/welcome/index.jst.hamlc
-  create  app/views/layouts/joosy/blog.html.erb
-  route  joosy '/blog', application: 'blog'
+  exist  app/assets/javascripts
+  create  app/assets/javascripts/application.coffee
+  create  app/assets/javascripts/helpers/application.coffee
+  create  app/assets/javascripts/layouts/application.coffee
+  create  app/assets/javascripts/pages/application.coffee
+  create  app/assets/javascripts/pages/welcome/index.coffee
+  create  app/assets/javascripts/routes.coffee
+  create  app/assets/javascripts/templates/layouts/application.jst.hamlc
+  create  app/assets/javascripts/templates/pages/welcome/index.jst.hamlc
+  create  app/assets/javascripts/application.js-old
+  remove  app/assets/javascripts/application.js
+  create  app/views/layouts/joosy.html.erb
+   route  joosy '/'
 {% endquotebox %}
 
-Внутри каркаса 
+{% sidenote  info %}
+Здесь Joosy привязывается к корневому маршруту, а о других возможностях размещения внутри Rails-проекта можно узнать в руководстве ХХХ. 
+{% endsidenote %}
+
+Вместе с разметкой приложение содержит стартовую страницу в HAMLC-формате. В дальнейшем мы рассмотрим как заменить его на другой формат ECO или JADE, но поскольку HAML наш любимый формат мы рекомендуем использовать именно его, так, как он великолепен. Серьезно!;)
+
+Тем временем абсолютно заслужено наступил черед насладиться первыми результатами дел наших праведных  - смело запустите `rails s` и открывайте [http://localhost:3000](http://localhost:3000), где Вас встретить начальная страница Joosy-приложения:
+
+![Начальная страница Joosy-приложения](http://i.imgur.com/2XMSWbo.png)
+
+Наши поздравления! Теперь оседлаем Ресурсы.
