@@ -16,15 +16,12 @@ language: ru
 
 
 
-<div class="info">
-  <p>
-    Если не указывать генератору имя приложения <code>blog</code>, то приложение будет сгенерировано прямо в папке <code>app/assets/javascripts</code> и доступно по адресу <code>http:/localhost:3000</code>
-  </p>
-</div>
-
-
 Joosy-приложение сгенерировано в папке `app/assets/javascripts/blog` и доступно по адресу `http://localhost:3000/blog`
 
+
+{% sidenote info %}
+    Если не указывать генератору имя приложения <code>blog</code>, то приложение будет сгенерировано прямо в папке <code>app/assets/javascripts</code> и доступно по адресу <code>http:/localhost:3000</code>
+{% endsidenote %}
 
 ##### config/routes.rb
 {% highlight ruby linenos %}
