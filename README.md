@@ -18,3 +18,6 @@ Guides are built on top of [Jekyll](jekyllrb.com). To run instance of guides loc
   * Run local server: `bundle exec jekyll serve --watch`
 
 Now point your browser to [http://localhost:4000](http://localhost:4000) and here they are! Go ahead to patch and improve something and then send us a pull request! :heart:
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/joosy/guides/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
