@@ -5,7 +5,7 @@ layout: default
 .content
   %header
     .container
-      %img.pull-left.logo{src: 'http://joosy.ws/joosy.png'}
+      %img.pull-left.logo{src: 'http://joosy.ws/joosy.png', alt: 'Joosy framework'}
       %p.pull-left
         Guides for version {{ page.version }}
         %a{href: '/'}
@@ -19,7 +19,7 @@ layout: default
               Index
           %li{class: '{% if page.section != "index" %}active{% endif %}'}
             #guides
-              {% capture partial %}versions/{{page.version}}/guides.haml{% endcapture %}
+              {% capture partial %}versions/{{page.version}}/{{page.language}}/guides.haml{% endcapture %}
               {% haml partial %}
             %a.dropdown-toggle{href: '#guides', data: {toggle: 'dropdown', target: '#guides'}}
               %i.icon-long-arrow-down

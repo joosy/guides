@@ -1,5 +1,6 @@
 //= require_tree ./pages
 //= require_tree ./versions
+//= require syntax
 
 .content
   header
@@ -52,6 +53,12 @@
       width: 500px
       z-index: 10
       line-height: 1.3em !important
+
+      dl
+        max-width: 205px
+
+        &.pull-left
+          margin-right: 10px
 
       dt.inner
         margin-top: 25px
