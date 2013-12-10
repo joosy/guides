@@ -1,11 +1,11 @@
 ---
 layout: guide
-title: "Ресурсы Joosy - Основные возможности"
+title: "Ресурсы: Основные возможности"
 version: 1.2
 language: ru
 ---
 
-## Ресурсы Joosy - Основные возможности
+## Ресурсы: Основные возможности
 
 Создадим joosy-класс для модели Post:
 
@@ -13,13 +13,12 @@ language: ru
 {% highlight ruby linenos %}
   class @Post extends Joosy.Resources.REST
     @entity 'post'
-
 {% endhighlight %}
 
 Директива `@entity 'model_name'` обязательна, она позволит построить путь к стандартному REST-ресурсу Rails: `localhost:3000/posts.json`
 
 {% sidenote info %}
-  Построить путь к нестандартному Rails-ресурсу позволит директива <code>@source '/funny_cats/latest_posts.json'</code>
+  Построить путь к нестандартному Rails-ресурсу позволит директива `@source '/funny_cats/latest_posts.json'`
 {% endsidenote %}
 
 

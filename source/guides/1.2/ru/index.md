@@ -24,7 +24,9 @@ language: ru
 
 #### Ресурсы
 
-* [Основные возможности]()
+* [Подготовка Backend](/guides/1.2/ru/rails/resources/preparations.html)
+
+* [Основные возможности](/guides/1.2/ru/rails/resources/main.html)
 
 * [Автоматическая генерация в Rails]()
 
@@ -63,11 +65,11 @@ language: ru
 
 #### Дополнительные возможности
 
+* [Конфигурация Joosy]()
+
 * [События Joosy]()
 
 * [Предзагрузка JS-файлов]()
-
-* [Joosy и MongoDB]()
 
 -----------------------------
 
